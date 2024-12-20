@@ -1,6 +1,6 @@
 body {
 	margin: 0px;
-	background-image: url("../Layout/Background.png");
+	background-image: url("background.png");
 	background-size: 96px;
 	background-repeat: repeat-x;
 	image-rendering: pixelated;
@@ -14,7 +14,7 @@ header {
 	margin: 100px auto 0 auto;
 
 	/* Image */
-	background-image: url("../Layout/header.jpg");
+	background-image: url("header.jpg");
 	background-position: center;
 	background-size: cover;
 
