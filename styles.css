@@ -1,11 +1,14 @@
 body {
-	margin: 0px;
-	background-image: url("background.png");
-	background-size: 96px;
-	background-repeat: repeat-x;
-	image-rendering: pixelated;
-	overflow: auto;
-	background-color: #4f4f86;
+  margin: 0;
+  background-image: 
+    url("background1.png"),
+    url("background2.png");
+  background-size: 96px auto, 96px auto;
+  background-repeat: repeat-x, repeat;
+  background-position: top center, top center;
+  image-rendering: pixelated;
+  overflow: auto;
+  background-color: #4f4f86;
 }
 
 header {
