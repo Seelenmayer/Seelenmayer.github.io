@@ -1,16 +1,102 @@
 const projects = {
-	"OpenGL Graphics": { title: "OpenGL Graphics", description: "This project explores advanced rendering techniques using OpenGL, including shaders, lighting models, and real-time rendering optimizations.", image: "Assets/project.jpg" },
-	"ThreeJS Website": { title: "ThreeJS Website", description: "Hello World", image: "Assets/project.jpg" },
-	"Bridge Project": { title: "Bridge Project", description: "Hello World", image: "Assets/project.jpg" },
-	"Blender Modeling": { title: "Blender Modeling", description: "Hello World", image: "Assets/project.jpg" },
-	"Virtualized Networks": { title: "Virtualized Networks", description: "Hello World", image: "Assets/project.jpg" },
-	"Compilers and Process Scheduling": { title: "Compilers and Process Scheduling", description: "Hello World", image: "Assets/project.jpg" },
-	"Render Textures": { title: "Render Textures", description: "Hello World", image: "Assets/project.jpg" },
-	"Godot Project": { title: "Godot Project", description: "Hello World", image: "Assets/project.jpg" },
-	"Magic Squares": { title: "Magic Squares", description: "Hello World", image: "Assets/project.jpg" },
-	"Jamfest": { title: "Jamfest", description: "Hello World", image: "Assets/project.jpg" },
-	"Cinematic Camera": { title: "Cinematic Camera", description: "Hello World", image: "Assets/project.jpg" },
-	"Miscellaneous": { title: "Miscellaneous", description: "<TODO: produce, pints, vr, logger, gameboy, unity tree, honours>", image: "Assets/project.jpg" },
+	"OpenGL Graphics": {
+		title: "OpenGL Graphics",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+				<h2>Title</h2>
+				<p>Placeholder information.</p>
+			</div>
+		`
+	},
+	"ThreeJS Website": {
+		title: "ThreeJS Website",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+			</div>
+		`
+	},
+	"Bridge Project": {
+		title: "Bridge Project",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+			</div>
+		`
+	},
+	"Blender Modeling": {
+		title: "Blender Modeling",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+			</div>
+		`
+	},
+	"Virtualized Networks": {
+		title: "Virtualized Networks",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+			</div>
+		`
+	},
+	"Compilers and Process Scheduling": {
+		title: "Compilers and Process Scheduling",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+			</div>
+		`
+	},
+	"Render Textures": {
+		title: "Render Textures",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+			</div>
+		`
+	},
+	"Godot Project": {
+		title: "Godot Project",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+			</div>
+		`
+	},
+	"Magic Squares": {
+		title: "Magic Squares",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+			</div>
+		`
+	},
+	"Jamfest": {
+		title: "Jamfest",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+			</div>
+		`
+	},
+	"Cinematic Camera": {
+		title: "Cinematic Camera",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+			</div>
+		`
+	},
+	"Miscellaneous": {
+		title: "Miscellaneous",
+		image: "Assets/project.jpg",
+		customHTML: `
+			<div>
+			</div>
+		`
+	}
 };
 
 let currentPage = 0;
@@ -68,9 +154,7 @@ function showProjectDetails(projectName) {
 	const mainContent = document.querySelector('main');
 	mainContent.innerHTML = `
 		<div>
-			<h1>${project.title}</h1>
-			<img src="${project.image}" alt="${project.title}" style="max-width: 100%; height: auto;">
-			<p>${project.description}</p>
+			${project.customHTML}
 		</div>
 	`;
 }
