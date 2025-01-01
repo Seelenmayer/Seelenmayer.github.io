@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Charset and viewport for responsive design -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Description for general search engines -->
+	<meta name="description" content="Check out my portfolio and creative projects including programming, art, and more.">
+
+	<!-- Open Graph metadata for social media sharing -->
+	<meta property="og:site_name" content="💜💙💚 Clayton Seelenmayer 💚💙💜">
+	<meta property="og:title" content="View now!">
+	<meta property="og:description" content="Check out my portfolio and creative projects including programming, art, and more.">
+	<meta property="og:image" content="https://seelenmayer.github.io/Assets/public.png">
+	<meta property="og:url" content="https://seelenmayer.github.io/index.html">
+	<meta property="og:type" content="website">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Clayton Seelenmayer">
+	<meta name="twitter:description" content="Check out my portfolio and creative projects including programming, art, and more.">
+	<meta name="twitter:image" content="https://seelenmayer.github.io/Assets/public.png">
+	<meta name="twitter:url" content="https://x.com/seelenmayer">
+
+	<!-- Title of the page -->
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+
+	<!-- Style -->
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a href="portfolio.html">Portfolio</a>
+		<a href="creative.html">Creative</a>
+		<a href="resume.html">Resume</a>
+		<a class="selected_tab">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Social Media</h1>
+				</div>
+				<ul>
+					<div class="navsociallink">
+						<li>
+							<a href="https://bsky.app/profile/seelenmayer.bsky.social">
+								<img src="Assets/icons8-bluesky-96.png" alt="[Bluesky Logo]">
+								<span>Bluesky</span>
+							</a>
+						</li>
+					</div>
+					<div class="navsociallink">
+						<li>
+							<a href="https://www.linkedin.com/in/claytonseelenmayer/">
+								<img src="Assets/icons8-linkedin-96.png" alt="[Linkedin Logo]">
+								<span>LinkedIn</span>
+							</a>
+						</li>
+					</div>
+					<div class="navsociallink">
+						<li>
+							<a href="https://x.com/seelenmayer">
+								<img src="Assets/icons8-x-96.png" alt="[X Logo]">
+								<span>X</span>
+							</a>
+						</li>
+					</div>
+				</ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Contact</h1>
+				<p>If you have an email client configured on your device, you can use the dynamically generated link below to message me directly.</p>
+				<p class="contactemail" id="contact">The email link will appear in <span id="countdown">8</span> seconds.</p>
+				<script>
+					var name = 'Seelenmayer';
+					var domain = 'live';
+					var tld = 'com';
+					// Display
+					function generateEmail() {
+						document.getElementById('contact').innerHTML = '<a href="mailto:' + name + '@' + domain + '.' + tld + '">' + name + '@' + domain + '.' + tld + '</a>';
+					}
+					// Countdown
+					var countdownTime = 8;
+					var countdownInterval = setInterval(function() {
+						countdownTime--;
+						document.getElementById('countdown').innerHTML = countdownTime;
+						if (countdownTime <= 0) {
+							clearInterval(countdownInterval);
+							generateEmail();
+						}
+					}, 1000);
+				</script>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>
