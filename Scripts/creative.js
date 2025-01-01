@@ -1,4 +1,4 @@
-const projects = {
+const projects = {/*
 	"OpenGL Graphics": {
 		title: "OpenGL Graphics",
 		image: "Assets/project.jpg",
@@ -16,87 +16,7 @@ const projects = {
 			<div>
 			</div>
 		`
-	},
-	"Bridge Project": {
-		title: "Bridge Project",
-		image: "Assets/project.jpg",
-		customHTML: `
-			<div>
-			</div>
-		`
-	},
-	"Blender Modeling": {
-		title: "Blender Modeling",
-		image: "Assets/project.jpg",
-		customHTML: `
-			<div>
-			</div>
-		`
-	},
-	"Virtualized Networks": {
-		title: "Virtualized Networks",
-		image: "Assets/project.jpg",
-		customHTML: `
-			<div>
-			</div>
-		`
-	},
-	"Compilers and Process Scheduling": {
-		title: "Compilers and Process Scheduling",
-		image: "Assets/project.jpg",
-		customHTML: `
-			<div>
-			</div>
-		`
-	},
-	"Render Textures": {
-		title: "Render Textures",
-		image: "Assets/project.jpg",
-		customHTML: `
-			<div>
-			</div>
-		`
-	},
-	"Godot Project": {
-		title: "Godot Project",
-		image: "Assets/project.jpg",
-		customHTML: `
-			<div>
-			</div>
-		`
-	},
-	"Magic Squares": {
-		title: "Magic Squares",
-		image: "Assets/project.jpg",
-		customHTML: `
-			<div>
-			</div>
-		`
-	},
-	"Jamfest": {
-		title: "Jamfest",
-		image: "Assets/project.jpg",
-		customHTML: `
-			<div>
-			</div>
-		`
-	},
-	"Cinematic Camera": {
-		title: "Cinematic Camera",
-		image: "Assets/project.jpg",
-		customHTML: `
-			<div>
-			</div>
-		`
-	},
-	"Miscellaneous": {
-		title: "Miscellaneous",
-		image: "Assets/project.jpg",
-		customHTML: `
-			<div>
-			</div>
-		`
-	}
+	}*/
 };
 
 let currentPage = 0;

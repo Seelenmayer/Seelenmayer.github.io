@@ -6,6 +6,7 @@ const projects = {
 			<div>
 				<h2>Title</h2>
 				<p>Placeholder information.</p>
+				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -14,6 +15,7 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
+				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -22,6 +24,7 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
+				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -30,6 +33,7 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
+				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -38,6 +42,7 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
+				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -46,6 +51,7 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
+				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -54,6 +60,7 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
+				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -62,6 +69,7 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
+				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -70,6 +78,7 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
+				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -78,6 +87,7 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
+				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -86,6 +96,7 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
+				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -94,6 +105,7 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
+				<div class="separator"></div>
 			</div>
 		`
 	}
