@@ -79,25 +79,32 @@
 			<div>
 				<h1>Contact</h1>
 				<p>If you have an email client configured on your device, you can use the dynamically generated link below to message me directly.</p>
-				<p class="contactemail" id="contact">The email link will appear in <span id="countdown">8</span> seconds.</p>
+				<p><span class="email-container" id="email1">The email will display shortly.</span></p>
 				<script>
-					var name = 'Seelenmayer';
-					var domain = 'live';
-					var tld = 'com';
-					// Display
-					function generateEmail() {
-						document.getElementById('contact').innerHTML = '<a href="mailto:' + name + '@' + domain + '.' + tld + '">' + name + '@' + domain + '.' + tld + '</a>';
+					// Function to reveal email after the timer
+					function revealEmail(id, emailParts) {
+						let seconds = 7;
+						document.getElementById(id).textContent = `This email will display itself in ${seconds} seconds.`;
+		
+						// Countdown
+						const countdown = setInterval(() => {
+							document.getElementById(id).textContent = `This email will display itself in ${seconds} seconds.`;
+							seconds--;
+							if (seconds < 0) {
+								clearInterval(countdown);
+								// Create a mailto link and display it
+								const email = emailParts[0] + '@' + emailParts[1] + '.' + emailParts[2];
+								document.getElementById(id).innerHTML = `<a href="mailto:${email}">${email}</a>`;
+							}
+						}, 1000);
 					}
-					// Countdown
-					var countdownTime = 8;
-					var countdownInterval = setInterval(function() {
-						countdownTime--;
-						document.getElementById('countdown').innerHTML = countdownTime;
-						if (countdownTime <= 0) {
-							clearInterval(countdownInterval);
-							generateEmail();
-						}
-					}, 1000);
+					// Start timer
+					window.onload = function() {
+						const emails = [
+							['Seelenmayer', 'live', 'com'],
+						];
+						revealEmail('email1', emails[0]);
+					};
 				</script>
 			</div>
 			<div class="separator"></div>
