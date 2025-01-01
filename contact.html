@@ -1,14 +1,9 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Charset and viewport for responsive design -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<!-- Description for general search engines -->
 	<meta name="description" content="Check out my portfolio and creative projects including programming, art, and more.">
-
-	<!-- Open Graph metadata for social media sharing -->
 	<meta property="og:site_name" content="💜💙💚 Clayton Seelenmayer 💚💙💜">
 	<meta property="og:title" content="View now!">
 	<meta property="og:description" content="Check out my portfolio and creative projects including programming, art, and more.">
@@ -20,13 +15,10 @@
 	<meta name="twitter:description" content="Check out my portfolio and creative projects including programming, art, and more.">
 	<meta name="twitter:image" content="https://seelenmayer.github.io/Assets/public.png">
 	<meta name="twitter:url" content="https://x.com/seelenmayer">
-
-	<!-- Title of the page -->
 	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
-
-	<!-- Style -->
 	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/contact.js"></script>
 </head>
 <body>
 	<a href="index.html" class="headerlink">
@@ -80,32 +72,6 @@
 				<h1>Contact</h1>
 				<p>If you have an email client configured on your device, you can use the dynamically generated link below to message me directly.</p>
 				<p><span class="email-container" id="email1">The email will display shortly.</span></p>
-				<script>
-					// Function to reveal email after the timer
-					function revealEmail(id, emailParts) {
-						let seconds = 7;
-						document.getElementById(id).textContent = `This email will display itself in ${seconds} seconds.`;
-		
-						// Countdown
-						const countdown = setInterval(() => {
-							document.getElementById(id).textContent = `This email will display itself in ${seconds} seconds.`;
-							seconds--;
-							if (seconds < 0) {
-								clearInterval(countdown);
-								// Create a mailto link and display it
-								const email = emailParts[0] + '@' + emailParts[1] + '.' + emailParts[2];
-								document.getElementById(id).innerHTML = `<a href="mailto:${email}">${email}</a>`;
-							}
-						}, 1000);
-					}
-					// Start timer
-					window.onload = function() {
-						const emails = [
-							['Seelenmayer', 'live', 'com'],
-						];
-						revealEmail('email1', emails[0]);
-					};
-				</script>
 			</div>
 			<div class="separator"></div>
 		</main>
