@@ -37,6 +37,7 @@ function renderProjects() {
 			</div>
 		`;
 	}
+	updatePageIndicator();  // Update the page indicator after rendering projects
 }
 
 // Function to handle page navigation
@@ -47,6 +48,13 @@ function changePage(direction) {
 		currentPage++;
 	}
 	renderProjects();
+}
+
+// Function to update the page number indicator
+function updatePageIndicator() {
+	const totalPages = Math.ceil(projectKeys.length / projectsPerPage);  // Calculate total number of pages
+	const pageIndicator = document.querySelector('.page-indicator');
+	pageIndicator.textContent = `Page ${currentPage + 1} out of ${totalPages}`;  // Update the page indicator text
 }
 
 // Function to update the main content based on selected project

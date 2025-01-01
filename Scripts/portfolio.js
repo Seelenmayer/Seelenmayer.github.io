@@ -49,13 +49,14 @@ function changePage(direction) {
 	updatePageIndicator();
 }
 
-// Function to update the page number indicator
+// Function to update the page number indicator to show "Page X out of Y"
 function updatePageIndicator() {
+	const totalPages = Math.ceil(projectKeys.length / projectsPerPage); // Calculate total pages
 	const pageIndicator = document.querySelector('.page-indicator');
-	pageIndicator.textContent = `Page ${currentPage + 1}`;
+	pageIndicator.textContent = `Page ${currentPage + 1} out of ${totalPages}`;
 }
 
-// Initialize the first page and update the indicator on load
+// Initialize the first page of projects and the page indicator on load
 window.onload = () => {
 	renderProjects();
 	updatePageIndicator();
@@ -73,6 +74,3 @@ function showProjectDetails(projectName) {
 		</div>
 	`;
 }
-
-// Initialize the first page of projects on load
-window.onload = renderProjects;
