@@ -1,5 +1,4 @@
-const projects = {
-	/*
+const projects = {/*
 	"OpenGL Graphics": { title: "OpenGL Graphics", description: "This project explores advanced rendering techniques using OpenGL, including shaders, lighting models, and real-time rendering optimizations.", image: "Assets/project.jpg" },
 	"ThreeJS Website": { title: "ThreeJS Website", description: "Hello World", image: "Assets/project.jpg" },
 	"Bridge Project": { title: "Bridge Project", description: "Hello World", image: "Assets/project.jpg" },
