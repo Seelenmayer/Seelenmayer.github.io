@@ -1,11 +1,18 @@
 const projects = {
 	"OpenGL Graphics": {
 		title: "OpenGL Graphics",
-		image: "Assets/project.jpg",
+		image: "Content/Portfolio/OpenGL Graphics/tree.jpg",
 		customHTML: `
 			<div>
-				<h2>Title</h2>
+				<h2>OpenGL Graphics</h2>
 				<p>Placeholder information.</p>
+				<img src="Content/Portfolio/OpenGL Graphics/tree.jpg" alt="[]">
+				<img src="Content/Portfolio/OpenGL Graphics/tree1.jpg" alt="[]">
+				<img src="Content/Portfolio/OpenGL Graphics/tree2.jpg" alt="[]">
+				<img src="Content/Portfolio/OpenGL Graphics/tree3.jpg" alt="[]">
+				<img src="Content/Portfolio/OpenGL Graphics/tree4.jpg" alt="[]">
+				<img src="Content/Portfolio/OpenGL Graphics/raytrace.jpg" alt="[]">
+				<img src="Content/Portfolio/OpenGL Graphics/particle.jpg" alt="[]">
 				<div class="separator"></div>
 			</div>
 		`
@@ -126,11 +133,13 @@ function renderProjects() {
 		const projectKey = projectKeys[i];
 		const project = projects[projectKey];
 		nav.innerHTML += `
-			<div class="navproject">
-				<a href="#" onclick="showProjectDetails('${projectKey}'); return false;">
-					<img src="${project.image}" alt="[Project Image]" class="projectimage">
-					<span class="navprojectoverlay">${project.title}</span>
-				</a>
+			<div class="navprojectcontainer">
+				<div class="navproject">
+					<a href="#" onclick="showProjectDetails('${projectKey}'); return false;">
+						<img src="${project.image}" alt="[Project Image]" class="projectimage">
+						<span class="navprojectoverlay">${project.title}</span>
+					</a>
+				</div>
 			</div>
 		`;
 	}
