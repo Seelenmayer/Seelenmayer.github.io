@@ -46,7 +46,20 @@ function changePage(direction) {
 		currentPage++;
 	}
 	renderProjects();
+	updatePageIndicator();
 }
+
+// Function to update the page number indicator
+function updatePageIndicator() {
+	const pageIndicator = document.querySelector('.page-indicator');
+	pageIndicator.textContent = `Page ${currentPage + 1}`;
+}
+
+// Initialize the first page and update the indicator on load
+window.onload = () => {
+	renderProjects();
+	updatePageIndicator();
+};
 
 // Function to update the main content based on selected project
 function showProjectDetails(projectName) {
