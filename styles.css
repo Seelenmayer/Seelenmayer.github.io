@@ -382,6 +382,7 @@ nav ul {
 .displaymediawrapper {
 	position: relative;
 	display: inline-block;
+	margin: 5px;
 }
 
 .displaymedia {
@@ -393,7 +394,6 @@ nav ul {
 	object-position: center;
 	background-color: black;
 	display: inline-block;
-	margin: 5px;
 	outline: 2px solid black;
 	cursor: pointer;
 	transition: transform 0.3s ease;
@@ -407,24 +407,29 @@ nav ul {
 
 .displaymediaoverlay {
 	position: absolute;
-	margin: 5px;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	object-fit: contain;
-	object-position: center;
 	background-color: rgba(0, 0, 0, 0.5);
-	opacity: 0;  /* Start with fully transparent overlay */
-	pointer-events: none; /* Ensure overlay doesn't block interactions with the image */
-	transition: opacity 0.3s ease; /* Smooth opacity transition */
-	display: none; /* Hide the overlay by default */
+	opacity: 0;
+	pointer-events: none;
+	display: none;
 }
 
-/* When hovering over the image, show the overlay */
 .displaymediawrapper:hover .displaymediaoverlay {
-	display: block; /* Show overlay on hover */
-	opacity: 0.8; /* Set the opacity to 0.8 on hover */
+	display: block;
+	opacity: 0.8;
+}
+
+.displaymediawrapper .displaymedia {
+	width: 100%;
+	height: 100%;
+}
+
+.displaymediawrapper .displaymediaoverlay {
+	width: 100%;
+	height: 100%;
 }
 
 /*------------------*/

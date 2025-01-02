@@ -103,7 +103,6 @@ const projects = {
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<img src="Content/Portfolio/Blender Modeling/wackman.jpg" alt="[Character]" class="displaymedia" onclick="expandImage(this)">
-						<div class="overlay"></div>
 						<img src="Assets/imageoverlay.png" alt="Click to Expand" class="displaymediaoverlay">
 					</div>
 				</div>
@@ -183,7 +182,7 @@ const projectKeys = Object.keys(projects);
 // Function to render the current page of projects
 function renderProjects() {
 	const nav = document.querySelector('nav ul');
-	nav.innerHTML = ''; // Clear existing projects
+	nav.innerHTML = '';
 	const startIndex = currentPage * projectsPerPage;
 	const endIndex = Math.min(startIndex + projectsPerPage, projectKeys.length);
 
@@ -216,7 +215,7 @@ function changePage(direction) {
 
 // Function to update the page number indicator to show "Page X out of Y"
 function updatePageIndicator() {
-	const totalPages = Math.ceil(projectKeys.length / projectsPerPage); // Calculate total pages
+	const totalPages = Math.ceil(projectKeys.length / projectsPerPage);
 	const pageIndicator = document.querySelector('.page-indicator');
 	pageIndicator.textContent = `Page ${currentPage + 1} out of ${totalPages}`;
 }
@@ -237,11 +236,8 @@ function showProjectDetails(projectName) {
 	`;
 }
 
-// Toggle the expanded class on the clicked image
+// Toggle image expansion
 function expandImage(image) {
-	const overlay = image.nextElementSibling; // Assuming overlay is the sibling element of the image
-
-	image.classList.toggle('expanded');  // Toggle the expanded class
-
-	// The overlay visibility and opacity are handled by the CSS hover styles, so no need to change them here.
+	const overlay = image.nextElementSibling;
+	image.classList.toggle('expanded');
 }
