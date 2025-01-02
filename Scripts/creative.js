@@ -73,8 +73,7 @@ function showProjectDetails(projectName) {
 	const project = projects[projectName];
 	const mainContent = document.querySelector('main');
 	mainContent.innerHTML = `
-		<div>
-			${project.customHTML}
-		</div>
+		${project.customHTML}
+		<div class="separator"></div>
 	`;
 }

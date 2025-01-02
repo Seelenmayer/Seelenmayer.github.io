@@ -361,6 +361,24 @@ nav ul {
 	padding: 20px;
 }
 
+.displaymediacontainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.displaymedia {
+	width: 100%;
+	height: auto;
+	max-width: 500px;
+	max-height: 300px;
+	object-fit: contain;
+	object-position: center;
+	background-color: black;
+	display: inline-block;
+	margin: 5px;
+	outline: 2px solid black;
+}
 
 /*------------------*/
 /*	Content Body	*/

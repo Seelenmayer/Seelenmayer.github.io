@@ -5,15 +5,50 @@ const projects = {
 		customHTML: `
 			<div>
 				<h2>OpenGL Graphics</h2>
-				<p>Placeholder information.</p>
-				<img src="Content/Portfolio/OpenGL Graphics/tree.jpg" alt="[]">
-				<img src="Content/Portfolio/OpenGL Graphics/tree1.jpg" alt="[]">
-				<img src="Content/Portfolio/OpenGL Graphics/tree2.jpg" alt="[]">
-				<img src="Content/Portfolio/OpenGL Graphics/tree3.jpg" alt="[]">
-				<img src="Content/Portfolio/OpenGL Graphics/tree4.jpg" alt="[]">
-				<img src="Content/Portfolio/OpenGL Graphics/raytrace.jpg" alt="[]">
-				<img src="Content/Portfolio/OpenGL Graphics/particle.jpg" alt="[]">
-				<div class="separator"></div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/OpenGL Graphics/tree.jpg" alt="[OpenGL Tree]" class="displaymedia">
+				</div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/OpenGL Graphics/tree1.jpg" alt="[OpenGL Tree]" class="displaymedia">
+				</div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/OpenGL Graphics/tree2.jpg" alt="[OpenGL Tree]" class="displaymedia">
+				</div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/OpenGL Graphics/tree3.jpg" alt="[OpenGL Tree]" class="displaymedia">
+				</div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/OpenGL Graphics/tree4.jpg" alt="[OpenGL Tree]" class="displaymedia">
+				</div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/OpenGL Graphics/raytrace.jpg" alt="[OpenGL Raytracer]" class="displaymedia">
+				</div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/OpenGL Graphics/particle.jpg" alt="[OpenGL Particles]" class="displaymedia">
+				<div class="displaymediacontainer">
+					<video class="displaymedia" poster="Content/Portfolio/OpenGL Graphics/conway_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+						<source src="Content/Portfolio/OpenGL Graphics/conway.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				<div class="displaymediacontainer">
+					<video class="displaymedia" poster="Content/Portfolio/OpenGL Graphics/icosahedron_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+						<source src="Content/Portfolio/OpenGL Graphics/icosahedron.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				<div class="displaymediacontainer">
+					<video class="displaymedia" poster="Content/Portfolio/OpenGL Graphics/particle_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+						<source src="Content/Portfolio/OpenGL Graphics/particle.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				<div class="displaymediacontainer">
+					<video class="displaymedia" poster="Content/Portfolio/OpenGL Graphics/tree_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+						<source src="Content/Portfolio/OpenGL Graphics/tree.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
 			</div>
 		`
 	},
@@ -22,7 +57,6 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
-				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -31,7 +65,6 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
-				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -40,7 +73,6 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
-				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -49,7 +81,6 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
-				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -58,7 +89,6 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
-				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -67,7 +97,6 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
-				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -76,7 +105,6 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
-				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -85,7 +113,6 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
-				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -94,7 +121,6 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
-				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -103,7 +129,6 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
-				<div class="separator"></div>
 			</div>
 		`
 	},
@@ -112,7 +137,6 @@ const projects = {
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
-				<div class="separator"></div>
 			</div>
 		`
 	}
@@ -174,8 +198,7 @@ function showProjectDetails(projectName) {
 	const project = projects[projectName];
 	const mainContent = document.querySelector('main');
 	mainContent.innerHTML = `
-		<div>
-			${project.customHTML}
-		</div>
+		${project.customHTML}
+		<div class="separator"></div>
 	`;
 }
