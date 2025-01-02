@@ -377,12 +377,12 @@ nav ul {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	margin: 10px;
 }
 
 .displaymediawrapper {
 	position: relative;
 	display: inline-block;
-	margin: 5px;
 }
 
 .displaymedia {
@@ -400,7 +400,7 @@ nav ul {
 }
 
 .displaymedia.expanded {
-	transform: scale(2);
+	transform: scale(1.5);
 	z-index: 10;
 	position: relative;
 }
