@@ -1,7 +1,7 @@
 const projects = {
 	"OpenGL Graphics": {
 		title: "OpenGL Graphics",
-		image: "Content/Portfolio/OpenGL Graphics/tree.jpg",
+		image: "Content/Portfolio/OpenGL Graphics/banner.jpg",
 		customHTML: `
 			<div>
 				<h2>OpenGL Graphics</h2>
@@ -76,16 +76,16 @@ const projects = {
 			</div>
 		`
 	},
-	"Virtualized Networks": {
-		title: "Virtualized Networks",
+	"Virtual Machines and Networks": {
+		title: "Virtual Machines and Networks",
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
 			</div>
 		`
 	},
-	"Compilers and Process Scheduling": {
-		title: "Compilers and Process Scheduling",
+	"Compilers and Processes": {
+		title: "Compilers and Processes",
 		image: "Assets/project.jpg",
 		customHTML: `
 			<div>
