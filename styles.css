@@ -407,6 +407,7 @@ nav ul {
 
 .displaymediaoverlay {
 	position: absolute;
+	margin: 5px;
 	top: 0;
 	left: 0;
 	width: 100%;
