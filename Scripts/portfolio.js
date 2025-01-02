@@ -6,25 +6,25 @@ const projects = {
 			<div>
 				<h2>OpenGL Graphics</h2>
 				<div class="displaymediacontainer">
-					<img src="Content/Portfolio/OpenGL Graphics/tree.jpg" alt="[OpenGL Tree]" class="displaymedia">
+					<img src="Content/Portfolio/OpenGL Graphics/tree.jpg" alt="[OpenGL Tree]" class="displaymedia" onclick="expandImage(this)">
 				</div>
 				<div class="displaymediacontainer">
-					<img src="Content/Portfolio/OpenGL Graphics/tree1.jpg" alt="[OpenGL Tree]" class="displaymedia">
+					<img src="Content/Portfolio/OpenGL Graphics/tree1.jpg" alt="[OpenGL Tree]" class="displaymedia" onclick="expandImage(this)">
 				</div>
 				<div class="displaymediacontainer">
-					<img src="Content/Portfolio/OpenGL Graphics/tree2.jpg" alt="[OpenGL Tree]" class="displaymedia">
+					<img src="Content/Portfolio/OpenGL Graphics/tree2.jpg" alt="[OpenGL Tree]" class="displaymedia" onclick="expandImage(this)">
 				</div>
 				<div class="displaymediacontainer">
-					<img src="Content/Portfolio/OpenGL Graphics/tree3.jpg" alt="[OpenGL Tree]" class="displaymedia">
+					<img src="Content/Portfolio/OpenGL Graphics/tree3.jpg" alt="[OpenGL Tree]" class="displaymedia" onclick="expandImage(this)">
 				</div>
 				<div class="displaymediacontainer">
-					<img src="Content/Portfolio/OpenGL Graphics/tree4.jpg" alt="[OpenGL Tree]" class="displaymedia">
+					<img src="Content/Portfolio/OpenGL Graphics/tree4.jpg" alt="[OpenGL Tree]" class="displaymedia" onclick="expandImage(this)">
 				</div>
 				<div class="displaymediacontainer">
-					<img src="Content/Portfolio/OpenGL Graphics/raytrace.jpg" alt="[OpenGL Raytracer]" class="displaymedia">
+					<img src="Content/Portfolio/OpenGL Graphics/raytrace.jpg" alt="[OpenGL Raytracer]" class="displaymedia" onclick="expandImage(this)">
 				</div>
 				<div class="displaymediacontainer">
-					<img src="Content/Portfolio/OpenGL Graphics/particle.jpg" alt="[OpenGL Particles]" class="displaymedia">
+					<img src="Content/Portfolio/OpenGL Graphics/particle.jpg" alt="[OpenGL Particles]" class="displaymedia" onclick="expandImage(this)">
 				<div class="displaymediacontainer">
 					<video class="displaymedia" poster="Content/Portfolio/OpenGL Graphics/conway_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
 						<source src="Content/Portfolio/OpenGL Graphics/conway.mp4" type="video/mp4">
@@ -59,27 +59,54 @@ const projects = {
 			<div>
 				<h2>ThreeJS Website</h2>
 				<div class="displaymediacontainer">
-					<img src="Content/Portfolio/ThreeJS Website/mobiusart.jpg" alt="[Website]" class="displaymedia">
+					<img src="Content/Portfolio/ThreeJS Website/mobiusart.jpg" alt="[Website]" class="displaymedia" onclick="expandImage(this)">
 				</div>
 				<div class="displaymediacontainer">
-					<img src="Content/Portfolio/ThreeJS Website/threejs.jpg" alt="[ThreeJS]" class="displaymedia">
+					<img src="Content/Portfolio/ThreeJS Website/threejs.jpg" alt="[ThreeJS]" class="displaymedia" onclick="expandImage(this)">
 				</div>
 			</div>
 		`
 	},
 	"Bridge Project": {
 		title: "Bridge Project",
-		image: "Assets/project.jpg",
+		image: "Content/Portfolio/Bridge Project/banner.jpg",
 		customHTML: `
 			<div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/Bridge Project/bridge1.jpg" alt="[Bridge]" class="displaymedia" onclick="expandImage(this)">
+				</div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/Bridge Project/bridge2.jpg" alt="[Bridge]" class="displaymedia" onclick="expandImage(this)">
+				<div class="displaymediacontainer">
+					<video class="displaymedia" poster="Content/Portfolio/Bridge Project/bridgedemo_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+						<source src="Content/Portfolio/Bridge Project/bridgedemo.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
 			</div>
 		`
 	},
 	"Blender Modeling": {
 		title: "Blender Modeling",
-		image: "Assets/project.jpg",
+		image: "Content/Portfolio/Blender Modeling/banner.jpg",
 		customHTML: `
 			<div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/Blender Modeling/donut.png" alt="[Donut]" class="displaymedia" onclick="expandImage(this)">
+				</div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/Blender Modeling/scene.jpg" alt="[Scene]" class="displaymedia" onclick="expandImage(this)">
+				</div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/Blender Modeling/tree.jpg" alt="[Tree]" class="displaymedia" onclick="expandImage(this)">
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<img src="Content/Portfolio/Blender Modeling/wackman.jpg" alt="[Character]" class="displaymedia" onclick="expandImage(this)">
+						<div class="overlay"></div>
+						<img src="Assets/imageoverlay.png" alt="Click to Expand" class="displaymediaoverlay">
+					</div>
+				</div>
 			</div>
 		`
 	},
@@ -208,4 +235,13 @@ function showProjectDetails(projectName) {
 		${project.customHTML}
 		<div class="separator"></div>
 	`;
+}
+
+// Toggle the expanded class on the clicked image
+function expandImage(image) {
+	const overlay = image.nextElementSibling; // Assuming overlay is the sibling element of the image
+
+	image.classList.toggle('expanded');  // Toggle the expanded class
+
+	// The overlay visibility and opacity are handled by the CSS hover styles, so no need to change them here.
 }
