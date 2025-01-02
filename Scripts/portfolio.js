@@ -54,9 +54,16 @@ const projects = {
 	},
 	"ThreeJS Website": {
 		title: "ThreeJS Website",
-		image: "Assets/project.jpg",
+		image: "Content/Portfolio/ThreeJS Website/banner.jpg",
 		customHTML: `
 			<div>
+				<h2>ThreeJS Website</h2>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/ThreeJS Website/mobiusart.jpg" alt="[Website]" class="displaymedia">
+				</div>
+				<div class="displaymediacontainer">
+					<img src="Content/Portfolio/ThreeJS Website/threejs.jpg" alt="[ThreeJS]" class="displaymedia">
+				</div>
 			</div>
 		`
 	},
