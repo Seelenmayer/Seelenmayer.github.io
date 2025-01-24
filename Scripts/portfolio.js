@@ -555,6 +555,56 @@ const projects = {
 			</div>
 		`
 	},
+	"Virtual Machines and Networks": {
+		title: "Virtual Machines and Networks",
+		image: "Content/Portfolio/Virtual Machines and Networks/banner.jpg",
+		customHTML: `
+			<div>
+				<h1>Virtual Machines and Networks</h1>
+				<p>These projects showcases some of my basic IT work, operating system installation, and networking setup. In these images you'll find that I was able to create virtual machines that run both Arch Linux, and TinyCore Linux operating systems, both known to be very professional and barebones typed systems. I also developed a file transfer application for both client and server to allow for image downloading.</p>
+				<div class="separator"></div>
+				<p>This project demonstrates how a web client communicates with a web server by requesting an HTTP webpage. The process begins when the client sends a DHCP request to obtain an IP address and network configuration from a DHCP server. The server responds with an offer that includes the client IP and the DNS server address. The client confirms the offer, and the DHCP server finalizes the lease. Once the client has the necessary network settings, it uses the provided DNS server to resolve domain names. When the client enters a URL in the browser, it sends a DNS query to the server to find the corresponding IP address. The DNS server either returns the cached IP or performs a lookup to resolve the domain.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Machines and Networks/arch.jpg" target="_blank">
+							<img src="Content/Portfolio/Virtual Machines and Networks/arch.jpg" alt="[Arch Linux]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">arch.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Machines and Networks/tiny.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Machines and Networks/tiny.png" alt="[Tiny Core]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">tiny.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>Leveraging Berkeley sockets and RFC 5905, I developed a robust and efficient system for reliable communication between the client and server, ensuring seamless image file downloading. This implementation demonstrates proficiency in network programming and low-level socket management. The full implementation details are available upon request.</p>
+				<a href="https://beej.us/guide/bgnet/" target="_blank">
+					<p>If you wish to find out more about Berkley sockets, please check out Beej's guide here.</p>
+				</a>
+				<a href="https://www.rfc-editor.org/rfc/rfc5905" target="_blank">
+					<p>This program complies with the specifications outlined in RFC 5905 as seen here.</p>
+				</a>
+				<p>I'd like to go over just one of the many processes involved in the making of these applications, namely the server side function enteringIntoPassive. This should give an example of the type of work involved in the making of this project.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Machines and Networks/ftp.jpg" target="_blank">
+							<img src="Content/Portfolio/Virtual Machines and Networks/ftp.jpg" alt="[FTP Code]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">ftp.jpg</div>
+				</div>
+				<p>This enteringIntoPassive function is part of an FTP server implementation that handles the process of transitioning the server into passive mode for a data transfer. The function first attempts to start a listener for incoming data connections using the startPassiveListener function. It uses a flag to determine whether this operation was successful. The server creates a response message using createPassiveSuccessResponse, which includes information like the port number where the server is listening for data connections and is sent to the client over the control connection using the sendToRemote function. The server checks if the listener socket is ready to accept a connection by calling isListenerSocketReady, which also handles timeout and error states. If the listener is ready to accept a connection, the server accepts the incoming connection using acceptClientConnection. The passive listener is stopped using stopPassiveListener, and a success response is prepared.</p>
+				<p>While there are certainly many additional processes involved in maintaining such applications, this should provide the public with a sufficient understanding of the work involved, without compromising my colleagues' privacy or academic integrity.</p>
+			</div>
+		`
+	},
 	"Compilers and Processes": {
 		title: "Compilers and Processes",
 		image: "Content/Portfolio/Compilers and Processes/banner.jpg",
@@ -648,53 +698,131 @@ const projects = {
 			</div>
 		`
 	},
-	"Virtual Machines and Networks": {
-		title: "Virtual Machines and Networks",
-		image: "Content/Portfolio/Virtual Machines and Networks/banner.jpg",
+	"Datastructures and Algorithms": {
+		title: "Datastructures and Algorithms",
+		image: "Content/Portfolio/Datastructures and Algorithms/banner.jpg",
 		customHTML: `
 			<div>
-				<h1>Virtual Machines and Networks</h1>
-				<p>These projects showcases some of my basic IT work, operating system installation, and networking setup. In these images you'll find that I was able to create virtual machines that run both Arch Linux, and TinyCore Linux operating systems, both known to be very professional and barebones typed systems. I also developed a file transfer application for both client and server to allow for image downloading.</p>
+				<h1>Datastructures and Algorithms</h1>
+				<p>This project demonstrates a strong understanding of datastructures, and algorithm analysis. First I reveal my Conway's Game of Life demo in OpenGL where I discuss a bit about emergent properties. Then I'll go over various algorithms and datastructures of increasing complexity until we reach the discussion point of big-O notation and "P=NP".</p>
 				<div class="separator"></div>
-				<p>This project demonstrates how a web client communicates with a web server by requesting an HTTP webpage. The process begins when the client sends a DHCP request to obtain an IP address and network configuration from a DHCP server. The server responds with an offer that includes the client IP and the DNS server address. The client confirms the offer, and the DHCP server finalizes the lease. Once the client has the necessary network settings, it uses the provided DNS server to resolve domain names. When the client enters a URL in the browser, it sends a DNS query to the server to find the corresponding IP address. The DNS server either returns the cached IP or performs a lookup to resolve the domain.</p>
+				<p>This short demo briefly demonstrates the simple rule-set of Conway's Game of Life cellular automata where a cell survives only if exactly 2 or 3 adjacent cells were alive. This demo appears chaotic, but with a change in initial conditions, these instructions can be used to create some fascinating patterns from glider guns to digital clocks!</p>
 				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Virtual Machines and Networks/arch.jpg" target="_blank">
-							<img src="Content/Portfolio/Virtual Machines and Networks/arch.jpg" alt="[Arch Linux]" class="displaymedia">
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-						</a>
-					</div>
-					<div class="displaymediadescription">arch.jpg</div>
+					<a href="Content/Portfolio/Datastructures and Algorithms/conway.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Datastructures and Algorithms/conway_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/Datastructures and Algorithms/conway.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">conway.mp4</div>
 				</div>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Virtual Machines and Networks/tiny.png" target="_blank">
-							<img src="Content/Portfolio/Virtual Machines and Networks/tiny.png" alt="[Tiny Core]" class="displaymedia">
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-						</a>
-					</div>
-					<div class="displaymediadescription">tiny.png</div>
+				<p>I'll include a fun paper I wrote that briefly suggests the idea of combining emergences of different patterns. The main take-away that I want to give is that I demonstrated an underlying understanding about turing machines.</p>
+				<div class="pdfcontainer">
+					<a href="Content/Portfolio/Datastructures and Algorithms/Cellular Automata & Procedural Generation.pdf" id="downloadLink" target="_blank">
+						<img src="Assets/pdf.png" alt="[Magic Squares Download]">
+					</a>
+					<p>Cellular Automata & Procedural Generation.pdf</p>
 				</div>
 				<div class="separator"></div>
-				<p>Leveraging Berkeley sockets and RFC 5905, I developed a robust and efficient system for reliable communication between the client and server, ensuring seamless image file downloading. This implementation demonstrates proficiency in network programming and low-level socket management. The full implementation details are available upon request.</p>
-				<a href="https://beej.us/guide/bgnet/" target="_blank">
-					<p>If you wish to find out more about Berkley sockets, please check out Beej's guide here.</p>
-				</a>
-				<a href="https://www.rfc-editor.org/rfc/rfc5905" target="_blank">
-					<p>This program complies with the specifications outlined in RFC 5905 as seen here.</p>
-				</a>
-				<p>I'd like to go over just one of the many processes involved in the making of these applications, namely the server side function enteringIntoPassive. This should give an example of the type of work involved in the making of this project.</p>
+				<p>This next section briefly mentions some of the datastructures I've implemented such as stack, set, dictionary, and red-black trees. I avoid revealing too many implementation details.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Virtual Machines and Networks/ftp.jpg" target="_blank">
-							<img src="Content/Portfolio/Virtual Machines and Networks/ftp.jpg" alt="[FTP Code]" class="displaymedia">
+						<a href="Content/Portfolio/Datastructures and Algorithms/stack.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/stack.jpg" alt="[Stack Header]" class="displaymedia">
 							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
 						</a>
 					</div>
-					<div class="displaymediadescription">ftp.jpg</div>
+					<div class="displaymediadescription">stack.jpg</div>
 				</div>
-				<p>This enteringIntoPassive function is part of an FTP server implementation that handles the process of transitioning the server into passive mode for a data transfer. The function first attempts to start a listener for incoming data connections using the startPassiveListener function. It uses a flag to determine whether this operation was successful. The server creates a response message using createPassiveSuccessResponse, which includes information like the port number where the server is listening for data connections and is sent to the client over the control connection using the sendToRemote function. The server checks if the listener socket is ready to accept a connection by calling isListenerSocketReady, which also handles timeout and error states. If the listener is ready to accept a connection, the server accepts the incoming connection using acceptClientConnection. The passive listener is stopped using stopPassiveListener, and a success response is prepared.</p>
-				<p>While there are certainly many additional processes involved in maintaining such applications, this should provide the public with a sufficient understanding of the work involved, without compromising my colleagues' privacy or academic integrity.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/set.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/set.jpg" alt="[Set Header]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">set.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/dictionary.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/dictionary.jpg" alt="[Dictionary Header]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">dictionary.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/redblacktree.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/redblacktree.jpg" alt="[RedBlackTree Example]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">redblacktree.jpg</div>
+				</div>
+				<div class="separator"></div>
+				<p>This next particular exersize was just too cool to not reveal in its entirety. It serves as a demonstration for a deep understanding in recursive functions and inductive proofs.</p>
+				<p>Given a 2^n by 2^n grid, you can select any particular square, and tesellate L-shaped trimono blocks around it that fill the containing grid.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/QuadTreeTesselation.png" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/QuadTreeTesselation.png" alt="[QuadTreeTesselation]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">QuadTreeTesselation.png</div>
+				</div>
+				<div class="scriptcontainer">
+					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/Datastructures%20and%20Algorithms/Quad%20Tree%20Tesselation" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script Directory]">
+					</a>
+					<p>Quad Tree Tesselation</p>
+				</div>
+				<a href="https://undergroundmathematics.org/divisibility-and-induction/triominoes/solution" target="_blank">
+					<p>You can view a more rigorous proof here!</p>
+				</a>
+				<div class="separator"></div>
+				<p>This next algorithm is called the "Minimal Bump Lexicographic Linear Extension of Partially Ordered Sets" and will serve as my demonstration of more advanced C++ vector datastructures and implementation of a partially ordered set datastructure.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/lexbump.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/lexbump.jpg" alt="[Minimal Bump Example]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">lexbump.jpg</div>
+				</div>
+				<div class="scriptcontainer">
+					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/Datastructures%20and%20Algorithms/Minimal%20Bump%20Lexicographic%20Linear%20Extension%20of%20Partially%20Ordered%20Sets" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script]">
+					</a>
+					<p>Minimal Bump Lexicographic Linear Extension of Partially Ordered Sets</p>
+				</div>
+				<div class="separator"></div>
+				<p>In this next section we will delve into more advanced levels of algorithm analysis and dynamic programming, namely the chain matrix association problem!</p>
+				<p>When we try multiplying matrices of differing dimensions, we find that the way we associate the matrix multiplications has an impact on the number of calculations we need to compute based solely on their dimensions. Now we can finally begin to discuss running time efficiency and so this solution that I've implemented runs in the big-O of n-cubed, denoted as O(n^3). This means that as the number of matrices increases, the complexity grows cubically in complexity!</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/chainmatrix.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/chainmatrix.jpg" alt="[Chain Matrix Association]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">chainmatrix.jpg</div>
+				</div>
+				<a href="https://cs.wmich.edu/gupta/teaching/cs4310/lectureNotes_cs4310/chainMatrixMultiplication%20from%20Dekai_AT_HKUST.pdf" target="_blank">
+					<p>Click here to see Dekai's notes in case you want more insight on this particular solution.</p>
+				</a>
+				<a href="https://youtu.be/prx1psByp7U?si=8iq6SBVS5sNGsmmL" target="_blank">
+					<p>Need a video to help explain? Don't worry, I got you!</p>
+				</a>
+				<p>Believe it or not, we can actually do much better than O(n^3)! Thanks to enough digging around, I was able to uncover this paper by T.C. Hu and M.T. Shing.</p>
+				<a href="http://i.stanford.edu/pub/cstr/reports/cs/tr/81/875/CS-TR-81-875.pdf" target="_blank">
+					<p>Click here to see how we can solve the chain matrix association problem in an impressive O(nlogn) time!</p>
+				</a>
+				<p>If we consider a convex polygon whose edges represent the matrices, and whose vertices represent the shared integer dimension, this problem of chain matrix association reduces to that of polygon disection, which we know to run in O(nlogn).</p>
+				<p>Its this type of thinking that allows us to compare and understand algorithms which lets us come closer to refining our understanding of the mythical problem "P=NP".</p>
 			</div>
 		`
 	},
@@ -790,119 +918,6 @@ const projects = {
 					</a>
 					<p>BridgeController.ino</p>
 				</div>
-			</div>
-		`
-	},
-	"Datastructures and Algorithms": {
-		title: "Datastructures and Algorithms",
-		image: "Content/Portfolio/Datastructures and Algorithms/banner.jpg",
-		customHTML: `
-			<div>
-				<h1>Datastructures and Algorithms</h1>
-				<p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</p>
-				<div class="separator"></div>
-				<p>This short demo briefly demonstrates the simple rule-set of Conway's Game of Life cellular automata where a cell survives only if exactly 2 or 3 adjacent cells were alive. This demo appears chaotic, but with a change in initial conditions, these instructions can be used to create some fascinating patterns from glider guns to digital clocks!</p>
-				<div class="displaymediacontainer">
-					<a href="Content/Portfolio/Datastructures and Algorithms/conway.mp4" target="_blank">
-						<video class="displaymedia" poster="Content/Portfolio/Datastructures and Algorithms/conway_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
-							<source src="Content/Portfolio/Datastructures and Algorithms/conway.mp4" type="video/mp4">
-							Your browser does not support the video tag.
-						</video>
-					</a>
-					<div class="displaymediadescription">conway.mp4</div>
-				</div>
-				<p>I'll include a fun paper I wrote that briefly suggests the idea of combining emergences of different patterns. The main take-away that I want to give is that I demonstrated an underlying understanding about turing machines.</p>
-				<div class="pdfcontainer">
-					<a href="Content/Portfolio/Datastructures and Algorithms/Cellular Automata & Procedural Generation.pdf" id="downloadLink" target="_blank">
-						<img src="Assets/pdf.png" alt="[Magic Squares Download]">
-					</a>
-					<p>Cellular Automata & Procedural Generation.pdf</p>
-				</div>
-				<div class="separator"></div>
-				<p>This next section briefly mentions some of the datastructures I've implemented such as stack, set, dictionary, and red-black trees. I avoid revealing too many implementation details.</p>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Datastructures and Algorithms/stack.jpg" target="_blank">
-							<img src="Content/Portfolio/Datastructures and Algorithms/stack.jpg" alt="[Stack Header]" class="displaymedia">
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-						</a>
-					</div>
-					<div class="displaymediadescription">stack.jpg</div>
-				</div>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Datastructures and Algorithms/set.jpg" target="_blank">
-							<img src="Content/Portfolio/Datastructures and Algorithms/set.jpg" alt="[Set Header]" class="displaymedia">
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-						</a>
-					</div>
-					<div class="displaymediadescription">set.jpg</div>
-				</div>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Datastructures and Algorithms/dictionary.jpg" target="_blank">
-							<img src="Content/Portfolio/Datastructures and Algorithms/dictionary.jpg" alt="[Dictionary Header]" class="displaymedia">
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-						</a>
-					</div>
-					<div class="displaymediadescription">dictionary.jpg</div>
-				</div>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Datastructures and Algorithms/redblacktree.jpg" target="_blank">
-							<img src="Content/Portfolio/Datastructures and Algorithms/redblacktree.jpg" alt="[RedBlackTree Example]" class="displaymedia">
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-						</a>
-					</div>
-					<div class="displaymediadescription">redblacktree.jpg</div>
-				</div>
-				<div class="separator"></div>
-				<p>This next particular exersize was just too cool to not reveal in its entirety. It serves as a demonstration for a deep understanding in recursive functions and inductive proofs.</p>
-				<p>Given a 2^n by 2^n grid, you can select any particular square, and tesellate L-shaped trimono blocks around it that fill the containing grid.</p>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Datastructures and Algorithms/QuadTreeTesselation.png" target="_blank">
-							<img src="Content/Portfolio/Datastructures and Algorithms/QuadTreeTesselation.png" alt="[QuadTreeTesselation]" class="displaymedia">
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-						</a>
-					</div>
-					<div class="displaymediadescription">QuadTreeTesselation.png</div>
-				</div>
-				<div class="scriptcontainer">
-					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/Datastructures%20and%20Algorithms/Quad%20Tree%20Tesselation" id="downloadLink" target="_blank">
-						<img src="Assets/script.png" alt="[Script Directory]">
-					</a>
-					<p>Quad Tree Tesselation</p>
-				</div>
-				<a href="https://undergroundmathematics.org/divisibility-and-induction/triominoes/solution" target="_blank">
-					<p>You can view a more rigorous proof here!</p>
-				</a>
-				<div class="separator"></div>
-				<p>This next algorithm is called the "Minimal Bump Lexicographic Linear Extension of Partially Ordered Sets" and will serve as my demonstration of more advanced C++ vector datastructures.</p>
-				<div class="separator"></div>
-				<p>In this next section we will delve into more advanced levels of algorithm analysis and dynamic programming, namely the chain matrix association problem!</p>
-				<p>When we try multiplying matrices of differing dimensions, we find that the way we associate the matrix multiplications has an impact on the number of calculations we need to compute based solely on their dimensions. Now we can finally begin to discuss running time efficiency and so this solution that I've implemented runs in the big-O of n-cubed, denoted as O(n^3). This means that as the number of matrices increases, the complexity grows cubically in complexity!</p>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Datastructures and Algorithms/chainmatrix.jpg" target="_blank">
-							<img src="Content/Portfolio/Datastructures and Algorithms/chainmatrix.jpg" alt="[Chain Matrix Association]" class="displaymedia">
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-						</a>
-					</div>
-					<div class="displaymediadescription">chainmatrix.jpg</div>
-				</div>
-				<a href="https://cs.wmich.edu/gupta/teaching/cs4310/lectureNotes_cs4310/chainMatrixMultiplication%20from%20Dekai_AT_HKUST.pdf" target="_blank">
-					<p>Click here to see Dekai's notes in case you want more insight on this particular solution.</p>
-				</a>
-				<a href="https://youtu.be/prx1psByp7U?si=8iq6SBVS5sNGsmmL" target="_blank">
-					<p>Need a video to help explain? Don't worry, I got you!</p>
-				</a>
-				<p>Believe it or not, we can actually do much better than O(n^3)! Thanks to enough digging around, I was able to uncover this paper by T.C. Hu and M.T. Shing.</p>
-				<a href="http://i.stanford.edu/pub/cstr/reports/cs/tr/81/875/CS-TR-81-875.pdf" target="_blank">
-					<p>Click here to see how we can solve the chain matrix association problem in an impressive O(nlogn) time!</p>
-				</a>
-				<p>If we consider a convex polygon whose edges represent the matrices, and whose vertices represent the shared integer dimension, this problem of chain matrix association reduces to that of polygon disection, which we know to run in O(nlogn).</p>
-				<p>Its this type of thinking that allows us to compare and understand algorithms which lets us come closer to refining our understanding of the mythical problem "P=NP".</p>
 			</div>
 		`
 	},
