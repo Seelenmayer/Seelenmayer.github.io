@@ -638,7 +638,9 @@ const projects = {
 		customHTML: `
 			<div>
 				<h1>Virtual Machines and Networks</h1>
-				<p>This project showcases some of my basic IT work, operating system installation, and networking setup. In these images you'll find that I was able to create virtual machines that run both Arch Linux, and TinyCore Linux operating systems, both known to be very professional and barebones types systems. I also developed a file transfer application for both client and server to allow for image downloading.</p>
+				<p>These projects showcases some of my basic IT work, operating system installation, and networking setup. In these images you'll find that I was able to create virtual machines that run both Arch Linux, and TinyCore Linux operating systems, both known to be very professional and barebones typed systems. I also developed a file transfer application for both client and server to allow for image downloading.</p>
+				<div class="separator"></div>
+				<p>This project demonstrates how a web client communicates with a web server by requesting an HTTP webpage. The process begins when the client sends a DHCP request to obtain an IP address and network configuration from a DHCP server. The server responds with an offer that includes the client IP and the DNS server address. The client confirms the offer, and the DHCP server finalizes the lease. Once the client has the necessary network settings, it uses the provided DNS server to resolve domain names. When the client enters a URL in the browser, it sends a DNS query to the server to find the corresponding IP address. The DNS server either returns the cached IP or performs a lookup to resolve the domain.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Virtual Machines and Networks/arch.jpg" target="_blank">
@@ -648,7 +650,6 @@ const projects = {
 					</div>
 					<div class="displaymediadescription">arch.jpg</div>
 				</div>
-				<p>This project demonstrates how a web client communicates with a web server by requesting an HTTP webpage. The process begins when the client sends a DHCP request to obtain an IP address and network configuration from a DHCP server. The server responds with an offer that includes the client IP and the DNS server address. The client confirms the offer, and the DHCP server finalizes the lease. Once the client has the necessary network settings, it uses the provided DNS server to resolve domain names. When the client enters a URL in the browser, it sends a DNS query to the server to find the corresponding IP address. The DNS server either returns the cached IP or performs a lookup to resolve the domain.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Virtual Machines and Networks/tiny.png" target="_blank">
@@ -658,6 +659,26 @@ const projects = {
 					</div>
 					<div class="displaymediadescription">tiny.png</div>
 				</div>
+				<div class="separator"></div>
+				<p>Leveraging Berkeley sockets and RFC 5905, I developed a robust and efficient system for reliable communication between the client and server, ensuring seamless image file downloading. This implementation demonstrates proficiency in network programming and low-level socket management. The full implementation details are available upon request.</p>
+				<a href="https://beej.us/guide/bgnet/" target="_blank">
+					<p>If you wish to find out more about Berkley sockets, please check out Beej's guide here.</p>
+				</a>
+				<a href="https://www.rfc-editor.org/rfc/rfc5905" target="_blank">
+					<p>This program complies with the specifications outlined in RFC 5905 as seen here.</p>
+				</a>
+				<p>I'd like to go over just one of the many processes involved in the making of these applications, namely the server side function enteringIntoPassive. This should give an example of the type of work involved in the making of this project.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Machines and Networks/ftp.jpg" target="_blank">
+							<img src="Content/Portfolio/Virtual Machines and Networks/ftp.jpg" alt="[FTP Code]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">ftp.jpg</div>
+				</div>
+				<p>This enteringIntoPassive function is part of an FTP server implementation that handles the process of transitioning the server into passive mode for a data transfer. The function first attempts to start a listener for incoming data connections using the startPassiveListener function. It uses a flag to determine whether this operation was successful. The server creates a response message using createPassiveSuccessResponse, which includes information like the port number where the server is listening for data connections and is sent to the client over the control connection using the sendToRemote function. The server checks if the listener socket is ready to accept a connection by calling isListenerSocketReady, which also handles timeout and error states. If the listener is ready to accept a connection, the server accepts the incoming connection using acceptClientConnection. The passive listener is stopped using stopPassiveListener, and a success response is prepared.</p>
+				<p>While there are certainly many additional processes involved in maintaining such applications, this should provide the public with a sufficient understanding of the work involved, without compromising my colleagues' privacy or academic integrity.</p>
 			</div>
 		`
 	},
@@ -840,7 +861,7 @@ const projects = {
 					<div class="displaymediadescription">MobiusArt.jpg</div>
 				</div>
 				<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main" target="_blank">
-					<p>For more web developer related work, you can view this websites source code on Github here.</p>
+					<p>For more web developer related work, you can view this very website that you're reading's source code on Github here.</p>
 				</a>
 				<div class="separator"></div>
 				<p>Here are a few screenshots of a Nintendo Gameboy ROM game that I built. The main take-away that I found from this project was utilizing the limited available RAM in rendering the on screen textures. The scene is composed of several sprites neatly put together as rendering one full image was beyond memory limitations. The scenes themselves were designed by downscaling the resolution and colour pallete of existing images.</p>
