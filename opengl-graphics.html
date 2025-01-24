@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a href="portfolio.html" class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>OpenGL Graphics</h1>
+				<p>These projects showcase some of my OpenGL work during my computer graphics apprenticeship with former Nintendo developer Mike K.</p>
+				<p>This section highlights a procedurally generated tree, a particle system along a smooth curve, a ray tracer demo, and a fun final video.</p>
+				<div class="separator"></div>
+				<p>I loved this L-systems tree. The program reads an input string from a file to describe drawing instructions for a tree. It uses a context-free grammar data structure to procedurally generate a fractal-like tree. A simple change to the input can alter the generated tree, allowing for a wide variety of forms. The drawn lines are then rendered as cylinders with interpolated girth from the base to the tip, with end-faces aligned to the XZ-plane.</p>
+				<p>This demo also captures the user’s pointer coordinates in screen space and applies a rotation-about-an-arbitrary-axis matrix to adjust the scene view. An arena is loaded with a texture applied, and various lights are strategically placed throughout the scene.</p>
+				<p>The following is a video demonstration that shows the tree with each iteration of the algorithm, as well as its environment with camera controls.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/OpenGL Graphics/tree.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/OpenGL Graphics/tree_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/OpenGL Graphics/tree.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">tree.mp4</div>
+				</div>
+				<p>The following 4 images show the first 4 iterations of this algorithm, followed by a polished wallpaper.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/OpenGL Graphics/tree1.jpg" target="_blank">
+							<img src="Content/Portfolio/OpenGL Graphics/tree1.jpg" alt="[OpenGL Tree]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">tree1.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/OpenGL Graphics/tree2.jpg" target="_blank">
+							<img src="Content/Portfolio/OpenGL Graphics/tree2.jpg" alt="[OpenGL Tree]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">tree2.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/OpenGL Graphics/tree3.jpg" target="_blank">
+							<img src="Content/Portfolio/OpenGL Graphics/tree3.jpg" alt="[OpenGL Tree]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">tree3.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/OpenGL Graphics/tree4.jpg" target="_blank">
+							<img src="Content/Portfolio/OpenGL Graphics/tree4.jpg" alt="[OpenGL Tree]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">tree4.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/OpenGL Graphics/tree.jpg" target="_blank">
+							<img src="Content/Portfolio/OpenGL Graphics/tree.jpg" alt="[OpenGL Tree]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">tree.jpg</div>
+				</div>
+				<p>Here you can view the project source code.</p>
+				<div class="scriptcontainer">
+					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/OpenGL%20Graphics/Context%20Free%20Grammar%20Tree" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script Directory]">
+					</a>
+					<p>Context Free Grammar Tree</p>
+				</div>
+				<div class="separator"></div>
+				<p>This project features a circular array of eight control points forming eight quadratic Bézier curves. A particle emitter interpolates along the curves, while individual particles move outward at regular intervals and smoothly transition their colors along a texture map.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/OpenGL Graphics/particle.jpg" target="_blank">
+							<img src="Content/Portfolio/OpenGL Graphics/particle.jpg" alt="[OpenGL Particles]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">particle.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/OpenGL Graphics/particle.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/OpenGL Graphics/particle_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/OpenGL Graphics/particle.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">particle.mp4</div>
+				</div>
+				<p>Here you can view the project source code.</p>
+				<div class="scriptcontainer">
+					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/OpenGL%20Graphics/Particle%20Emitter%20%26%20Bezier%20Curves" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script Directory]">
+					</a>
+					<p>Particle Emitter & Bezier Curves</p>
+				</div>
+				<div class="separator"></div>
+				<p>This short demo presents a ray tracer that utilizes the Phong reflection model. It determines pixel colors by casting rays into the scene and back-tracing sample colors from reflected surfaces. The lighting is calculated as a combination of specular highlights, diffuse reflections, and ambient illumination. The reflections in the spheres reveal the two primary scene lights.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/OpenGL Graphics/raytrace.jpg" target="_blank">
+							<img src="Content/Portfolio/OpenGL Graphics/raytrace.jpg" alt="[OpenGL Raytracer]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">raytrace.jpg</div>
+				</div>
+				<div class="separator"></div>
+				<p>This final demo shows an icosahedron rotating along two axes based on cosine waves, illuminated by a color-changing light.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/OpenGL Graphics/icosahedron.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/OpenGL Graphics/icosahedron_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/OpenGL Graphics/icosahedron.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">icosahedron.mp4</div>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a href="portfolio.html" class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Bridge Project</h1>
+				<p>I competed in VIU's 2016 Bridge Building Competition and completed the Fundamentals of Engineering certification.</p>
+				<p>I collaborated with teammates on proposals, drafting, construction, and gear systems. A motor with pulse-width modulation helped keep the bridge lifting at a slow rate without needing an overcomplicated gearbox. A worm gear prevented gravity from reversing the motor.</p>
+				<p>I implemented the electrical systems, which included an 8-bit shift register controlling all of the sensors. Vehicle and ship traffic was detected using an ultrasonic sensor to masure return time and calculate distance while discarding noisy inputs. Conductive pads detected bridge states or pedestrian traffic by polling. An H-bridge chip controlled DC motor polarity for bridge movement, while 4 LEDs signalled traffic.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Bridge Project/bridgedemo.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Bridge Project/bridgedemo_poster.jpg" preload="metadata" loading="lazy" controls loop>
+							<source src="Content/Portfolio/Bridge Project/bridgedemo.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">bridgedemo.mp4</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Bridge Project/bridge1.jpg" target="_blank">
+							<img src="Content/Portfolio/Bridge Project/bridge1.jpg" alt="[Bridge]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">bridge1.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Bridge Project/bridge2.jpg" target="_blank">
+							<img src="Content/Portfolio/Bridge Project/bridge2.jpg" alt="[Bridge]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">bridge2.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Bridge Project/electronics.jpg" target="_blank">
+							<img src="Content/Portfolio/Bridge Project/electronics.jpg" alt="[Electronics]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">electronics.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Bridge Project/bridge3.jpg" target="_blank">
+							<img src="Content/Portfolio/Bridge Project/bridge3.jpg" alt="[Bridge]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">bridge3.jpg</div>
+				</div>
+				<div class="scriptcontainer">
+					<a href="Content/Portfolio/Bridge Project/BridgeController.txt" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script]">
+					</a>
+					<p>BridgeController.txt</p>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

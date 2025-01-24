@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a href="portfolio.html" class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Compilers and Processes</h1>
+				<p>This section explores fundamental OS concepts, including process scheduling, memory management, and concurrency. I demonstrate CPU scheduling algorithms, semaphore-based synchronization, and a custom Linux shell. Additionally, I showcase a compiler parser, and a Bash script for automating console commands.</p>
+				<div class="separator"></div>
+				<p>This screenshot illustrates five scheduling algorithms that manage process execution on CPU cores and GPU buses: first-come-first-serve, shortest-job-first, highest-priority-first, round-robin, and priority round-robin. Round-robin assigns time slices to processes in a cyclic order, while priority round-robin reinserts processes based on priority.</p>
+				<p>The terminal output follows the format "[Task Name] [Priority] [Remaining_Time]" for detailed analysis.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/schedule.png" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/schedule.png" alt="[Process Scheduler]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">schedule.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>This example simulates two threads (teaching assistants) managing 10 jobs (students). Each student receives a random programming task before requiring further assistance.</p>  
+				<p>The key takeaway is the importance of locking memory-sensitive operations. Proper locking ensures data integrity in multi-threaded environments, forming the foundation of concurrent programming.</p>  
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/semaphore.png" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/semaphore.png" alt="[Multi-Threading]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">semaphore.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>This Linux shell intercepts and modifies user commands before passing them to the system.</p>  
+				<p>It supports automated compilation and execution, along with commands like "pwd" (print working directory), "!!" (repeat last command), "ls" (list directory contents), output redirection, sorting, command history, and safe exit.</p>  
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/shell.png" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/shell.png" alt="[Linux Shell]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">shell.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>Next, I introduce the compiler parser I developed for my C-style language.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Compilers and Processes/compilerdemo.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Compilers and Processes/compilerdemo_poster.jpg" preload="metadata" loading="lazy" controls loop>
+							<source src="Content/Portfolio/Compilers and Processes/compilerdemo.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">compilerdemo.mp4</div>
+				</div>
+				<div class="separator"></div>
+				<p>This photo showcases my lab setup, featuring multiple open terminals and VIM.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/station.jpg" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/station.jpg" alt="[Linux Shell]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">station.png</div>
+				</div>
+				<p>This Bash script automates frequently used terminal commands, specifically for Git submissions.</p>
+				<div class="scriptcontainer">
+					<a href="Content/Portfolio/Compilers and Processes/myBash.sh" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script]">
+					</a>
+					<p>myBash.sh</p>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

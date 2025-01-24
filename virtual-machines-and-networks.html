@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a href="portfolio.html" class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Virtual Machines and Networks</h1>
+				<p>These projects showcase some of my basic IT work, including operating system installation and network setup. In these images, you'll see virtual machines running Arch Linux and TinyCore Linux. Additionally, I developed a file transfer applications for both the client and server to allow for image downloading.</p>
+				<div class="separator"></div>
+				<p>This project demonstrates how a web client communicates with a web server by requesting an HTTP webpage. The process begins when the client sends a DHCP request to obtain an IP address and network configuration from a DHCP server. The server responds with an offer containing the client’s IP and the DNS server address. The client confirms the offer, and the DHCP server finalizes the lease. Once the client has the necessary network settings, it uses the provided DNS server to resolve domain names. When the client enters a URL in the browser, it sends a DNS query to the server to find the corresponding IP address. The DNS server either returns the cached IP or performs a lookup to resolve the domain.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Machines and Networks/arch.jpg" target="_blank">
+							<img src="Content/Portfolio/Virtual Machines and Networks/arch.jpg" alt="[Arch Linux]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">arch.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Machines and Networks/tiny.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Machines and Networks/tiny.png" alt="[Tiny Core]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">tiny.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>Leveraging Berkeley sockets and RFC 5905, I developed a system for reliable file download communication between the client and server. This implementation demonstrates my proficiency in network programming and low-level socket management.</p>
+				<a href="https://beej.us/guide/bgnet/" target="_blank">
+					<p>If you wish to learn more about Berkley sockets, please check out Beej's guide here.</p>
+				</a>
+				<a href="https://www.rfc-editor.org/rfc/rfc5905" target="_blank">
+					<p>My project followed the specifications outlined in RFC 5905 as seen here.</p>
+				</a>
+				<p>I'd like to highlight one of the many processes involved in developing these applications—specifically, the server-side function <code>enteringIntoPassive</code>.</p>
+				<p>The <code>enteringIntoPassive</code> function is part of an FTP server implementation that transitions the server into passive mode for data transfer. The function first attempts to start a listener for incoming data connections using <code>startPassiveListener</code>. It then checks whether this operation was successful. The server constructs a response message using <code>createPassiveSuccessResponse</code>, which includes details such as the port number where the server is listening for data connections. This message is sent to the client over the control connection using <code>sendToRemote</code>. The server then verifies if the listener socket is ready to accept a connection by calling <code>isListenerSocketReady</code>, which also manages timeout and error states. If the listener is ready, the server accepts the incoming connection using <code>acceptClientConnection</code>. Finally, the passive listener is stopped with <code>stopPassiveListener</code>, and a success response is prepared.</p>
+				<p>While many additional processes are involved, this example should provide a sufficient understanding of the work required.</p>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

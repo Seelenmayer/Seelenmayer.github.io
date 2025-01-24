@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a href="portfolio.html" class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Datastructures and Algorithms</h1>
+				<p>This section demonstrates a strong understanding of datastructures and algorithm analysis. First, I showcase my Conway's Game of Life demo in OpenGL, discussing emergent properties. Then, I explore various algorithms and datastructures, leading up to big-O notation and "P=NP".</p>
+				<div class="separator"></div>
+				<p>Conway's Game of Life is a cellular automata where a cell survives only if exactly 2 or 3 adjacent cells are alive. Though chaotic, different initial conditions can produce fascinating patterns.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Datastructures and Algorithms/conway.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Datastructures and Algorithms/conway_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/Datastructures and Algorithms/conway.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">conway.mp4</div>
+				</div>
+				<p>I also wrote a paper exploring the idea of combining emergent patterns. The main takeaway is my underlying understanding of Turing machines.</p>
+				<div class="pdfcontainer">
+					<a href="Content/Portfolio/Datastructures and Algorithms/Cellular Automata & Procedural Generation.pdf" id="downloadLink" target="_blank">
+						<img src="Assets/pdf.png" alt="[Magic Squares Download]">
+					</a>
+					<p>Cellular Automata & Procedural Generation.pdf</p>
+				</div>
+				<div class="separator"></div>
+				<p>I wanted to discuss at least one datastructure, so I've elected to mention the red-black tree, a self-balancing binary search tree.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/redblacktree.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/redblacktree.jpg" alt="[RedBlackTree Example]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">redblacktree.jpg</div>
+				</div>
+				<div class="separator"></div>
+				<p>This next algorithm discusses a solid understanding of recursion and inductive proofs.</p>
+				<p>Given a 2^n by 2^n grid, you can select any square to remove, and tessellate L-shaped trimino blocks around it recursively to fill the grid.</p>
+				<p>This exercize has been left for the students to solve.</p>
+				<a href="https://undergroundmathematics.org/divisibility-and-induction/triominoes/solution" target="_blank">
+					<p>You can view a more rigorous proof here!</p>
+				</a>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/QuadTreeTesselation.png" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/QuadTreeTesselation.png" alt="[QuadTreeTesselation]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">QuadTreeTesselation.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>Next, I showcase my "Minimal Bump Lexicographic Linear Extension of Partially Ordered Sets" project to demonstrate advanced C++ vector datastructures. This project takes a partially ordered set of elements and arranges them in order while making the fewest changes possible.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/lexbump.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/lexbump.jpg" alt="[Minimal Bump Example]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">lexbump.jpg</div>
+				</div>
+				<div class="scriptcontainer">
+					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/Datastructures%20and%20Algorithms/Minimal%20Bump%20Lexicographic%20Linear%20Extension%20of%20Partially%20Ordered%20Sets" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script]">
+					</a>
+					<p>Minimal Bump Lexicographic Linear Extension of Partially Ordered Sets</p>
+				</div>
+				<div class="separator"></div>
+				<p>We now explore advanced algorithm analysis and dynamic programming, focusing on the chain matrix association problem.</p>
+				<p>Matrix multiplication order impacts computational complexity. My implementation runs in O(n³), meaning complexity grows cubically as the number of matrices increases.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/chainmatrix.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/chainmatrix.jpg" alt="[Chain Matrix Association]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">chainmatrix.jpg</div>
+				</div>
+				<a href="https://cs.wmich.edu/gupta/teaching/cs4310/lectureNotes_cs4310/chainMatrixMultiplication%20from%20Dekai_AT_HKUST.pdf" target="_blank">
+					<p>Dekai's notes provide further insight.</p>
+				</a>
+				<a href="https://youtu.be/prx1psByp7U?si=8iq6SBVS5sNGsmmL" target="_blank">
+					<p>Need a video explanation? Watch this!</p>
+				</a>
+				<p>By modeling matrices as edges in a convex polygon, chain matrix association reduces to polygon dissection, which runs in O(n log n).</p>
+				<a href="http://i.stanford.edu/pub/cstr/reports/cs/tr/81/875/CS-TR-81-875.pdf" target="_blank">
+					<p>This paper by T.C. Hu and M.T. Shing reveals a faster O(n log n) solution.</p>
+				</a>
+				<p>This kind of algorithmic comparison helps refine our understanding of "P=NP" by determining different runtime efficiency classes of algorithms and whether or not they are computible by Turing machines.</p>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

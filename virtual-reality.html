@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a href="portfolio.html" class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Virtual Reality</h1>
+				<p>This section showcases my industry experiences working with virtual reality systems.</p>
+				<p>I began by playtesting Pistol Whip during its prototyping phase at Cloudhead Games. I set up my HTC Vive and integrated it into Unity using Unity's XR plugins.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo1.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo1.png" alt="[Virtual Reality Demo]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo1.jpg</div>
+				</div>
+				<p>I contributed to a team developing a VR scenario, where I:</p>
+				<ul>
+					<li>Implemented dynamic level loading over a network using JSON descriptors.</li>
+					<li>Developed a wrapper for the Obi Rope library.</li>
+					<li>Assisted artists with Unity’s Shader Graph and Perforce version control.</li>
+					<li>Led playtesting efforts, documenting findings efficiently.</li>
+				</ul>
+				<p>I'm particularly proud of this scene, which demonstrates:</p>
+				<ul>
+					<li>Clean level composition to resemble the industry environment.</li>
+					<li>Usage of my developer tool for the Obi Rope library to build realistic pipes in scene.</li>
+					<li>Phong reflection lighting techniques composed of a specular skylight, a diffuse floor light, and a dimly lit ambient light not occluded by the scene.</li>
+				</ul>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo2.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo2.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo2.png</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo3.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo3.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo3.png</div>
+				</div>
+				<p>Lastly, I helped develop an Unreal Engine plugin that used computer vision and AI to predict scene placements through a Python environment deployed on AWS within a Kubernetes cluster. It incorporated third-party tools such as:</p>
+				<ul>
+					<li>Video-to-3D model conversion.</li>
+					<li>Text-to-voice and translations.</li>
+					<li>Generative texture recommendations.</li>
+				</ul>
+				<p>The final image below was generated from the prompt "jungle", using a folder of office assets.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo4.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo4.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo4.png</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo5.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo5.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo5.png</div>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

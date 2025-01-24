@@ -1,0 +1,60 @@
+/*******************************************************
+	This file contains the instructions used to render
+		the LSystem tree.
+
+	How To Use:
+		The first word read in will be the command.
+		White spaces will be ignored.
+
+		If the command is Seed:
+			The contents following will become the root.
+			Only the last seed will be considered.
+
+		If the command is Angle:
+			The first letter (x/y/z) will be the rotation axis.
+			The first letter before "=" will be the name.
+			The contents after "=" will represent the angle
+				of rotation. Must supply sign. Negative
+				rotations will be allowed.
+
+		If the command is Rule:
+			The first number represents the length.
+				Must supply sign. Negative lengths will be
+				allowed.
+			The first letter before "=" will be the name.
+			The contents after"=" will represent the rule.
+
+		The instructions will start after the
+			word "~~Begin~~".
+
+		Example 2D:
+			Seed  :: B
+			Angle :: z ::q=+25
+			Angle :: z ::r=-25
+			Rule  ::+1 ::A=AA
+			Rule  ::+1 ::B=Aq((B)rB)A(rAB)qB
+
+		Example 3D:
+			Seed  :: B
+			Angle :: z ::q=+22.5
+			Angle :: z ::r=-22.5
+			Angle :: x ::s=+15.5
+			Angle :: x ::t=-15.5
+			Angle :: x ::u=+11.25
+			Angle :: x ::v=-11.25
+			Rule  ::+1 ::A=AA
+			Rule  ::+2 ::B=A((q((B)rB)A(AB)qB)(s(uB)))t(vB)
+*******************************************************/
+
+~~Begin~~
+Seed  :: B
+Angle :: z ::q=+18.5
+Angle :: z ::r=-18.5
+Angle :: x ::s=+11.25
+Angle :: x ::t=-11.25
+Angle :: x ::u=+13.33
+Angle :: x ::v=-13.33
+Angle :: z ::w=+11.25
+Angle :: z ::x=-11.25
+Rule  ::+1 ::A=AA
+Rule  ::+2 ::B=A(((q((B)rB)A(AB)qB)(s(uB)))t(vxB))wvB

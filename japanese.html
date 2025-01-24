@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a href="portfolio.html" class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Japanese</h1>
+				<p>This section showcases my journal entries while I was studying Japanese.</p>
+				<div class="pdfcontainer">
+					<a href="Content/Portfolio/Japanese/Japanese Journal 7 - Holiday (Translated).pdf" id="downloadLink" target="_blank">
+						<img src="Assets/pdf.png" alt="[Holiday]">
+					</a>
+					<p>Japanese Journal 7 - Holiday (Translated).pdf</p>
+				</div>
+				<div class="pdfcontainer">
+					<a href="Content/Portfolio/Japanese/Japanese Journal 6 - Casual Entries (Translated).pdf" id="downloadLink" target="_blank">
+						<img src="Assets/pdf.png" alt="[Casual Entires (Translated)]">
+					</a>
+					<p>Japanese Journal 6 - Casual Entries (Translated).pdf</p>
+				</div>
+				<div class="pdfcontainer">
+					<a href="Content/Portfolio/Japanese/Japanese Journal 5 - Day Off.pdf" id="downloadLink" target="_blank">
+						<img src="Assets/pdf.png" alt="[Day Off]">
+					</a>
+					<p>Japanese Journal 5 - Day Off.pdf</p>
+				</div>
+				<div class="pdfcontainer">
+					<a href="Content/Portfolio/Japanese/Japanese Journal 4 - Hometown.pdf" id="downloadLink" target="_blank">
+						<img src="Assets/pdf.png" alt="[Hometown]">
+					</a>
+					<p>Japanese Journal 4 - Hometown.pdf</p>
+				</div>
+				<div class="pdfcontainer">
+					<a href="Content/Portfolio/Japanese/Japanese Journal 3 - Time with Friends.pdf" id="downloadLink" target="_blank">
+						<img src="Assets/pdf.png" alt="[Time with Friends]">
+					</a>
+					<p>Japanese Journal 3 - Time with Friends.pdf</p>
+				</div>
+				<div class="pdfcontainer">
+					<a href="Content/Portfolio/Japanese/Japanese Journal 2 - Favourite Place.pdf" id="downloadLink" target="_blank">
+						<img src="Assets/pdf.png" alt="[Favourite Place]">
+					</a>
+					<p>Japanese Journal 2 - Favourite Place.pdf</p>
+				</div>
+				<div class="pdfcontainer">
+					<a href="Content/Portfolio/Japanese/Japanese Journal 1 - Favourite Movie.pdf" id="downloadLink" target="_blank">
+						<img src="Assets/pdf.png" alt="[Favourite Movie]">
+					</a>
+					<p>Japanese Journal 1 - Favourite Movie.pdf</p>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a href="portfolio.html" class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Assembly and Hardware</h1>
+				<p>This section showcases my experiments with the M86HC11E and SSBC architectures, Verilog hardware simulations of state machines and latches, and hardware maintenance samples.</p>
+				<div class="separator"></div>
+				<div>
+					<p>"Wave.s" is an M86HC11E program designed for the CME11-E9-EVBU board (PW link HACK) to generate a 30% high square wave, viewable on an oscilloscope. It demonstrates physical assembly architecture and an interrupt service routine.</p>
+					<p>
+						<a href="https://www.nxp.com/docs/en/reference-manual/M68HC11ERG.pdf" target="_blank" rel="noopener noreferrer">
+							Click here to see the M86HC11E manual.
+						</a>
+					</p>
+					<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/HC11/M86HC11E.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/HC11/M86HC11E.jpg" alt="[HC11 Diagram]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+						<div class="displaymediadescription">M86EHC11.jpg</div>
+					</div>
+					<div class="scriptcontainer">
+						<a href="Content/Portfolio/Assembly and Hardware/HC11/Wave.s" id="downloadLink" target="_blank">
+							<img src="Assets/script.png" alt="[Script]">
+						</a>
+						<p>Wave.s</p>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div>
+					<p>"Doubling.ssbc" tests Peter W.'s SSBC assembly machine, demonstrating direct memory mapping and recursive subroutine calls by reading input "n" and assigning "f(n)" to another port.</p>  
+					<p>"Doubling.cpp" replicates this behavior in C++ for better understanding.</p> 
+					<p>
+						<a href="https://github.com/Babakanoosh/Visual-SSBC" target="_blank" rel="noopener noreferrer">
+							Click here to see the SSBC source repository and web interpreter.
+						</a>
+					</p>
+					<div class="scriptcontainer">
+						<a href="Content/Portfolio/Assembly and Hardware/SSBC/Doubling.ssbc" id="downloadLink" target="_blank">
+							<img src="Assets/script.png" alt="[Script]">
+						</a>
+						<p>Doubling.ssbc</p>
+					</div>
+					<div class="scriptcontainer">
+						<a href="Content/Portfolio/Assembly and Hardware/SSBC/Doubling.cpp" id="downloadLink" target="_blank">
+							<img src="Assets/script.png" alt="[Script]">
+						</a>
+						<p>Doubling.cpp</p>
+					</div>
+					<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/SSBC/SSBCvisualized.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/SSBC/SSBCvisualized.jpg" alt="[SSBC Visualized]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+						<div class="displaymediadescription">SSBCvisualized.jpg</div>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div>
+					<p>This experiment explores finite state machines in Verilog. Mealy designs output on transitions, while Moore designs output based on state.</p>  
+					<p>"FSM.v" contains the state machine implementations.</p> 
+					<p>"FSM_tb.v" provides test data for GTKWave, visualizing finite state machine behavior through waveforms.</p>
+					<div class="scriptcontainer">
+						<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM.v" id="downloadLink" target="_blank">
+							<img src="Assets/script.png" alt="[Script]">
+						</a>
+						<p>FSM.v</p>
+					</div>
+					<div class="scriptcontainer">
+						<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM_tb.v" id="downloadLink" target="_blank">
+							<img src="Assets/script.png" alt="[Script]">
+						</a>
+						<p>FSM_tb.v</p>
+					</div>
+					<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM Descriptions/MealyType.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM Descriptions/MealyType.jpg" alt="[Mealy Diagram]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+						<div class="displaymediadescription">MealyType.jpg</div>
+					</div>
+					<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/Wave Outputs/MealyTypeWave.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/Wave Outputs/MealyTypeWave.jpg" alt="[Mealy Wave Diagram]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+						<div class="displaymediadescription">MealyTypeWave.jpg</div>
+					</div>
+						<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM Descriptions/MooreType.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM Descriptions/MooreType.jpg" alt="[Moore Diagram]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+						<div class="displaymediadescription">MooreType.jpg</div>
+					</div>
+					<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/Wave Outputs/MooreTypeWave.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/Wave Outputs/MooreTypeWave.jpg" alt="[Moore Wave Diagram]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+						<div class="displaymediadescription">MooreTypeWave.jpg</div>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div>
+					<p>This experiment explores Verilog data latches, including a D-flip-flop with reset and a Johnson counter. It also demonstrates combining latches for advanced data storage.</p>  
+					<p>"Latches.v" contains the latch implementations.</p>
+					<p>"Latches_tb.v" provides test data for GTKWave, visualizing finite state machine behavior through waveforms.</p>
+					<div class="scriptcontainer">
+						<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Latches.v" id="downloadLink" target="_blank">
+							<img src="Assets/script.png" alt="[Script]">
+						</a>
+						<p>Latches.v</p>
+					</div>
+					<div class="scriptcontainer">
+						<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Latches_tb.v" id="downloadLink" target="_blank">
+							<img src="Assets/script.png" alt="[Script]">
+						</a>
+						<p>Latches_tb.v</p>
+					</div>
+					<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/D_Flip_Flop.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/D_Flip_Flop.jpg" alt="[D Flip Flop Wave]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+						<div class="displaymediadescription">D_Flip_Flop.jpg</div>
+					</div>
+					<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/Johnson_Counter.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/Johnson_Counter.jpg" alt="[Johnson Counter Wave]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+						<div class="displaymediadescription">Johnson_Counter.jpg</div>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div>
+					<p>This experiment covers computer maintenance, including cleaning and reapplying thermal paste on an NVidia ASUS ROG STRIX GTX 1080 GPU and an Intel LGA 1151 CPU.</p>  
+					<p>The process involves disassembling the GPU backplate, reapplying thermal paste, and reassembling.</p>
+					<p>I unmounted the water cooling system on my Intel LGA 1151 socket to reapply thermal paste to the CPU.</p>
+					<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/Maintenance/GPUPasting.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/Maintenance/GPUPasting.jpg" alt="[GPU repasting]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+					</div>
+					<div class="displaymediadescription">GPUPasting.jpg</div>
+					<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/Maintenance/GPUBuilt.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/Maintenance/GPUBuilt.jpg" alt="[GPU repasting]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+					</div>
+					<div class="displaymediadescription">GPUBuilt.jpg</div>
+					<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/Maintenance/CPUPasting.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/Maintenance/CPUPasting.jpg" alt="[GPU repasting]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+					</div>
+					<div class="displaymediadescription">CPUPasting.jpg</div>
+					<div class="displaymediacontainer">
+						<div class="displaymediawrapper">
+							<a href="Content/Portfolio/Assembly and Hardware/Maintenance/CPUBuilt.jpg" target="_blank">
+								<img src="Content/Portfolio/Assembly and Hardware/Maintenance/CPUBuilt.jpg" alt="[GPU repasting]" class="displaymedia">
+								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+							</a>
+						</div>
+					</div>
+					<div class="displaymediadescription">CPUBuilt.jpg</div>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

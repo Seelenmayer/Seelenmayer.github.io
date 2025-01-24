@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a href="portfolio.html" class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Blender Modeling</h1>
+				<p>Here's a summary of my Blender projects. I followed Blender Guru’s tutorial to create my first donut, then modeled my own character. I also experimented with the Sapling Tree Gen package to create a custom scene.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Blender Modeling/donut.png" target="_blank">
+						<div class="displaymediawrapper">
+							<img src="Content/Portfolio/Blender Modeling/donut.png" alt="[Donut]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</div>
+					</a>
+					<div class="displaymediadescription">donut.png</div>
+				</div>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Blender Modeling/character.jpg" target="_blank">
+						<div class="displaymediawrapper">
+							<img src="Content/Portfolio/Blender Modeling/character.jpg" alt="[Character]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</div>
+					</a>
+					<div class="displaymediadescription">character.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Blender Modeling/tree.jpg" target="_blank">
+						<div class="displaymediawrapper">
+							<img src="Content/Portfolio/Blender Modeling/tree.jpg" alt="[Tree]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</div>
+					</a>
+					<div class="displaymediadescription">tree.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Blender Modeling/scene.jpg" target="_blank">
+						<div class="displaymediawrapper">
+							<img src="Content/Portfolio/Blender Modeling/scene.jpg" alt="[Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</div>
+					</a>
+					<div class="displaymediadescription">scene.jpg</div>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>
