@@ -869,7 +869,7 @@ const projects = {
 					<div class="displaymediadescription">QuadTreeTesselation.png</div>
 				</div>
 				<div class="scriptcontainer">
-					<a href="Content/Portfolio/Datastructures and Algorithms/Quad Tree Tesselation" id="downloadLink" target="_blank">
+					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/Datastructures%20and%20Algorithms/Quad%20Tree%20Tesselation" id="downloadLink" target="_blank">
 						<img src="Assets/script.png" alt="[Script Directory]">
 					</a>
 					<p>Quad Tree Tesselation</p>
