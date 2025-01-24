@@ -877,6 +877,32 @@ const projects = {
 				<a href="https://undergroundmathematics.org/divisibility-and-induction/triominoes/solution" target="_blank">
 					<p>You can view a more rigorous proof here!</p>
 				</a>
+				<div class="separator"></div>
+				<p>This next algorithm is called the "Minimal Bump Lexicographic Linear Extension of Partially Ordered Sets" and will serve as my demonstration of more advanced C++ vector datastructures.</p>
+				<div class="separator"></div>
+				<p>In this next section we will delve into more advanced levels of algorithm analysis and dynamic programming, namely the chain matrix association problem!</p>
+				<p>When we try multiplying matrices of differing dimensions, we find that the way we associate the matrix multiplications has an impact on the number of calculations we need to compute based solely on their dimensions. Now we can finally begin to discuss running time efficiency and so this solution that I've implemented runs in the big-O of n-cubed, denoted as O(n^3). This means that as the number of matrices increases, the complexity grows cubically in complexity!</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/chainmatrix.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/chainmatrix.jpg" alt="[Chain Matrix Association]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">chainmatrix.jpg</div>
+				</div>
+				<a href="https://cs.wmich.edu/gupta/teaching/cs4310/lectureNotes_cs4310/chainMatrixMultiplication%20from%20Dekai_AT_HKUST.pdf" target="_blank">
+					<p>Click here to see Dekai's notes in case you want more insight on this particular solution.</p>
+				</a>
+				<a href="https://youtu.be/prx1psByp7U?si=8iq6SBVS5sNGsmmL" target="_blank">
+					<p>Need a video to help explain? Don't worry, I got you!</p>
+				</a>
+				<p>Believe it or not, we can actually do much better than O(n^3)! Thanks to enough digging around, I was able to uncover this paper by T.C. Hu and M.T. Shing.</p>
+				<a href="http://i.stanford.edu/pub/cstr/reports/cs/tr/81/875/CS-TR-81-875.pdf" target="_blank">
+					<p>Click here to see how we can solve the chain matrix association problem in an impressive O(nlogn) time!</p>
+				</a>
+				<p>If we consider a convex polygon whose edges represent the matrices, and whose vertices represent the shared integer dimension, this problem of chain matrix association reduces to that of polygon disection, which we know to run in O(nlogn).</p>
+				<p>Its this type of thinking that allows us to compare and understand algorithms which lets us come closer to refining our understanding of the mythical problem "P=NP".</p>
 			</div>
 		`
 	},
