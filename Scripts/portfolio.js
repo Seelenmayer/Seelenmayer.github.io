@@ -913,10 +913,10 @@ const projects = {
 					<div class="displaymediadescription">bridge3.jpg</div>
 				</div>
 				<div class="scriptcontainer">
-					<a href="Content/Portfolio/Bridge Project/BridgeController.ino" id="downloadLink" target="_blank">
+					<a href="Content/Portfolio/Bridge Project/BridgeController.txt" id="downloadLink" target="_blank">
 						<img src="Assets/script.png" alt="[Script]">
 					</a>
-					<p>BridgeController.ino</p>
+					<p>BridgeController.txt</p>
 				</div>
 			</div>
 		`

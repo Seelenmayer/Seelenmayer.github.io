@@ -1,0 +1,717 @@
+//Name:		Project Bridge
+//Author:	Clayton Seelenmayer
+//Date:		March 1st 2016
+
+//Program description
+//This program uses 4 HC-SR04 ping sensors to detect ship, vehicle and train
+//traffic. By emitting a sound wave, we can calculate the distance of an oncoming
+//object. If the ship detects an object in range, we check for vehicle and train
+//traffic. If we recieve no signals then we proceed to check for pedestrians
+//by checking if the hidden wires on the lanes have connected. We return to the
+//vehicle and train detection if these wires were connected, otherwise proceed
+//to power the motors. Once the bridge states have been connected, we wait for
+//the ship to pass the opposite sensor. The motors will then reverse until the
+//states have connected.
+
+//Constances
+	//Pins
+	//Pin 0 was unused.
+	int Piezo				=  1;			//Piezo Buzzer
+	int TrafficRedLED			=  2;			//Traffic Red LED
+	int WaterRedLED				=  3;			//Water Red LED
+	int WaterYellowLED			=  4;			//Water Yellow LED
+	int MotorAForward			=  5;			//H-bridge pin - "Motor A" forward
+	int MotorABackward			=  6;			//H-bridge pin - "Motor A" backward
+	int TrafficSensorA			=  7;			//Traffic Sensor A
+	int TrafficSensorB			=  8;			//Traffic Sensor B
+	int TrafficGreenLED			=  9;			//Traffic Green LED
+	int MotorBForward			=  10;			//H-bridge pin - "Motor B" forward
+	int MotorBBackward			=  11;			//H-bridge pin - "Motor B" backward
+	int WaterSensorA			=  12;			//Water Sensor A
+	int WaterSensorB			=  13;			//Water Sensor B
+	int BridgeStateAOpen			=  A0;			//"Open" state for A side
+	int BridgeStateBClosed			=  A1;			//"Closed" state for B side
+	int BridgeStateAClosed			=  A2;			//"Closed" state for A side
+	int BridgeStateBOpen			=  A3;			//"Open" state for B side
+	int PedestrianLaneA			=  A4;			//Pedestrian lane A.
+	int PedestrianLaneB			=  A5;			//Pedestrian lane B.
+
+	//Global Variables - Programmer's Interface
+	int MaxUpdates					= 1;		//Number of sensor checks before interchanging LEDs on a 0.5second interval.
+	int PasserbyNumChecks				= 3;		//Number of consecutive detections to see that the boat has passed.
+		//Water Control
+		int WaterNumChecks			= 3;		//Number of consecutive detections to power the motor.
+		int WaterMaxRange			= 10;		//Maximum distance that we consider the object to be (cm).
+		//Traffic Control
+		int TrafficNumChecks			= 5;		//Number of consecutive detections NOT to power the motor.
+		int TrafficMaxRange			= 14;		//Maximum distance that we conisder the object to be (cm).
+		//Pedestrian Control
+		float VoltageAThreshold			= 0.4;		//Bridge will not lift if 20% of the connection is made.
+		float VoltageBThreshold			= 0.4;		//Bridge will not lift if 20% of the connection is made.
+
+	//Global Variables - Function Paramaters
+	int NumUpdates = 0;						//Number of shift register updates.
+	int LEDsState;							//Tracks which set of LEDs will be lit.
+	int PiezoState = 0;						//Tracks which tone the piezo buzzer will play.
+	bool LEDsOn = true;						//Blinking lights begin lit.
+	bool ReplayedProgram = false;			//Tracks if the program has repeated. Used for the piezo buzzer.
+	char LastWaterSensorDetection;			//Last water sensor (A, B) that detected a ship.
+	float SpeedOfSound = 0.0343;			//Speed of sound (cm/μs).
+	float VoltageConversion = 0.004888;		//Voltage conversion (5/1023 = 0.00488758553)
+
+//Prototypes   
+	//Water Control
+	bool WaterControl();								//Checks for water traffic.
+	int  WaterSensorAControl();							//Sensor A calculates object distance.
+	int  WaterSensorBControl();							//Sensor B calculates object distance.
+	bool WaterConditionsCheck(int &Distance, int &WaterObjectCount);		//Tracks the number of accepted distances.
+	//Vehicle Control
+	bool TrafficControl();								//Checks for vehicle / train traffic.
+	int  TrafficSensorAControl();							//Sensor A calculates object distance.
+	int  TrafficSensorBControl();							//Sensor B calculates object distance.
+	bool TrafficConditionsCheck (int &Distance, int &TrafficObjectCount);		//Tracks the number of accepted distances.
+	//Lighting Control
+	void LEDs();									//Controls LEDs.
+	//Pedestrian Control
+	bool PedestrianControl ();							//Checks for padestrian traffic on deck.
+	//Motor Control
+	void MotorControl ();								//Controls motor functions.
+	void MotorPower (bool RisingMode);						//Powers motors.
+	void MotorStopA ();								//Motors will stop on side A.
+	void MotorStopB ();								//Motors will stop on side B.
+	void PassingShipDetection ();							//Detects to see if the ship has passed.
+	//Bridge State Control
+	int BridgeStateAControl (bool &RisingMode);					//Checks which state A side of the bridge is in.
+	int BridgeStateBControl (bool &RisingMode);					//Checks which state B side of the bridge is in.
+	//Piezo Buzzer
+	void PiezoBuzzer ();								//Piezo buzzer.
+
+//Function Order - Where they are called from.
+	//Setup ();
+	//Main ();
+	//		WaterControl ();
+	//			LEDs ();
+	//			WaterSensorAControl ();
+	//			WaterSensorBControl ();
+	//			WaterConditionsCheck ();
+	//		TrafficControl ();
+	//			LEDs ();
+	//			TrafficSensorAControl ();
+	//			TrafficSensorBControl ();
+	//			TrafficConditionsCheck ();
+	//		PadestrianControl ();
+	//		MotorControl ();
+	//			MotorPower ();
+	//				LEDs ();
+	//				BridgeStateAControl ();
+	//				BridgeStateBControl ();
+	//				MotorStopA ();
+	//				MotorStopB ();
+	//			PassingShipDetection ();
+	//				PassingShipA ();
+	//					WaterSensorAControl ();
+	//					LEDs ();
+	//				PassingShipB
+	//					WaterSensorBControl ();
+	//					LEDs ();
+ 
+//Piezo Buzzer Frequencies
+	//	Note	Frequency
+	//	c		262 Hz
+	//	d		294 Hz
+	//	e		330 Hz
+	//	f		349 Hz
+	//	g		392 Hz
+	//	a		440 Hz
+	//	b		494 Hz
+	//	C		523 Hz
+
+//Setup Function
+void setup()
+{
+	//Lighting Control
+	pinMode (TrafficGreenLED, OUTPUT);
+	pinMode (TrafficRedLED, OUTPUT);
+	pinMode (WaterRedLED, OUTPUT);
+	pinMode (WaterYellowLED, OUTPUT);
+	//Pedestrian Control
+	pinMode (PedestrianLaneA, INPUT);
+	pinMode (PedestrianLaneB, INPUT);
+	//Motor Control
+	pinMode (MotorAForward, OUTPUT);
+	pinMode (MotorABackward, OUTPUT);
+	pinMode (MotorBForward, OUTPUT);
+	pinMode (MotorBBackward, OUTPUT);
+	//Bridge State Control
+	pinMode (BridgeStateAOpen, INPUT);
+	pinMode (BridgeStateAClosed, INPUT);
+	pinMode (BridgeStateBOpen, INPUT);
+	pinMode (BridgeStateBClosed, INPUT);
+}
+
+//Main Routine
+void loop()
+{
+	bool RepeatProgram = false;
+	LEDsState = 0;					//LED lighting state (WaterRed, TrafficGreen).
+	WaterControl ();				//Detects oncoming boats.
+	LEDsState = 1;					//LED lighting state (WaterRedLED, TrafficRedLED).
+	while (RepeatProgram == false)
+	{
+		if ((PedestrianControl() == true)&&(TrafficControl() == true))		//If there is nobody on the bridge deck...
+		{
+			MotorControl();			//Powers motor functions.
+			PiezoState = 1;			//Restarts the piezo buzzer.
+			RepeatProgram = true;		//Allows us to check "WaterControl" once again.
+		}
+	}
+}
+
+//Water Traffic Check
+bool WaterControl ()
+{
+	int WaterObjectCountA = 0;		//Number of checks that the object is in range of "WaterSensorA".
+	int WaterObjectCountB = 0;		//Number of checks that the object is in range of "WaterSensorB". 
+	int Distance;				//How far the object is located.
+	while (true)
+	{
+		if (PiezoState > 0)
+		{
+			PiezoBuzzer();				//Plays the frequency.
+		}
+		LEDs ();					//Powers LEDs (WaterRed, TrafficGreen).
+		Distance = WaterSensorAControl ();		//Obtains object distance for "WaterSensorA".
+		if (WaterConditionsCheck (Distance, WaterObjectCountA) == true)	//Confirms the detection.
+		{
+			WaterObjectCountA         =  0;						//Reset "WaterObjectCountA".
+			WaterObjectCountB         =  0;						//Reset "WaterObjectCountB".
+			LastWaterSensorDetection  =  'A';					//Update "LastWaterSensorDetection".
+			//Serial.print ("The ship was detected on the A side.\n");
+			return true;								//Assigns power to the motor.
+		}
+		Distance = WaterSensorBControl ();						//Obtains object distance for "WaterSensorB".   
+		if (WaterConditionsCheck (Distance, WaterObjectCountB) == true)			//Confirms the detection.
+		{
+			WaterObjectCountA         =  0;						//Reset "WaterObjectCountA"
+			WaterObjectCountB         =  0;						//Reset "WaterObjectCountB"
+			LastWaterSensorDetection  =  'B';					//Update "LastWaterSensorDetection".
+			//Serial.print ("The ship was detected on the B side.\n");
+			return true;								//Assigns power to the motor.
+		}
+	}
+}
+
+//Water Sensor A Calculates Object Distance.
+int WaterSensorAControl ()
+{
+	long Duration;						//Signal duration for "WaterSensorA".
+	int Distance;						//Object distance for "WaterSensorA".
+	pinMode (WaterSensorA, OUTPUT);
+	digitalWrite (WaterSensorA, HIGH);			//Output sound wave.
+	delay (1);
+	digitalWrite (WaterSensorA, LOW);
+	pinMode (WaterSensorA, INPUT);
+	Duration = pulseIn (WaterSensorA, HIGH);		//Sound wave's travel time.
+	Distance = (Duration / 2) * SpeedOfSound;		//Object distance.
+	//Serial.print ("Water Sensor A:  ");
+	//Serial.print (Distance);
+	//Serial.print ("cm\n");
+	return Distance;					//Return "Distance".
+}
+
+//Water Sensor B Calculates Object Distance.
+int WaterSensorBControl ()
+{
+	long Duration;						//Signal duration for "WaterSensorB".
+	int Distance;						//Object distance for "WaterSensorB".
+	pinMode (WaterSensorB, OUTPUT);
+	digitalWrite (WaterSensorB, HIGH);			//Output sound wave.
+	delay (1);
+	digitalWrite (WaterSensorB, LOW);
+	pinMode (WaterSensorB, INPUT);
+	Duration = pulseIn (WaterSensorB, HIGH);		//Sound wave's travel time.
+	Distance = (Duration / 2) * SpeedOfSound;		//Object distance.
+	//Serial.print ("Water Sensor B:  ");
+	//Serial.print (Distance);
+	//Serial.print ("cm\n");
+	return Distance;					//Return "Distance".
+}
+
+//Checks If Object Was In Range Of Water Sensor
+bool WaterConditionsCheck (int &Distance, int &WaterObjectCount)
+{
+	if ((Distance < WaterMaxRange)&&(Distance != 0))	//If object distance is within "WaterMaxRange" but not 0:
+	{
+		WaterObjectCount++;				//	increase "WaterObjectCount" by 1.
+	}
+	else
+	{
+		WaterObjectCount = 0;				//	otherwise reset "WaterObjectCount".
+	}
+	if (WaterObjectCount >= WaterNumChecks)			//If object count met "WaterNumChecks":
+	{
+		WaterObjectCount = 0;				//	reset "WaterObjectCount" and
+		return true;					//	return true, indicating that a boat was detected.
+	}
+	return false;						//Return false indicating that there is no ship detected.
+}
+
+//Vehicle & Train Traffic Check
+bool TrafficControl ()
+{
+	bool TrafficSensorACleared = false;			//Checks if "TrafficSensorA" is clear.
+	bool TrafficSensorBCleared = false;			//Checks if "TrafficSensorB" is clear.
+	int TrafficObjectCountA = TrafficNumChecks;		//Number of checks that the object is in range of "TrafficSensorA".
+	int TrafficObjectCountB = TrafficNumChecks;		//Number of checks that the object is in range of "TrafficSensorB".
+	int Distance;						//Object distance.
+	while (true)						//While any lane is not clear:
+	{
+		LEDs ();									//Powers LEDs (WaterRed, TrafficGreen).
+		Distance = TrafficSensorAControl ();						//Object distance before "TrafficSensorA".
+		if (TrafficConditionsCheck (Distance, TrafficObjectCountA) == true)		//Confirms the detection.
+		{
+			TrafficSensorACleared = true;						//Lane "A" cleared.
+		}
+		Distance = TrafficSensorBControl ();						//Object distance before "TrafficSensorB".
+		if (TrafficConditionsCheck (Distance, TrafficObjectCountB) == true)		//Confirms the detection.
+		{
+			TrafficSensorBCleared = true;						//Lane "B" cleared.
+		}
+		if ((TrafficSensorACleared == true)&&(TrafficSensorBCleared == true))		//If all lanes are cleared return.
+		{
+			return true;
+		}
+		else										//Otherwise, reset both "TrafficSensorXCleared".
+		{
+			TrafficSensorACleared = false;
+			TrafficSensorBCleared = false;
+		}
+	} 
+}
+
+//Traffic Sensor A Calculates Object Distance.
+int TrafficSensorAControl ()
+{
+	long Duration;					//Signal duration for "TrafficSensorA".
+	int Distance;					//Object distance for "TrafficSensorA".
+	pinMode (TrafficSensorA, OUTPUT);
+	digitalWrite (TrafficSensorA, HIGH);		//Output sound wave.
+	delay (1);
+	digitalWrite (TrafficSensorA, LOW);
+	pinMode (TrafficSensorA, INPUT);
+	Duration = pulseIn (TrafficSensorA, HIGH);	//Sound wave's travel time.
+	Distance = (Duration / 2) * SpeedOfSound;	//Object distance.
+	//Serial.print ("Traffic Sensor A:  ");
+	//Serial.print (Distance);
+	//Serial.print ("cm\n");
+	return Distance;				//Return "Distance".
+}
+
+//Traffic Sensor B Calculates Object Distance.
+int TrafficSensorBControl ()
+{
+	long Duration;					//Signal duration for "TrafficSensorB".
+	int Distance;					//Object distance for "TrafficSensorB".
+	pinMode (TrafficSensorB, OUTPUT);
+	digitalWrite (TrafficSensorB, HIGH);		//Output sound wave.
+	delay (1);
+	digitalWrite (TrafficSensorB, LOW);
+	pinMode (TrafficSensorB, INPUT);
+	Duration = pulseIn (TrafficSensorB, HIGH);	//Sound wave's travel time.
+	Distance = (Duration / 2) * SpeedOfSound;	//Object distance.
+	//Serial.print ("Traffic Sensor B:  ");
+	//Serial.print (Distance);
+	//Serial.print ("cm\n");
+	return Distance;				//Return "Distance".
+}
+
+//Checks If Object Was In Range Of Traffic Sensor.
+bool TrafficConditionsCheck (int &Distance, int &TrafficObjectCount)
+{
+	if ((Distance<TrafficMaxRange)&&(Distance!=0))			//If object distance is within "TrafficMaxRange" but not 0:
+	{
+		TrafficObjectCount = TrafficNumChecks;			//	reset "TrafficObjectCount" to "TrafficNumChecks".
+	}	
+	else if ((Distance>TrafficMaxRange)||(Distance==0))		//If object distance is greater than "TrafficMaxRange":
+	{
+		TrafficObjectCount--;					//	minus 1 to "TrafficObjectCount".
+	}
+	if (TrafficObjectCount <= 0)					//If object count is zero:
+	{
+		return true;						//	return true, indicating that no vehicle or train was detected.
+	}
+	return false;							//Return false if a vehicle or train may be detected.
+}
+
+//Checks For Pedestrian Traffic.
+bool PedestrianControl()
+{
+	float OccupiedA = (analogRead (PedestrianLaneA))*(VoltageConversion);		//Reads a voltage across pedestrian lane A.
+	float OccupiedB = (analogRead (PedestrianLaneB))*(VoltageConversion);		//Reads a voltage across pedestrian lane B.
+	//Serial.print ("The voltage across lanes A and B respectively are:\n");
+	//Serial.print (OccupiedA);
+	//Serial.print ("v\n");
+	//Serial.print (OccupiedB);
+	//Serial.print ("v\n");
+	if ((OccupiedA < VoltageAThreshold)&&(OccupiedB < VoltageBThreshold))		//If the lanes aren't occupied:
+	{
+		return true;
+	}
+	else
+	{
+		if (OccupiedA < VoltageAThreshold)					//Print the occupied lane.
+		{
+			//Serial.print ("Pedestrians are on side A.\n");
+		}
+		if (OccupiedB < VoltageBThreshold)
+		{
+			//Serial.print ("Pedestrians are on side B.\n");
+		}
+		return false;
+	}
+}
+
+//Motor Function.
+void MotorControl ()
+{
+	bool RisingMode = true;								//Prepared to rise.
+	//Serial.print ("Motors will rise\n");
+	MotorPower(RisingMode);								//Powers motor functions.
+	//Serial.print ("The ship will pass the opposite sensor\n");
+	PiezoState = 1;									//Restarts piezo buzzer.
+	PassingShipDetection();								//Waits for the ship to pass.
+	//Serial.print ("Motors will fall\n");
+	RisingMode = false;								//Prepare the bridge to lower.
+	MotorPower(RisingMode);								//Powers motor functions.
+	return;										//Return to "MotorControlPrompt".
+}
+
+//Powers Motors.
+void MotorPower (bool RisingMode)
+{
+	LEDsState = 1;									//"WaterRedLED", "TrafficRedLED" active.
+	bool MotorAStop = false;							//Stops  motor A.
+	bool MotorBStop = false;							//Stops motor B.
+	if (RisingMode == true)								//If the bridge is rising...
+	{
+		analogWrite (MotorABackward, 0);
+		analogWrite (MotorAForward, 205);					//Assign motor A forward.
+		analogWrite (MotorBBackward, 0);
+		analogWrite (MotorBForward, 255);					//Assign motor B forward.
+		while (true)								//Loop until:
+		{
+			LEDs();								//Powers LEDs (WaterRedLED, TrafficRedLED).
+			if ((BridgeStateAControl() == 1)&&(MotorAStop == false))	//	The bridge has reached it's "open" state for side A.
+			{
+				MotorAStop = true;
+				MotorStopA();						//Then stop the motor.
+			}
+			if ((BridgeStateBControl() == 1)&&(MotorBStop == false))	//The bridge has reached it's "open" state for side B.
+			{
+				MotorBStop = true;
+				MotorStopB();						//Then stop the motor.
+			}
+			if ((MotorAStop == true)&&(MotorBStop == true))
+			{
+				return;
+			}
+		}
+	}
+	else										//If the bridge is falling...
+	{
+		analogWrite (MotorAForward, 0);
+		analogWrite (MotorABackward, 205);					//	Assign motor A backward.
+		analogWrite (MotorBForward, 0);
+		analogWrite (MotorBBackward, 255);					//	Assign motor B backward.
+		while (true)
+		{
+			LEDs();								//Powers LEDs (WaterRedLED, TrafficRedLED).
+			if ((BridgeStateAControl() == 2)&&(MotorAStop == false))	//The bridge has reached it's "closed" state for side A:
+			{
+				MotorAStop = true;
+				MotorStopA();
+			}
+			if ((BridgeStateBControl() == 2)&&(MotorBStop == false))	//The bridge has reached it's "closed" state for side B:
+			{
+				MotorBStop = true;
+				MotorStopB();
+			}
+			if ((MotorAStop == true)&&(MotorBStop == true))
+			{
+				return;
+			}
+		}
+	}
+}
+
+//Checks Bridge State For Side A.
+int BridgeStateAControl()
+{
+	bool StateDetectedClosed = digitalRead (BridgeStateAClosed);		//Detects if the bridge has reached the "Closed" state.
+	bool StateDetectedOpen = digitalRead (BridgeStateAOpen);		//Detects if the bridge has reached the "Open" state.
+	if (StateDetectedClosed == true)					//If the bridge has reached the "Closed" state:
+	{
+		return 2;							//	"Closed" state detected.
+	}
+	if (StateDetectedOpen == true)						//If the bridge has reached the "Open" state:
+	{
+		return 1;							//	"Open" state detected.
+	}
+	return 0;								//No state detected.
+}
+
+//Checks Bridge State For Side B.
+int BridgeStateBControl()
+{
+	bool StateDetectedClosed = digitalRead (BridgeStateBClosed);		//Detects if the bridge has reached the "Closed" state.
+	bool StateDetectedOpen = digitalRead (BridgeStateBOpen);		//Detects if the bridge has reached the "Open" state.
+	if (StateDetectedClosed == true)					//If the bridge has reached the "Closed" state...
+	{
+		return 2;							//	"Closed" state detected.
+	}
+	if (StateDetectedOpen == true)						//If the bridge has reached the "Open" state...
+	{
+		return 1;							//	"Open" state detected.
+	}
+	return 0;								//No state detected.
+}
+
+//Motor Stop For Side A
+void MotorStopA ()
+{
+	analogWrite (MotorAForward, 0);			//Deactivate "MotorAForward".
+	analogWrite (MotorABackward, 0);		//Deactivate "MotorABackward".
+	return;						//Returns to "MotorPower" function.
+}
+
+//Motor Stop For Side B
+void MotorStopB ()
+{
+	analogWrite (MotorBForward, 0);			//Deactivate "MotorBForward".
+	analogWrite (MotorBBackward, 0);		//Deactivate "MotorBBackward".
+	return;						//Returns to "MotorPower" function.
+}
+
+//Detects to see if the ship has passed.
+void PassingShipDetection ()
+{
+	LEDsState = 2;					//LED lightning state (WaterYellowLED, TrafficRedLED).
+	if (LastWaterSensorDetection == 'B')		//If the last sensor that detected the ship was "WaterSensorA":
+	{
+		PassingShipA ();			//	Confirm that the ship has passed.
+		return;					//	Return to "MotorPower".
+	}
+	else						//If the last sensor that detected the ship was "WaterSensorB":
+	{
+		PassingShipB ();			//	Confirm that the ship has passed.
+		return;					//	Return to "MotorPower".
+	}
+}
+
+//Controls functions for the passing ship on side A.
+void PassingShipA ()
+{
+	int Distance = 0;				//Object distance.
+	int ObjectCount = 0;				//Object count.
+	bool FirstSight = false;			//True when boat was detected.
+	while (true)					//Loop until we see the boat pass "Water Sensor B".
+	{
+		if (PiezoState > 0)
+		{
+			PiezoBuzzer();
+		}
+		LEDs();						//Powers LEDs (WaterYellowLED, TrafficRedLED).
+		Distance = WaterSensorAControl ();		//Obtaine "Distance" from "WaterSensorA".
+		if (Distance > WaterMaxRange)			//If "Distance" is greater than "WaterMaxRange":
+		{
+			ObjectCount = 0;			//Reset "ObjectCount".
+		}
+		else if (Distance <= 0)				//Else if "Distance" is less than or equal to 0:
+		{
+			ObjectCount = 0;			//Reset "ObjectCount".
+		}
+		else						//Else:
+		{
+			ObjectCount++;				//Update "ObjectCount".
+			Distance = 0;				//Reset "Distance".
+			if (ObjectCount >= PasserbyNumChecks)	//If "ObjectCount" met "PasserbyNumChecks":
+			{
+				FirstSight = true;		//The boat has been detected.
+				ObjectCount = 0;		//Reset "ObjectCount".
+			}
+		}
+		if (FirstSight == true)				//If the boat was detected let it pass.
+		{
+			while (true)
+			{
+				if (PiezoState > 0)
+				{
+					PiezoBuzzer();			//Plays the frequency.
+				}
+				LEDs ();				//Powers LEDs (WaterYellowLED, TrafficRedLED).
+				Distance = WaterSensorAControl ();	//Obtain "Distance" from "WaterSensorA".
+				if (Distance < WaterMaxRange)		//If the object was in sight:
+				{
+					ObjectCount = 0;		//Reset "ObjectCount".
+				}
+				else					//Otherwise:
+				{
+					ObjectCount++;			//Add 1 to "ObjectCount".
+				}
+				if (ObjectCount >= PasserbyNumChecks)	//If "ObjectCount" met "WaterNumChecks":
+				{
+					return;				//Return to "PassingShipDetection".
+				}
+			}
+		}
+	}
+}
+
+//Controls functions for the passing ship on side B.
+void PassingShipB ()
+{
+	int Distance = 0;			//Object distance.
+	int ObjectCount = 0;			//Object count.
+	bool FirstSight = false;		//True when boat was detected.
+	while (true)				//Loop until we see the boat pass "Water Sensor B".
+	{
+		if (PiezoState > 0)
+		{
+			PiezoBuzzer();
+		}
+		LEDs();						//Powers LEDs (WaterYellowLED, TrafficRedLED).
+		Distance = WaterSensorBControl ();		//Obtaine "Distance" from "WaterSensorB".
+		if (Distance > WaterMaxRange)			//If "Distance" is greater than "WaterMaxRange":
+		{
+			ObjectCount = 0;			//Reset "ObjectCount".
+		}
+		else if (Distance <= 0)				//Else if "Distance" is less than or equal to 0:
+		{
+			ObjectCount = 0;			//Reset "ObjectCount".
+		}
+		else						//Else:
+		{
+			ObjectCount++;				//Update "ObjectCount".
+			Distance = 0;				//Reset "Distance".
+			if (ObjectCount >= PasserbyNumChecks)	//If "ObjectCount" met "PasserbyNumChecks":
+			{
+				FirstSight = true;		//The boat has been detected.
+				ObjectCount = 0;		//Reset "ObjectCount".
+			}
+		}
+		if (FirstSight == true)				//If the boat was detected let it pass.
+		{
+			while (true)
+			{
+				if (PiezoState > 0)
+				{
+					PiezoBuzzer();
+				}
+				LEDs();						//Powers LEDs (WaterYellowLED, TrafficRedLED).
+				Distance = WaterSensorBControl ();		//Obtain "Distance" from WaterSensorB.
+				if (Distance < WaterMaxRange)			//If the object was in sight:
+				{
+					ObjectCount = 0;			//Reset "ObjectCount".
+				}
+				else						//Otherwise:
+				{
+					ObjectCount++;				//Add 1 to "ObjectCount".
+				}
+				if (ObjectCount >= PasserbyNumChecks)		//If "ObjectCount" met "WaterNumChecks":
+				{
+					return;					//Return to "PassingShipDetection".
+				}
+			}
+		}
+	}
+}
+
+//Controls which LEDs will be lit.
+void LEDs ()
+{
+	int SensorDelay = 500/MaxUpdates;				//Time (ms) between sensor outputs.
+	if (LEDsState == 0)						//If we are detecting for traffic when
+	{								//the bridge is in it's closed state:
+		digitalWrite (WaterYellowLED, LOW);			//	WaterYellowLED unactive.
+		digitalWrite (TrafficRedLED, LOW);			//	TrafficRedLED unactive.
+		digitalWrite (WaterRedLED, HIGH);			//	WaterRedLED active.
+		if (LEDsOn == true)					//	If the blinking LED is on:
+		{
+			digitalWrite (TrafficGreenLED, HIGH);		//	TrafficGreenLED active.
+		}
+		else							//	If the blinking LED is off:
+		{
+			digitalWrite (TrafficGreenLED, LOW);		//	TrafficGreenLED unactive.
+		}
+	}
+	if (LEDsState == 1)						//If the bridge is either rising or falling.
+	{
+		digitalWrite (WaterYellowLED, LOW);			//	WaterYellowLED unactive.
+		digitalWrite (TrafficGreenLED, LOW);			//	TrafficGreenLED unactive.
+		digitalWrite (WaterRedLED, HIGH);			//	WaterRedLED active.
+		if (LEDsOn == true)					//	If the blinking LED is on:
+		{
+			digitalWrite (TrafficRedLED, HIGH);		//	TrafficRedLED active.
+		}
+		else							//	If the blinking LED is off:
+		{
+			digitalWrite (TrafficRedLED, LOW);		//	TrafficRedLED unactive.
+		}
+	}
+	if (LEDsState == 2)						//If the bridge is open and waiting for the
+	{															//ship to pass:
+		digitalWrite (WaterRedLED, LOW);			//	WaterRedLED unactive.
+		digitalWrite (TrafficGreenLED, LOW);			//	TrafficRedLED unactive.
+		digitalWrite (WaterYellowLED, HIGH);			//	WaterYellowLED active.
+		if (LEDsOn == true)					//	If the blinking LED is on:
+		{
+			digitalWrite (TrafficRedLED, HIGH);		//	TrafficRedLED active.
+		}
+		else							//	If the blinking LED is off:
+		{
+			digitalWrite (TrafficRedLED, LOW);		//	TrafficRedLED unactive.
+		}
+	}
+	NumUpdates++;							//Update the number of shift register updates.
+	delay (SensorDelay);
+	if (NumUpdates >= MaxUpdates)					//If "NumUpdates" met "MaxUpdates":
+	{
+		NumUpdates = 0;						//	Reset "NumUpdates"
+		if (LEDsOn == true)					//	If the blinking LED was on:
+		{
+			LEDsOn = false;					//	Turn it off.
+		}
+		else							//	If the blinking LED was off:
+		{
+			LEDsOn = true;					//	Turn it on.
+		}
+	}
+}
+
+//Piezo Buzzer
+void PiezoBuzzer ()
+{
+	int Duration = 500;
+	int Frequency;
+	if (PiezoState == 1)
+	{
+		Frequency = 425;
+		tone (Piezo, Frequency, Duration);
+	}
+	if (PiezoState == 2)
+	{
+		Frequency = 600;
+		tone (Piezo, Frequency, Duration);
+	}
+	if (PiezoState == 3)
+	{
+		Frequency = 875;
+		tone (Piezo, Frequency, Duration);
+	}
+	PiezoState++;
+	if (PiezoState == 4)
+	{
+		PiezoState = 0;
+	}
+	return;
+}
