@@ -572,7 +572,7 @@ const projects = {
 		customHTML: `
 			<div>
 				<h1>Compilers and Processes</h1>
-				<p>This exercise explores key concepts in utilizing an operating system effectively. I demonstrate various CPU process schedulers commonly used in time-sharing algorithms. Additionally, I operate a self-made Linux shell designed to provide an extra layer of convenience and protection for the user, similar to Windows PowerShell. I also delve into the use of semaphores in asynchronous programs, which manage overlapping memory spaces and ensure coherence in memory usage. Lastly, I included my own custom bash script that I used to help automate certain console commands.</p>
+				<p>This exercise explores key concepts in utilizing an operating system effectively, and go over some useful processes that can run within. I demonstrate various CPU process schedulers commonly used in time-sharing algorithms. I also delve into the use of semaphores in asynchronous programs, which manage overlapping memory spaces and ensure coherence in memory usage. Additionally, I operate a self-made Linux shell designed to provide an extra layer of convenience and protection for the user, similar to Windows PowerShell. I added in my Oracle database management system project to help aid in my accounting for my warehousing job. Lastly, I included my own custom bash script that I used to help automate certain console commands.</p>
 				<div class="separator"></div>
 				<p>This screenshot highlights five scheduling algorithms used to determine when operating system processes access hardware resources such as CPU cores or GPU buses.</p>
 				<p>The algorithms showcased include first-come-first-serve, shortest-job-first, highest-priority-first, round-robin, and priority-round-robin. Round-robin is a preemptive scheduling algorithm that assigns each process a fixed time slice to execute. Once the time slice expires, the process moves to the back of the queue, and the next process begins execution. In priority round-robin, the process is reinserted into the queue based on its priority, ensuring higher-priority tasks are scheduled ahead of lower-priority ones.</p>
@@ -587,19 +587,6 @@ const projects = {
 					<div class="displaymediadescription">schedule.png</div>
 				</div>
 				<div class="separator"></div>
-				<p>This program functions as a Linux shell, intercepting user commands and manipulating them before passing them to the system.</p>
-				<p>Here, I demonstrate functionality for automated compilation and execution to boot the shell. Commands include "pwd" to print the working directory, "!!" to repeat the last command, "ls" to list all items in the current directory, "ls > output.txt" to redirect the output to a file, "cat output.txt | sort -r" to display the file contents in reverse-sorted order, "history" to track the last 10 commands, and "exit" to safely close the shell.</p>
-				<p>This type of software is useful for tasks such as database manipulation, where real-time changes can be applied with the ability to revert critical updates.</p>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Compilers and Processes/shell.png" target="_blank">
-							<img src="Content/Portfolio/Compilers and Processes/shell.png" alt="[Linux Shell]" class="displaymedia">
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-						</a>
-					</div>
-					<div class="displaymediadescription">shell.png</div>
-				</div>
-				<div class="separator"></div>
 				<p>This example demonstrates how two threads (represented by teaching assistants 1 and 2) handle 10 jobs (represented by students 1 through 10). Each student is assigned a random programming duration before needing assistance from a TA again.</p>
 				<p>The primary takeaway from this project is the importance of locking conditionals that check memory-sensitive information. When accessing memory, it's essential to lock it before viewing and unlock it when done. This concept forms the foundation of multi-threaded programming.</p>
 				<div class="displaymediacontainer">
@@ -610,6 +597,46 @@ const projects = {
 						</a>
 					</div>
 					<div class="displaymediadescription">semaphore.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>This program functions as a Linux shell, intercepting user commands and manipulating them before passing them to the system.</p>
+				<p>Here, I demonstrate functionality for automated compilation and execution to boot the shell. Commands include "pwd" to print the working directory, "!!" to repeat the last command, "ls" to list all items in the current directory, "ls > output.txt" to redirect the output to a file, "cat output.txt | sort -r" to display the file contents in reverse-sorted order, "history" to track the last 10 commands, and "exit" to safely close the shell.</p>
+				<p>This type of software is useful for tasks such as database manipulation, where real-time changes can be applied with the ability to revert critical updates. You can see my database management system below that uses a similiar concept.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/shell.png" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/shell.png" alt="[Linux Shell]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">shell.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>I also worked on an Oracle-based relational database management system! This database management served as an application for an inexperienced user to be able to communicate to the Oracle database service through prepared SQL statements. </p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/database1.jpg" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/database1.jpg" alt="[Database Prompt]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">database1.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/database2.jpg" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/database2.jpg" alt="[Database Prepared Statement]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">database2.jpg</div>
+				</div>
+				<p>You can view the source code for my project here on Github.</p>
+				<div class="scriptcontainer">
+					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/Compilers%20and%20Processes/DBMS" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script Directory]">
+					</a>
+					<p>Database Management System</p>
 				</div>
 				<div class="separator"></div>
 				<p>This photo provides a glimpse into my laboratory work environment, featuring various open terminal windows and VIM, my preferred IDE.</p>
@@ -917,7 +944,7 @@ const projects = {
 		customHTML: `
 			<div>
 				<h1>Japanese</h1>
-				<p>Here contains my works from my Japanese language proficiency courses. It shows a short cultural paper that I wrote comparing video game cultures, and includes my journal entries written in Japanese.
+				<p>Here contains my works from my Japanese language proficiency courses. It shows a short cultural paper that I wrote comparing video game cultures, and includes my journal entries written in Japanese.</p>
 				<div class="pdfcontainer">
 					<a href="Content/Portfolio/Japanese/Japanese American Influence on Video Game Development.pdf" id="downloadLink" target="_blank">
 						<img src="Assets/pdf.png" alt="[Japanese American Influence on Video Game Development]">
