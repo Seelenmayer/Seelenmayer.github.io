@@ -6,7 +6,7 @@ const projects = {
 			<div>
 				<h1>OpenGL Graphics</h1>
 				<p>This project contains samples of my OpenGL work during my computer graphics class apprenticeship with former Nintendo developer Mike K.</p>
-				<p>It showcases my procedurally generated tree, a particle system along a smooth curve, a ray-tracer demo, a display of Conway's Game of Life, and a simple fun video for last.</p>
+				<p>It showcases my procedurally generated tree, a particle system along a smooth curve, a ray-tracer demo, and a simple fun video for last.</p>
 				<div class="separator"></div>
 				<p>I loved this L-systems tree with all my heart. This program reads in an input string from a file to describe draw instructions for a tree. It uses a context-free-grammar data-structure to procedurally generate a fractal like tree to simulate natural growth. A simple change to the input can altar the tree that's generated and allow for a great range of variety. I then take the lines drawn and instead render them as cylinders whose girth interpolates from the base of the tree to a point source and whose end-faces are XZ-planar.</p>
 				<p>This demo also reveals capturing the user's pointer's screen space coordinates and utilizing the rotation-about-an-arbitrary-axis matrix to rotate the scene view. An arena is loaded with a texture applied, as well as various lighting created around the scene.</p>
@@ -111,17 +111,6 @@ const projects = {
 						</a>
 					</div>
 					<div class="displaymediadescription">raytrace.jpg</div>
-				</div>
-				<div class="separator"></div>
-				<p>This short demo briefly demonstrates the simple rule-set of Conway's Game of Life cellular automata where a cell survives only if exactly 2 or 3 adjacent cells were alive. This demo appears chaotic, but with a change in initial conditions, these instructions can be used to create some fascinating patterns from glider guns to digital clocks!</p>
-				<div class="displaymediacontainer">
-					<a href="Content/Portfolio/OpenGL Graphics/conway.mp4" target="_blank">
-						<video class="displaymedia" poster="Content/Portfolio/OpenGL Graphics/conway_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
-							<source src="Content/Portfolio/OpenGL Graphics/conway.mp4" type="video/mp4">
-							Your browser does not support the video tag.
-						</video>
-					</a>
-					<div class="displaymediadescription">conway.mp4</div>
 				</div>
 				<div class="separator"></div>
 				<p>This short demo just reveals an icosohedron rotating along 2 axis based on cosine waves before a colour changing light.</p>
@@ -801,6 +790,93 @@ const projects = {
 					</a>
 					<p>BridgeController.ino</p>
 				</div>
+			</div>
+		`
+	},
+	"Datastructures and Algorithms": {
+		title: "Datastructures and Algorithms",
+		image: "Content/Portfolio/Datastructures and Algorithms/banner.jpg",
+		customHTML: `
+			<div>
+				<h1>Datastructures and Algorithms</h1>
+				<p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</p>
+				<div class="separator"></div>
+				<p>This short demo briefly demonstrates the simple rule-set of Conway's Game of Life cellular automata where a cell survives only if exactly 2 or 3 adjacent cells were alive. This demo appears chaotic, but with a change in initial conditions, these instructions can be used to create some fascinating patterns from glider guns to digital clocks!</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Datastructures and Algorithms/conway.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Datastructures and Algorithms/conway_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/Datastructures and Algorithms/conway.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">conway.mp4</div>
+				</div>
+				<p>I'll include a fun paper I wrote that briefly suggests the idea of combining emergences of different patterns. The main take-away that I want to give is that I demonstrated an underlying understanding about turing machines.</p>
+				<div class="pdfcontainer">
+					<a href="Content/Portfolio/Datastructures and Algorithms/Cellular Automata & Procedural Generation.pdf" id="downloadLink" target="_blank">
+						<img src="Assets/pdf.png" alt="[Magic Squares Download]">
+					</a>
+					<p>Cellular Automata & Procedural Generation.pdf</p>
+				</div>
+				<div class="separator"></div>
+				<p>This next section briefly mentions some of the datastructures I've implemented such as stack, set, dictionary, and red-black trees. I avoid revealing too many implementation details.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/stack.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/stack.jpg" alt="[Stack Header]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">stack.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/set.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/set.jpg" alt="[Set Header]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">set.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/dictionary.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/dictionary.jpg" alt="[Dictionary Header]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">dictionary.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/redblacktree.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/redblacktree.jpg" alt="[RedBlackTree Example]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">redblacktree.jpg</div>
+				</div>
+				<div class="separator"></div>
+				<p>This next particular exersize was just too cool to not reveal in its entirety. It serves as a demonstration for a deep understanding in recursive functions and inductive proofs.</p>
+				<p>Given a 2^n by 2^n grid, you can select any particular square, and tesellate L-shaped trimono blocks around it that fill the containing grid.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/QuadTreeTesselation.png" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/QuadTreeTesselation.png" alt="[QuadTreeTesselation]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">QuadTreeTesselation.png</div>
+				</div>
+				<div class="scriptcontainer">
+					<a href="Content/Portfolio/Datastructures and Algorithms/Quad Tree Tesselation" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script Directory]">
+					</a>
+					<p>Quad Tree Tesselation</p>
+				</div>
+				<a href="https://undergroundmathematics.org/divisibility-and-induction/triominoes/solution" target="_blank">
+					<p>You can view a more rigorous proof here!</p>
+				</a>
 			</div>
 		`
 	},
