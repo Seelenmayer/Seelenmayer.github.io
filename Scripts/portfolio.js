@@ -631,7 +631,7 @@ const projects = {
 					</div>
 					<div class="displaymediadescription">database2.jpg</div>
 				</div>
-				<p>You can view the source code for my project here on Github.</p>
+				<p>You can view the source code for my project here on Github. The source code has not been maintained since 2017.</p>
 				<div class="scriptcontainer">
 					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/Compilers%20and%20Processes/DBMS" id="downloadLink" target="_blank">
 						<img src="Assets/script.png" alt="[Script Directory]">
@@ -841,7 +841,8 @@ const projects = {
 					<div class="displaymediadescription">BaileysCatastrophe3.mp4</div>
 				</div>
 				<div class="separator"></div>
-					<p>This demo demonstrates how a camera's render can be used as a texture and applied to a material in real-time, creating the illusion of looking through a portal. On the right side of the screen, you can experience the effect from the intended perspective, while the left side provides an external view where the illusion is broken. This contrast offers an intuitive understanding of how the effect is achieved.</p> 				<div class="displaymediacontainer">
+				<p>This demo demonstrates how a camera's render can be used as a texture and applied to a material in real-time, creating the illusion of looking through a portal. On the right side of the screen, you can experience the effect from the intended perspective, while the left side provides an external view where the illusion is broken. This contrast offers an intuitive understanding of how the effect is achieved.</p>
+				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Miscellaneous/RenderImg.jpg" target="_blank">
 							<img src="Content/Portfolio/Miscellaneous/RenderImg.jpg" alt="[Render Textures Example]" class="displaymedia">
@@ -993,6 +994,43 @@ const projects = {
 						<img src="Assets/pdf.png" alt="[Favourite Movie]">
 					</a>
 					<p>Japanese Journal 1 - Favourite Movie.pdf</p>
+				</div>
+			</div>
+		`
+	},
+	"Maxs Mushrooms": {
+		title: "Maxs Mushrooms",
+		image: "Content/Portfolio/Maxs Mushrooms/banner.jpg",
+		customHTML: `
+			<div>
+				<h1>Maxs Mushrooms</h1>
+				<p>This last section is a throwback to the family produce business that I helped work on the frontlines for over many years. My job was to intake customer orders, place order requests with suppliers, help plan routes, and organize the truck in an efficient and logical manner for ease of delivery. This job essentially derives itself from the NP-c traveling salesman problem and box packing problem.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Maxs Mushrooms/max1.jpg" target="_blank">
+							<img src="Content/Portfolio/Maxs Mushrooms/max1.jpg" alt="[Max]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">max1.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Maxs Mushrooms/max2.jpg" target="_blank">
+							<img src="Content/Portfolio/Maxs Mushrooms/max2.jpg" alt="[Max]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">max2.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Maxs Mushrooms/roger.jpg" target="_blank">
+							<img src="Content/Portfolio/Maxs Mushrooms/roger.jpg" alt="[Roger]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">roger.jpg</div>
 				</div>
 			</div>
 		`
