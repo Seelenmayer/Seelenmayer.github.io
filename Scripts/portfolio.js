@@ -714,7 +714,7 @@ const projects = {
 		customHTML: `
 			<div>
 				<h1>Compilers and Processes</h1>
-				<p>This exercise explores key concepts in utilizing an operating system effectively, and go over some useful processes that can run within. I demonstrate various CPU process schedulers commonly used in time-sharing algorithms. I also delve into the use of semaphores in asynchronous programs, which manage overlapping memory spaces and ensure coherence in memory usage. Additionally, I operate a self-made Linux shell designed to provide an extra layer of convenience and protection for the user, similar to Windows PowerShell. I added in my Oracle database management system project to help aid in my accounting for my warehousing job. Lastly, I included my own custom bash script that I used to help automate certain console commands.</p>
+				<p>This exercise explores key concepts in utilizing an operating system effectively, and go over some useful processes that can run within. I demonstrate various CPU process schedulers commonly used in time-sharing algorithms. I also delve into the use of semaphores in asynchronous programs, which manage overlapping memory spaces and ensure coherence in memory usage. Additionally, I operate a self-made Linux shell designed to provide an extra layer of convenience and protection for the user, similar to Windows PowerShell. I added in my Oracle database management system project to help aid in my accounting for my warehousing job. Next, I talk about the compiler that I had written. Lastly, I included my own custom bash script that I used to help automate certain console commands.</p>
 				<div class="separator"></div>
 				<p>This screenshot highlights five scheduling algorithms used to determine when operating system processes access hardware resources such as CPU cores or GPU buses.</p>
 				<p>The algorithms showcased include first-come-first-serve, shortest-job-first, highest-priority-first, round-robin, and priority-round-robin. Round-robin is a preemptive scheduling algorithm that assigns each process a fixed time slice to execute. Once the time slice expires, the process moves to the back of the queue, and the next process begins execution. In priority round-robin, the process is reinserted into the queue based on its priority, ensuring higher-priority tasks are scheduled ahead of lower-priority ones.</p>
@@ -779,6 +779,17 @@ const projects = {
 						<img src="Assets/script.png" alt="[Script Directory]">
 					</a>
 					<p>Database Management System</p>
+				</div>
+				<div class="separator"></div>
+				<p>Next I'll talk about the compiler parser that I wrote for my C-styled language.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Compilers and Processes/compilerdemo.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Compilers and Processes/compilerdemo_poster.jpg" preload="metadata" loading="lazy" controls loop>
+							<source src="Content/Portfolio/Compilers and Processes/compilerdemo.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">compilerdemo.mp4</div>
 				</div>
 				<div class="separator"></div>
 				<p>This photo provides a glimpse into my laboratory work environment, featuring various open terminal windows and VIM, my preferred IDE.</p>
