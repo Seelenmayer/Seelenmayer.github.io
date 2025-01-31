@@ -195,15 +195,48 @@ const projects = {
 				<h1>Game Jams</h1>
 				<p>This section showcases all of my game jam projects and community involvements with Global Game Jam, Pirate Software, and the VIGD Discord server.<p>
 				<div class="separator"></div>
-				<p>I entered into Pirate Software's Game Jam (January 2025) and was able to form a team of 4 others! They requested I build a certain type of game, and in only 4 hours I was able to create this demo in Unity. The full game is still in development.</p>
+				<p>I entered Pirate Software's Game Jam (January 2025) and was able to form a team of 4 others! In just a few hours, I was able to prototype the team's ideas.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Game Jams/pirategamejam.png" target="_blank">
-							<img src="Content/Portfolio/Game Jams/pirategamejam.png" alt="[Pirate Demo]" class="displaymedia">
+						<a href="Content/Portfolio/Game Jams/piratedemo.png" target="_blank">
+							<img src="Content/Portfolio/Game Jams/piratedemo.png" alt="[Pirate Demo]" class="displaymedia">
 							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
 						</a>
 					</div>
-					<div class="displaymediadescription">pirategamejam.png</div>
+					<div class="displaymediadescription">piratedemo.png</div>
+				</div>
+				<p>By the end of the week, we were able to build a functioning online multiplayer chess and card game! A client can join a host via. a generated code. This project also allowed me to utilize Unity's built in version control.</p>
+				<p>
+					<a href="https://mh-el.itch.io/magechesstest" target="_blank" rel="noopener noreferrer">
+						Click here to see the game submission.
+					</a>
+				</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/pirate16a.bmp" target="_blank">
+							<img src="Content/Portfolio/Game Jams/pirate16a.bmp" alt="[Pirate Demo]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">pirate16a.bmp</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/pirate16b.bmp" target="_blank">
+							<img src="Content/Portfolio/Game Jams/pirate16b.bmp" alt="[Pirate Demo]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">pirate16b.bmp</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/pirate16c.bmp" target="_blank">
+							<img src="Content/Portfolio/Game Jams/pirate16c.bmp" alt="[Pirate Demo]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">pirate16c.bmp</div>
 				</div>
 				<div class="separator"></div>
 				<p>Global Game Jam 2025 was so much fun! I was able to achieve my goal of integrating Llama into Unity and making a pet daycare simulator. I decided to not officially publish this game as I was also competing in Pirate Software's game jam. I was also having too much fun assisting the other developers on their projects!</p>
@@ -217,7 +250,7 @@ const projects = {
 					<div class="displaymediadescription">ggj2025.png</div>
 				</div>
 				<div class="separator"></div>
-				<p>Back in the summer of 2024, Sheldon, Dan, and I participated in the Global Game Jam 2024 event. Sheldon was in charge of music, Dan setup the version control systems and playtested, and I developed the game Jamfest in Unity. Within 24 hours, I was able to design and create this split-screen racing game where players summon terrain to block eachother from the finish line.</p>
+				<p>Back in the summer of 2024, Sheldon, Dan, and I participated in the Global Game Jam 2024 event. Sheldon was in charge of music, Dan setup the Github version control systems and playtested, and I developed the game Jamfest in Unity. Within 24 hours, I was able to design and create this split-screen racing game where players summon terrain to block eachother from the finish line.</p>
 				<div class="displaymediacontainer">
 					<a href="Content/Portfolio/Global Game Jam 2024/Jamfest.mp4" target="_blank">
 						<video class="displaymedia" poster="Content/Portfolio/Game Jams/Jamfest_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
@@ -987,6 +1020,65 @@ const projects = {
 						<img src="Assets/script.png" alt="[Script]">
 					</a>
 					<p>BridgeController.txt</p>
+				</div>
+			</div>
+		`
+	},
+	"Virtual Reality": {
+		title: "Virtual Reality",
+		image: "Content/Portfolio/Virtual Reality/banner.jpg",
+		customHTML: `
+			<div>
+				<h1>Virtual Reality</h1>
+				<p>This project outlines some of my experiences working with virtual reality systems.</p>
+				<p>For starters, I helped Cloudhead Games playtest Pistol Whip while it was still in prototyping. Later, I setup my HTC Vive and coordinated it within the Unity environment using their XR plugins.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo1.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo1.png" alt="[Virtual Reality Demo]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo1.jpg</div>
+				</div>
+				<p>I later helped a team develop a VR scenario. My task was to implement dynamic level loading over a network using JSON files as descriptors, create a wrapper to utilize the Obi Rope library, assist artists in using Unity's shader graph and Perforce version control, and more. I helped lead in playtesting and carefully documented everything in as few runs as possible.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo2.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo2.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo2.png</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo3.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo3.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo3.png</div>
+				</div>
+				<p>I'm particularily proud of this scene as it shows the use of my wrapper to the Obi Rope library in placing these pipes. It also shows careful attention to lighting. I created a light in the sky that is occluded by the manhole. I also created two lights on the floor; one that is occluded by the scene, and another that is not. These 3 lights show a strong understanding of the phong reflection model which describe lighting as a composition of specular, diffuse, and ambient lighting.</p>
+				<p>Lastly, I helped develop an Unreal Engine plugin that used computer vision and AI to predict scene placement (with and without greyblocks) through a Python environment on AWS. It encorporated 3rd party widgets such as video-to-3d-model, texture-recommendation, text-to-voice, and text-translation. The last image was generated from the prompt "jungle" with a folder of office assets.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo4.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo4.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo4.png</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo5.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo5.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo5.png</div>
 				</div>
 			</div>
 		`
