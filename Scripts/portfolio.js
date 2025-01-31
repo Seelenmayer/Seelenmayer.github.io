@@ -207,7 +207,7 @@ const projects = {
 				</div>
 				<p>By the end of the week, we were able to build a functioning online multiplayer chess and card game! A client can join a host via. a generated code. This project also allowed me to utilize Unity's built in version control.</p>
 				<p>
-					<a href="https://mh-el.itch.io/magechesstest" target="_blank" rel="noopener noreferrer">
+					<a href="https://batmenzdw.itch.io/sorcererschess" target="_blank" rel="noopener noreferrer">
 						Click here to see the game submission.
 					</a>
 				</p>
