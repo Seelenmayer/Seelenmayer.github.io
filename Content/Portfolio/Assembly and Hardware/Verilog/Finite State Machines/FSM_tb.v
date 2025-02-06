@@ -19,39 +19,6 @@
 `include "Latches.v"
 
 
-//`^*~-~*^`^*~-~*^` Simple Moore Module `^*~-~*^`^*~-~*^`
-module SimpleMooreModule_tb();
-	reg clk = 0;
-	reg w;
-	reg Resetn;
-	wire z;
-	SimpleMooreModule c1(clk, w, Resetn, z);
-	always begin
-		clk = ~clk;
-		#5;
-	end
-	initial begin
-		$dumpfile("FSM_tb.vcd");
-		$dumpvars(0,SimpleMooreModule_tb);
-		Resetn = 0; #10;
-		w = 1; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		w = 0; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		w = 1; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		Resetn = 1; #10;
-		w = 1; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		w = 0; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		w = 1; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		$finish;
-	end
-endmodule
-
-
 //`^*~-~*^`^*~-~*^` Moore-Type FSM `^*~-~*^`^*~-~*^`
 module MooreTypeFSM_tb();
 	reg clk = 0;
@@ -66,39 +33,6 @@ module MooreTypeFSM_tb();
 	initial begin
 		$dumpfile("FSM_tb.vcd");
 		$dumpvars(0,MooreTypeFSM_tb);
-		Resetn = 0; #10;
-		w = 1; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		w = 0; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		w = 1; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		Resetn = 1; #10;
-		w = 1; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		w = 0; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		w = 1; #10; w = 0; #10;
-		w = 1; #10; w = 1; #10;
-		$finish;
-	end
-endmodule
-
-
-//`^*~-~*^`^*~-~*^` Simple Mealy Module `^*~-~*^`^*~-~*^`
-module SimpleMealyModule_tb();
-	reg clk = 0;
-	reg w;
-	reg Resetn = 0;
-	wire z;
-	SimpleMealyModule c3(clk, w, Resetn, z);
-	always begin
-		clk = ~clk;
-		#5;
-	end
-	initial begin
-		$dumpfile("FSM_tb.vcd");
-		$dumpvars(0,SimpleMealyModule_tb);
 		Resetn = 0; #10;
 		w = 1; #10; w = 0; #10;
 		w = 1; #10; w = 1; #10;

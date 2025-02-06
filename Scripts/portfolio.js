@@ -75,7 +75,6 @@ const projects = {
 				</div>
 				<div class="separator"></div>
 				<p>This project uses a circular array of 8 control points to create 8 quadratic bezier curves where the particle emitter will linearly-interpolate along. The particles themselves linearly-interpolate outward at regular intervals while linearly interpolating the colour along a texture map.</p>
-				<p>This project has so many applications! One example that I like to mention is that of a racing game. A camera following a car will fly in and around the scene while the car kicks up dust particles that dissipate over time in the wind.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/OpenGL Graphics/particle.jpg" target="_blank">
@@ -133,8 +132,8 @@ const projects = {
 			<div>
 				<h1>Cinematic Camera</h1>
 				<p>This project showcases my camera controller milestone for a Unity game that I was working on. A user can intuitively and smoothly drag the camera with them, visually burning any obstructions that get in the way! This controller was inspired by platformer genres with Klonoa as reference.</p>
-				<p>The developer defines 3 splines; the player spline, the camera spline, and the camera look-at target spline. As the player progresses along their spline, they will hit an interval's end and push the interval's upper bound forward which causes the lower bound to catch up from a fixed distance away. The camera floats idle within the interval until the lower bound comes and pushes it forward which causes the camera to interpolate along its own spline and its look at target to progress along its own spline, updating the camera rotation matrix each frame.</p>
-				<p>In the event that a marked object is too close in proximety to the camera, a shader appears to burn the object away as to not obstruct the player's view. When the camera is in range, I randomly assign a noise texture map generated in Gimp to interpolate the burn effect along. If the camera is sufficiently far away, the regeneration process occurs to reverse the burn effect.
+				<p>The developer defines three splines: the player spline, the camera spline, and the camera look-at target spline. As the player moves along their spline, reaching an interval’s end pushes the upper bound forward, while the lower bound follows at a fixed distance. The camera remains idle within this interval until pushed forward by the lower bound, interpolating along its spline while its look-at target progresses along its own. This updates the camera’s rotation matrix each frame.</p>
+				<p>If a marked object gets too close to the camera, a shader gradually burns it away to prevent obstruction. When in range, a noise texture map generated in GIMP is randomly assigned to guide the burn effect’s interpolation. Once the camera moves far enough away, the object regenerates, reversing the burn effect.</p>
 				<div class="displaymediacontainer">
 					<a href="Content/Portfolio/Cinematic Camera/camera.mp4" target="_blank">
 						<video class="displaymedia" poster="Content/Portfolio/Cinematic Camera/camera_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
@@ -174,7 +173,7 @@ const projects = {
 					</div>
 					<div class="displaymediadescription">shader3.png</div>
 				</div>
-				<p>Here is the final result! There is however, one massive oversight that happened during this project. The objects with this shader applied weren't casting any shadows. The solution to this got complicated as I had to inject my code into the existing Unity "Lit" shader to inherit the other natural lighting properties that the engine provides. It involved digging into every Unity shader script to resolve namespace issues with capturing screen space coordinates, and deciphering in which render pass this glow affect should be applied. I decided to render the effect in the forward pass, but also made the deliberate decision to not use a deferred rendering pass. Forward rendering is the traditional and simpler rendering technique where the scene is rendered in a single pass, and all lighting calculations are done per object during the rendering process. Deferred rendering is a more advanced rendering technique where the scene is rendered in two (or more) passes. It separates the process of geometry rendering and lighting calculations but has a major drawback of not being able to render transparency without major design overhauls.</p>
+				<p>Here’s the final result! However, one major oversight emerged during this project where objects with this shader weren’t casting shadows. Fixing this became complex, requiring me to integrate my code into Unity’s existing HDRP "Lit" shader to inherit its natural lighting properties. This meant combing through Unity’s shader scripts to resolve namespace issues with screen space coordinates and determining the correct render pass for the glow effect. I chose to render it in the forward pass while deliberately avoiding deferred rendering. Forward rendering, a simpler technique, processes lighting per object in a single pass, whereas deferred rendering separates geometry and lighting calculations but struggles with transparency without significant design overhauls.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Cinematic Camera/shader4.png" target="_blank">
@@ -250,7 +249,7 @@ const projects = {
 					<div class="displaymediadescription">ggj2025.png</div>
 				</div>
 				<div class="separator"></div>
-				<p>Back in the summer of 2024, Sheldon, Dan, and I participated in the Global Game Jam 2024 event. Sheldon was in charge of music, Dan setup the Github version control systems and playtested, and I developed the game Jamfest in Unity. Within 24 hours, I was able to design and create this split-screen racing game where players summon terrain to block eachother from the finish line.</p>
+				<p>Back in the summer of 2024, Sheldon, Dan, and I participated in the Global Game Jam 2024 event. Sheldon was in charge of music, Dan setup the Github version control systems and playtested, and I developed the game Jamfest in Unity. Within 48 hours, I was able to design and create this split-screen racing game where players summon terrain to block eachother from the finish line.</p>
 				<div class="displaymediacontainer">
 					<a href="Content/Portfolio/Global Game Jam 2024/Jamfest.mp4" target="_blank">
 						<video class="displaymedia" poster="Content/Portfolio/Game Jams/Jamfest_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
@@ -406,8 +405,7 @@ const projects = {
 				<p>This project demonstrates my experiements with the M86HC11E architecture, SSBC architecture, and verilog hardware simulations of state machines, and latches. I've also included samples of hardware maintenance.</p>
 				<div class="separator"></div>
 				<div>
-					<p>The file "Wave.s" is a program designed to be ran on the M86HC11E architecture to demonstrate the use of working on the physical board CME11-E9-EVBU (with the PW link HACK) with the intention of producing a 30% high square wave form and display its output on an oscilloscope.</p>
-					<p>This program demonstrates the use of physical assembly architecture and with an interupt service routine.</p>
+					<p>The file "Wave.s" is a program designed to be ran on the M86HC11E architecture to demonstrate the use of working on the physical board CME11-E9-EVBU (with the PW link HACK) with the intention of producing a 30% high square wave form and display its output on an oscilloscope. It demonstrates the use of physical assembly architecture and with an interupt service routine.</p>
 					<div class="scriptcontainer">
 						<a href="Content/Portfolio/Assembly and Hardware/HC11/Wave.s" id="downloadLink" target="_blank">
 							<img src="Assets/script.png" alt="[Script]">
@@ -462,7 +460,7 @@ const projects = {
 				</div>
 				<div class="separator"></div>
 				<div>
-					<p>This experiment demonstrates the usage of different finite state machines written in verilog. Mealy designs output based on their transition, while Moore types output based on their state. This experiment demonstrates 2 uses each for both designs.</p>
+					<p>This experiment demonstrates the usage of different finite state machines written in verilog. Mealy designs output based on their transition, while Moore types output based on their state.</p>
 					<p>The file FSM.v contains the implementations for creating the specific finite state machines.</p>
 					<div class="scriptcontainer">
 						<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM.v" id="downloadLink" target="_blank">
@@ -476,24 +474,6 @@ const projects = {
 							<img src="Assets/script.png" alt="[Script]">
 						</a>
 						<p>FSM_tb.v</p>
-					</div>
-					<div class="displaymediacontainer">
-						<div class="displaymediawrapper">
-							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM Descriptions/SimpleMealy.jpg" target="_blank">
-								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM Descriptions/SimpleMealy.jpg" alt="[Simple Mealy Diagram]" class="displaymedia">
-								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-							</a>
-						</div>
-						<div class="displaymediadescription">SimpleMealy.jpg</div>
-					</div>
-					<div class="displaymediacontainer">
-						<div class="displaymediawrapper">
-							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/Wave Outputs/SimpleMealyWave.jpg" target="_blank">
-								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/Wave Outputs/SimpleMealyWave.jpg" alt="[Simple Mealy Wave Diagram]" class="displaymedia">
-								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-							</a>
-						</div>
-						<div class="displaymediadescription">SimpleMealyWave.jpg</div>
 					</div>
 					<div class="displaymediacontainer">
 						<div class="displaymediawrapper">
@@ -512,24 +492,6 @@ const projects = {
 							</a>
 						</div>
 						<div class="displaymediadescription">MealyTypeWave.jpg</div>
-					</div>
-					<div class="displaymediacontainer">
-						<div class="displaymediawrapper">
-							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM Descriptions/SimpleMoore.jpg" target="_blank">
-								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM Descriptions/SimpleMoore.jpg" alt="[Simple Moore Diagram]" class="displaymedia">
-								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-							</a>
-						</div>
-						<div class="displaymediadescription">SimpleMoore.jpg</div>
-					</div>
-					<div class="displaymediacontainer">
-						<div class="displaymediawrapper">
-							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/Wave Outputs/SimpleMooreWave.jpg" target="_blank">
-								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/Wave Outputs/SimpleMooreWave.jpg" alt="[Simple Moore Wave Diagram]" class="displaymedia">
-								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-							</a>
-						</div>
-						<div class="displaymediadescription">SimpleMooreWave.jpg</div>
 					</div>
 						<div class="displaymediacontainer">
 						<div class="displaymediawrapper">
@@ -552,7 +514,7 @@ const projects = {
 				</div>
 				<div class="separator"></div>
 				<div>
-					<p>This experiment demonstrates the usage of different data latches written in verilog, namely SR-latches with NOR gates, gated D-latches with enable, gated D-latches with reset, asynchronous up counter, and Johnson counter. Since Johnson counter uses gated D-latches ("flip-flops"), this experiment also serves as a demonstration into using multiple instantiations of data latches in creating larger, more sophisticated data storage methods.</p>
+					<p>This experiment demonstrates the usage of different data latches written in verilog, namely D-flip-flop with reset, and Johnson counter. This experiment also serves as a demonstration into using multiple instantiations of data latches in creating larger, more sophisticated data storage methods.</p>
 					<p>The file Latches.v contains the implementations for creating the data-latch structure.</p>
 					<div class="scriptcontainer">
 						<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Latches.v" id="downloadLink" target="_blank">
@@ -569,24 +531,6 @@ const projects = {
 					</div>
 					<div class="displaymediacontainer">
 						<div class="displaymediawrapper">
-							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/SR_Latch_NOR.jpg" target="_blank">
-								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/SR_Latch_NOR.jpg" alt="[SR Latch NOR Wave]" class="displaymedia">
-								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-							</a>
-						</div>
-						<div class="displaymediadescription">SR_Latch_NOR.jpg</div>
-					</div>
-					<div class="displaymediacontainer">
-						<div class="displaymediawrapper">
-							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/Gated_D_Latch.jpg" target="_blank">
-								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/Gated_D_Latch.jpg" alt="[Gated D Latch Wave]" class="displaymedia">
-								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-							</a>
-						</div>
-						<div class="displaymediadescription">Gated_D_Latch.jpg</div>
-					</div>
-					<div class="displaymediacontainer">
-						<div class="displaymediawrapper">
 							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/D_Flip_Flop.jpg" target="_blank">
 								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/D_Flip_Flop.jpg" alt="[D Flip Flop Wave]" class="displaymedia">
 								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
@@ -596,16 +540,7 @@ const projects = {
 					</div>
 					<div class="displaymediacontainer">
 						<div class="displaymediawrapper">
-							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/Up_Count.jpg" target="_blank">
-								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/Up_Count.jpg" alt="[Up Count Wave]" class="displaymedia">
-								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-							</a>
-						</div>
-						<div class="displaymediadescription">Up_Count.jpg</div>
-					</div>
-					<div class="displaymediacontainer">
-						<div class="displaymediawrapper">
-							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/SR_Latch_NOR.jpg" target="_blank">
+							<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/Johnson_Counter.jpg" target="_blank">
 								<img src="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Wave Outputs/Johnson_Counter.jpg" alt="[Johnson Counter Wave]" class="displaymedia">
 								<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
 							</a>
@@ -664,7 +599,7 @@ const projects = {
 		customHTML: `
 			<div>
 				<h1>Virtual Machines and Networks</h1>
-				<p>These projects showcases some of my basic IT work, operating system installation, and networking setup. In these images you'll find that I was able to create virtual machines that run both Arch Linux, and TinyCore Linux operating systems, both known to be very professional and barebones typed systems. I also developed a file transfer application for both client and server to allow for image downloading.</p>
+				<p>These projects showcases some of my basic IT work, operating system installation, and networking setup. In these images you'll find that I was able to create virtual machines that run both Arch Linux, and TinyCore Linux operating systems. I also developed a file transfer application for both client and server to allow for image downloading.</p>
 				<div class="separator"></div>
 				<p>This project demonstrates how a web client communicates with a web server by requesting an HTTP webpage. The process begins when the client sends a DHCP request to obtain an IP address and network configuration from a DHCP server. The server responds with an offer that includes the client IP and the DNS server address. The client confirms the offer, and the DHCP server finalizes the lease. Once the client has the necessary network settings, it uses the provided DNS server to resolve domain names. When the client enters a URL in the browser, it sends a DNS query to the server to find the corresponding IP address. The DNS server either returns the cached IP or performs a lookup to resolve the domain.</p>
 				<div class="displaymediacontainer">
@@ -686,7 +621,7 @@ const projects = {
 					<div class="displaymediadescription">tiny.png</div>
 				</div>
 				<div class="separator"></div>
-				<p>Leveraging Berkeley sockets and RFC 5905, I developed a robust and efficient system for reliable communication between the client and server, ensuring seamless image file downloading. This implementation demonstrates proficiency in network programming and low-level socket management. The full implementation details are available upon request.</p>
+				<p>Leveraging Berkeley sockets and RFC 5905, I developed a system for reliable file download communication between the client and server. This implementation demonstrates proficiency in network programming and low-level socket management.</p>
 				<a href="https://beej.us/guide/bgnet/" target="_blank">
 					<p>If you wish to find out more about Berkley sockets, please check out Beej's guide here.</p>
 				</a>
@@ -703,8 +638,8 @@ const projects = {
 					</div>
 					<div class="displaymediadescription">ftp.jpg</div>
 				</div>
-				<p>This enteringIntoPassive function is part of an FTP server implementation that handles the process of transitioning the server into passive mode for a data transfer. The function first attempts to start a listener for incoming data connections using the startPassiveListener function. It uses a flag to determine whether this operation was successful. The server creates a response message using createPassiveSuccessResponse, which includes information like the port number where the server is listening for data connections and is sent to the client over the control connection using the sendToRemote function. The server checks if the listener socket is ready to accept a connection by calling isListenerSocketReady, which also handles timeout and error states. If the listener is ready to accept a connection, the server accepts the incoming connection using acceptClientConnection. The passive listener is stopped using stopPassiveListener, and a success response is prepared.</p>
-				<p>While there are certainly many additional processes involved in maintaining such applications, this should provide the public with a sufficient understanding of the work involved, without compromising my colleagues' privacy or academic integrity.</p>
+				<p>This enteringIntoPassive function is part of an FTP server implementation that handles the process of transitioning the server into passive mode for data transfer. The function first attempts to start a listener for incoming data connections using the startPassiveListener function. It uses a flag to determine whether this operation was successful. The server creates a response message using createPassiveSuccessResponse, which includes information like the port number where the server is listening for data connections and is sent to the client over the control connection using the sendToRemote function. The server checks if the listener socket is ready to accept a connection by calling isListenerSocketReady, which also handles timeout and error states. If the listener is ready to accept a connection, the server accepts the incoming connection using acceptClientConnection. The passive listener is stopped using stopPassiveListener, and a success response is prepared.</p>
+				<p>While there are certainly many additional processes involved, this should provide a sufficient understanding of the work involved.</p>
 			</div>
 		`
 	},
@@ -714,7 +649,7 @@ const projects = {
 		customHTML: `
 			<div>
 				<h1>Compilers and Processes</h1>
-				<p>This exercise explores key concepts in utilizing an operating system effectively, and go over some useful processes that can run within. I demonstrate various CPU process schedulers commonly used in time-sharing algorithms. I also delve into the use of semaphores in asynchronous programs, which manage overlapping memory spaces and ensure coherence in memory usage. Additionally, I operate a self-made Linux shell designed to provide an extra layer of convenience and protection for the user, similar to Windows PowerShell. I added in my Oracle database management system project to help aid in my accounting for my warehousing job. Next, I talk about the compiler that I had written. Lastly, I included my own custom bash script that I used to help automate certain console commands.</p>
+				<p>This exercise covers essential concepts for effectively using an operating system, including key processes that run within it. I demonstrate various CPU process schedulers used in time-sharing algorithms and explore semaphores in asynchronous programs for managing overlapping memory and ensuring coherence. I also showcase a self-made Linux shell. Additionally, I discuss my Oracle database management system, as well as a compiler parser I developed. Finally, I include a custom Bash script I created to automate console commands.</p>
 				<div class="separator"></div>
 				<p>This screenshot highlights five scheduling algorithms used to determine when operating system processes access hardware resources such as CPU cores or GPU buses.</p>
 				<p>The algorithms showcased include first-come-first-serve, shortest-job-first, highest-priority-first, round-robin, and priority-round-robin. Round-robin is a preemptive scheduling algorithm that assigns each process a fixed time slice to execute. Once the time slice expires, the process moves to the back of the queue, and the next process begins execution. In priority round-robin, the process is reinserted into the queue based on its priority, ensuring higher-priority tasks are scheduled ahead of lower-priority ones.</p>
@@ -743,7 +678,6 @@ const projects = {
 				<div class="separator"></div>
 				<p>This program functions as a Linux shell, intercepting user commands and manipulating them before passing them to the system.</p>
 				<p>Here, I demonstrate functionality for automated compilation and execution to boot the shell. Commands include "pwd" to print the working directory, "!!" to repeat the last command, "ls" to list all items in the current directory, "ls > output.txt" to redirect the output to a file, "cat output.txt | sort -r" to display the file contents in reverse-sorted order, "history" to track the last 10 commands, and "exit" to safely close the shell.</p>
-				<p>This type of software is useful for tasks such as database manipulation, where real-time changes can be applied with the ability to revert critical updates. You can see my database management system below that uses a similiar concept.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Compilers and Processes/shell.png" target="_blank">
@@ -754,7 +688,7 @@ const projects = {
 					<div class="displaymediadescription">shell.png</div>
 				</div>
 				<div class="separator"></div>
-				<p>I also worked on an Oracle-based relational database management system! This database management served as an application for an inexperienced user to be able to communicate to the Oracle database service through prepared SQL statements. </p>
+				<p>I also worked on an Oracle-based relational database management system. This database management served as an application for an inexperienced user to be able to communicate to the Oracle database service through prepared SQL statements. </p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Compilers and Processes/database1.jpg" target="_blank">
@@ -931,7 +865,7 @@ const projects = {
 				<a href="https://youtu.be/prx1psByp7U?si=8iq6SBVS5sNGsmmL" target="_blank">
 					<p>Need a video to help explain? Don't worry, I got you!</p>
 				</a>
-				<p>Believe it or not, we can actually do much better than O(n^3)! Thanks to enough digging around, I was able to uncover this paper by T.C. Hu and M.T. Shing.</p>
+				<p>Believe it or not, we can actually do much better than O(n^3)! I was able to uncover this paper by T.C. Hu and M.T. Shing.</p>
 				<a href="http://i.stanford.edu/pub/cstr/reports/cs/tr/81/875/CS-TR-81-875.pdf" target="_blank">
 					<p>Click here to see how we can solve the chain matrix association problem in an impressive O(nlogn) time!</p>
 				</a>
@@ -1072,7 +1006,7 @@ const projects = {
 					<div class="displaymediadescription">demo3.png</div>
 				</div>
 				<p>I'm particularily proud of this scene as it shows the use of my wrapper to the Obi Rope library in placing these pipes. It also shows careful attention to lighting. I created a light in the sky that is occluded by the manhole. I also created two lights on the floor; one that is occluded by the scene, and another that is not. These 3 lights show a strong understanding of the phong reflection model which describe lighting as a composition of specular, diffuse, and ambient lighting.</p>
-				<p>Lastly, I helped develop an Unreal Engine plugin that used computer vision and AI to predict scene placement (with and without greyblocks) through a Python environment on AWS. It encorporated 3rd party widgets such as video-to-3d-model, texture-recommendation, text-to-voice, and text-translation. The last image was generated from the prompt "jungle" with a folder of office assets.</p>
+				<p>Lastly, I helped develop an Unreal Engine plugin that used computer vision and AI to predict scene placement through a Python environment on AWS. It encorporated 3rd party widgets such as video-to-3d-model, texture-recommendation, text-to-voice, and text-translation. The last image was generated from the prompt "jungle" with a folder of office assets.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Virtual Reality/demo4.png" target="_blank">
@@ -1100,7 +1034,7 @@ const projects = {
 		customHTML: `
 			<div>
 				<h1>Miscellaneous</h1>
-				<p>This project is a collective of various small miscellaneous exersizes worth demonstrating. It showcases a Unity console organizer and demonstration for meta-programming, a group game project featuring shaders in Godot, a brief overview of using ThreeJS to display 3d renderings in a browser, instantiating render textures to simulate a portal, and image downscalings for levels to a memory limited gameboy ROM game.
+				<p>This project is a collection of small but noteworthy exercises. It features a project for using render textures to make a portal in Unity, a console organizer which demonstrates meta-programming, a group game project with shaders in Godot, a brief showcase of ThreeJS for displaying 3D renderings in a browser, render textures simulating a portal effect, and image downscaling techniques for a memory-limited Game Boy ROM game.</p>
 				<div class="separator"></div>
 				<p>This project demonstrates my first group game project, Bailey's Catastrophe, which was cut short due to the pandemic lockdown. It was my first experience in the Godot engine where I worked on the background, shaders, level loading systems, and version control management. I was particularily proud of my pixelization shader which allowed us to render 3d objects in a 2d 32bit pixelated way. This went hand-in-hand with our tile-based level design structure which paved a way for generative level branching.</p>
 				<div class="displaymediacontainer">
@@ -1294,7 +1228,7 @@ const projects = {
 		customHTML: `
 			<div>
 				<h1>Maxs Mushrooms</h1>
-				<p>This last section is a throwback to the family produce business that I helped work on the frontlines for over many years. My job was to intake customer orders, place order requests with suppliers, help plan routes, and organize the truck in an efficient and logical manner for ease of delivery. This job essentially derives itself from the NP-c traveling salesman problem and box packing problem.</p>
+				<p>This section is a throwback to the family produce business that I helped work on the frontlines for over many years. My job was to intake customer orders, place order requests with suppliers, help plan routes, and organize the truck in an efficient and logical manner for ease of delivery. This job essentially derives itself from the NP-c traveling salesman problem and box packing problem.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Maxs Mushrooms/max1.jpg" target="_blank">
@@ -1321,6 +1255,44 @@ const projects = {
 						</a>
 					</div>
 					<div class="displaymediadescription">roger.jpg</div>
+				</div>
+			</div>
+		`
+	},
+	"Music": {
+		title: "Music",
+		image: "Content/Portfolio/Music/banner.jpg",
+		customHTML: `
+			<div>
+				<h1>Music</h1>
+				<p>I love playing music in my spare time. I spent most of my life playing percussion, but along the way found many other fascinating instruments ranging from 6 or 12 string electric and acoustic guitars, 4 or 5 string basses, piano, xylophone, or even a pan flute!</p>
+				<p>In this section, I wanted to showcase some of my few available recordings. Starting from Diablo's "Tristram" town theme on guitar, then Maplestory's "Ellinia" town theme on piano, and lastly, Maplestory's "Orbis" town theme on xylophone.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Music/tristram.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Music/tristram_poster.jpg" preload="metadata" loading="lazy" controls loop>
+							<source src="Content/Portfolio/Music/tristram.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">tristram.mp4</div>
+				</div>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Music/ellinia.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Music/ellinia_poster.jpg" preload="metadata" loading="lazy" controls loop>
+							<source src="Content/Portfolio/Music/ellinia.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">ellinia.mp4</div>
+				</div>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Music/orbis.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Music/orbis_poster.jpg" preload="metadata" loading="lazy" controls loop>
+							<source src="Content/Portfolio/Music/orbis.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">orbis.mp4</div>
 				</div>
 			</div>
 		`

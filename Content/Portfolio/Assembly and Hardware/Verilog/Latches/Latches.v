@@ -8,10 +8,7 @@
 //	Behavior:
 //		This program contains the implementations for demonstrating
 //			the usage of data latches such as:
-//				- SR Latches with NOR Gates.
-//				- Gated D Latches with Enable.
 //				- Gated D Latches with Reset.
-//				- Asynchronous Up Counter.
 //				- Johnson Counter.
 //
 //	Compilation:	"iverilog -o Latches.vvp Latches.v"
@@ -20,36 +17,7 @@
 //`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`
 
 
-//`^*~-~*^`^*~-~*^` SR Latch with NOR Gates `^*~-~*^`^*~-~*^`
-module SRLatchNor(
-	input wire s,
-	input wire r,
-	output wire q,
-	output wire q_n
-);
-nor(q, r, q_n);
-nor(q_n, s, q);
-endmodule
-
-
-//`^*~-~*^`^*~-~*^` Gated D Latch with Enable `^*~-~*^`^*~-~*^`
-module GatedDLatch(
-	input wire clk,
-	input wire d,
-	input wire en,
-	output reg q,
-	output reg q_n
-);
-always @(posedge clk) begin
-	if (en) begin
-		q <= d;
-		q_n <= ~d;
-	end
-end
-endmodule
-
-
-//`^*~-~*^`^*~-~*^` Gated D Latch with Reset `^*~-~*^`^*~-~*^`
+//`^*~-~*^`^*~-~*^` DFlipflop `^*~-~*^`^*~-~*^`
 module DFlipflop(
 	input wire clk,
 	input wire d,
@@ -79,24 +47,6 @@ nand(w23, clk_n_n, w22);
 nand(q, w13, q_n);
 nand(q_n, q, w23, reset_n);
 
-endmodule
-
-
-//`^*~-~*^`^*~-~*^` Asynchronous Up Counter `^*~-~*^`^*~-~*^`
-module upcount #(parameter N=4)(
-	input wire clk,
-	input wire reset,
-	input wire en,
-	output reg[N-1:0] q
-);
-	always @(posedge clk) begin
-		if (reset) begin
-			q <= 0;
-		end
-		else if (en) begin
-			q <= q+1;
-		end
-	end
 endmodule
 
 

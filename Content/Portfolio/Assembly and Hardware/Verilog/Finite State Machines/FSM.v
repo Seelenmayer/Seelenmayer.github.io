@@ -15,38 +15,6 @@
 //`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`
 
 
-//`^*~-~*^`^*~-~*^` Simple Moore Module `^*~-~*^`^*~-~*^`
-module SimpleMooreModule(
-	input wire clk,
-	input wire w,
-	input wire Resetn,
-	output reg z
-);
-	reg [1:0] y, Y;			//present and next state
-	parameter A=2'b00, B=2'b01, C=2'b10;
-	always @(w,y) begin
-		case (y)
-			A: if (w) Y=B;
-				else Y=A;
-			B: if (w) Y=C;
-				else Y=A;
-			C: if (w) Y=C;
-				else Y=A;
-			default: Y=2'bxx;
-		endcase
-	end
-	always @(y) begin
-		if (y==C) z = 1;
-		else z = 0;
-	end
-	always @(negedge Resetn, posedge clk) begin
-		#10;
-		if (Resetn==0) y <= A;
-		else y <= Y;
-	end
-endmodule
-
-
 //`^*~-~*^`^*~-~*^` Moore-Type FSM `^*~-~*^`^*~-~*^`
 module MooreTypeFSM(
 	input wire clk,
@@ -80,42 +48,6 @@ module MooreTypeFSM(
 	always @(negedge Resetn, posedge clk) begin
 		#10;
 		if (Resetn==0) y <= A;
-		else y <= Y;
-	end
-endmodule
-
-
-//`^*~-~*^`^*~-~*^` Simple Mealy Module `^*~-~*^`^*~-~*^`
-module SimpleMealyModule(
-	input wire clk,
-	input wire w,
-	input wire Resetn,
-	output reg z
-);
-	reg y, Y;
-	parameter A=1'b0, B=1'b1;
-	always @(w,y) begin
-		case (y)
-			A: if (w) begin 
-				Y=B;
-				z=0;
-			end
-			else begin
-				Y=A;
-			end
-			B: if (w) begin
-				Y=B;
-				z=1;
-			end
-			else begin
-				Y=A;
-				z=0; 
-			end
-		endcase
-	end
-	always @(negedge Resetn, posedge clk) begin
-		#10;
-		if (Resetn==0)  y <= A;
 		else y <= Y;
 	end
 endmodule
