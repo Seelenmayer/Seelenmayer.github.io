@@ -1049,7 +1049,7 @@ const projects = {
 		customHTML: `
 			<div>
 				<h1>Bridge Project</h1>
-				<p>This project highlights my achievement in competing in Vancouver Island University's Bridge Building Competition of 2016 as well as the completion of VIU's Fundamentals of Engineering certification.</p>
+				<p>This project highlights my achievement in competing in Vancouver Island University's Bridge Building Competition of 2016, as well as the completion of VIU's Fundamentals of Engineering certification.</p>
 				<div class="displaymediacontainer">
 					<a href="Content/Portfolio/Bridge Project/bridgedemo.mp4" target="_blank">
 						<video class="displaymedia" poster="Content/Portfolio/Bridge Project/bridgedemo_poster.jpg" preload="metadata" loading="lazy" controls loop>
