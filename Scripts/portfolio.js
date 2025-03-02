@@ -1040,6 +1040,26 @@ const projects = {
 					</div>
 					<div class="displaymediadescription">Gameboy2.png</div>
 				</div>
+				<div class="separator"></div>
+				<p>This project briefly showcases one of my physics lab experiments where I designed a microscope with 16x magnification.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Miscellaneous/microscope1.jpg" target="_blank">
+							<img src="Content/Portfolio/Miscellaneous/microscope1.jpg" alt="[Microscope]" class="displaymedia">
+							<img src="Assets/imageoverlay.jpg" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">microscope1.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Miscellaneous/microscope2.jpg" target="_blank">
+							<img src="Content/Portfolio/Miscellaneous/microscope2.jpg" alt="[Microscope]" class="displaymedia">
+							<img src="Assets/imageoverlay.jpg" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">microscope2.jpg</div>
+				</div>
 			</div>
 		`
 	},
