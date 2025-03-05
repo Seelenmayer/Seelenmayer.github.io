@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Start timer
 	const emails = [
-		['dror.nir01', 'gmail', 'com'],
-		['Gara', 'viu', 'ca'],
-		['maxsmushrooms', 'gmail', 'com']
+		['example', 'gmail', 'com']
+		['example', 'gmail', 'com'],
+		['example', 'gmail', 'com'],
 	];
-	revealEmail('email1', emails[0]);
-	revealEmail('email2', emails[1]);
-	revealEmail('email3', emails[2]);
+	//revealEmail('email1', emails[0]);
+	//revealEmail('email2', emails[1]);
+	//revealEmail('email3', emails[2]);
 });
