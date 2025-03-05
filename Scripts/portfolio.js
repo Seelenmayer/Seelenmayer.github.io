@@ -939,7 +939,7 @@ const projects = {
 		customHTML: `
 			<div>
 				<h1>Miscellaneous</h1>
-				<p>This project is a collection of small but noteworthy exercises. It features a project for using render textures to make a portal in Unity, a console organizer which demonstrates meta-programming, a group game project with shaders in Godot, a brief showcase of ThreeJS for displaying 3D renderings in a browser, render textures simulating a portal effect, and image downscaling techniques for a memory-limited Game Boy ROM game.</p>
+				<p>This project is a collection of small but noteworthy exercises. It features a project for using render textures to make a portal in Unity, a console organizer which demonstrates meta-programming, a group game project with shaders in Godot, a brief showcase of ThreeJS for displaying 3D renderings in a browser, render textures simulating a portal effect, image downscaling techniques for a memory-limited Game Boy ROM game, and lastly an 8x magnification microscope demonstration.</p>
 				<div class="separator"></div>
 				<p>This project demonstrates my first group game project, Bailey's Catastrophe, which was cut short due to the pandemic lockdown. It was my first experience in the Godot engine where I worked on the background, shaders, level loading systems, and version control management. I was particularily proud of my pixelization shader which allowed us to render 3d objects in a 2d 32bit pixelated way. This went hand-in-hand with our tile-based level design structure which paved a way for generative level branching.</p>
 				<div class="displaymediacontainer">
