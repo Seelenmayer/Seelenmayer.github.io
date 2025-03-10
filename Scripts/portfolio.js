@@ -826,7 +826,7 @@ const projects = {
 						<a href="Content/Portfolio/Datastructures And Algorithms/quadtree.jpg" target="_blank">
 							<img src="Content/Portfolio/Datastructures And Algorithms/quadtree.jpg" alt="[Quad Tree]" class="displaymedia">
 							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-						</a> 
+						</a>
 					</div>
 					<div class="displaymediadescription">quadtree.jpg</div>
 				</div>
