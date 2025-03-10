@@ -810,7 +810,7 @@ const projects = {
 					<div class="displaymediadescription">redblacktree.jpg</div>
 				</div>
 				<div class="separator"></div>
-				<p>This next particular exersize was just too cool to not reveal in its entirety. It serves as a demonstration for a deep understanding in recursive functions and inductive proofs.</p>
+				<p>This next exersize serves as a demonstration for a deeper understanding in recursive functions and inductive proofs.</p>
 				<p>Given a 2^n by 2^n grid, you can select any particular square, and tesellate L-shaped trimono blocks around it that fill the containing grid.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
@@ -821,11 +821,14 @@ const projects = {
 					</div>
 					<div class="displaymediadescription">QuadTreeTesselation.png</div>
 				</div>
-				<div class="scriptcontainer">
-					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/Datastructures%20and%20Algorithms/Quad%20Tree%20Tesselation" id="downloadLink" target="_blank">
-						<img src="Assets/script.png" alt="[Script Directory]">
-					</a>
-					<p>Quad Tree Tesselation</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures And Algorithms/quadtree.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures And Algorithms/quadtree.jpg" alt="[Quad Tree]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">quadtree.jpg</div>
 				</div>
 				<a href="https://undergroundmathematics.org/divisibility-and-induction/triominoes/solution" target="_blank">
 					<p>You can view a more rigorous proof here!</p>
