@@ -39,11 +39,10 @@
 		<main>
 			<div>
 				<h1>Compilers and Processes</h1>
-				<p>This exercise covers essential concepts for effectively using an operating system, including key processes that run within it. I demonstrate various CPU process schedulers used in time-sharing algorithms and explore semaphores in asynchronous programs for managing overlapping memory and ensuring coherence. I also showcase a self-made Linux shell. Additionally, I discuss my Oracle database management system, as well as a compiler parser I developed. Finally, I include a custom Bash script I created to automate console commands.</p>
+				<p>This section explores fundamental OS concepts, including process scheduling, memory management, and concurrency. I demonstrate CPU scheduling algorithms, semaphore-based synchronization, and a custom Linux shell. Additionally, I showcase my Oracle database management system, a compiler parser, and a Bash script for automating console commands.</p>
 				<div class="separator"></div>
-				<p>This screenshot highlights five scheduling algorithms used to determine when operating system processes access hardware resources such as CPU cores or GPU buses.</p>
-				<p>The algorithms showcased include first-come-first-serve, shortest-job-first, highest-priority-first, round-robin, and priority-round-robin. Round-robin is a preemptive scheduling algorithm that assigns each process a fixed time slice to execute. Once the time slice expires, the process moves to the back of the queue, and the next process begins execution. In priority round-robin, the process is reinserted into the queue based on its priority, ensuring higher-priority tasks are scheduled ahead of lower-priority ones.</p>
-				<p>You can interpret the terminal output in the format "[Task Name] [Priority] [Remaining_Time]" for a closer examination.</p>
+				<p>This screenshot illustrates five scheduling algorithms that manage process execution on CPU cores and GPU buses: first-come-first-serve, shortest-job-first, highest-priority-first, round-robin, and priority round-robin. Round-robin assigns time slices to processes in a cyclic order, while priority round-robin reinserts processes based on priority.</p>
+				<p>The terminal output follows the format "[Task Name] [Priority] [Remaining_Time]" for detailed analysis.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Compilers and Processes/schedule.png" target="_blank">
@@ -54,8 +53,8 @@
 					<div class="displaymediadescription">schedule.png</div>
 				</div>
 				<div class="separator"></div>
-				<p>This example demonstrates how two threads (represented by teaching assistants 1 and 2) handle 10 jobs (represented by students 1 through 10). Each student is assigned a random programming duration before needing assistance from a TA again.</p>
-				<p>The primary takeaway from this project is the importance of locking conditionals that check memory-sensitive information. When accessing memory, it's essential to lock it before viewing and unlock it when done. This concept forms the foundation of multi-threaded programming.</p>
+				<p>This example simulates two threads (teaching assistants) managing 10 jobs (students). Each student receives a random programming task before requiring further assistance.</p>  
+				<p>The key takeaway is the importance of locking memory-sensitive operations. Proper locking ensures data integrity in multi-threaded environments, forming the foundation of concurrent programming.</p>  
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Compilers and Processes/semaphore.png" target="_blank">
@@ -66,8 +65,8 @@
 					<div class="displaymediadescription">semaphore.png</div>
 				</div>
 				<div class="separator"></div>
-				<p>This program functions as a Linux shell, intercepting user commands and manipulating them before passing them to the system.</p>
-				<p>Here, I demonstrate functionality for automated compilation and execution to boot the shell. Commands include "pwd" to print the working directory, "!!" to repeat the last command, "ls" to list all items in the current directory, "ls > output.txt" to redirect the output to a file, "cat output.txt | sort -r" to display the file contents in reverse-sorted order, "history" to track the last 10 commands, and "exit" to safely close the shell.</p>
+				<p>This Linux shell intercepts and modifies user commands before passing them to the system.</p>  
+				<p>It supports automated compilation and execution, along with commands like "pwd" (print working directory), "!!" (repeat last command), "ls" (list directory contents), output redirection, sorting, command history, and safe exit.</p>  
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Compilers and Processes/shell.png" target="_blank">
@@ -78,7 +77,7 @@
 					<div class="displaymediadescription">shell.png</div>
 				</div>
 				<div class="separator"></div>
-				<p>I also worked on an Oracle-based relational database management system. This database management served as an application for an inexperienced user to be able to communicate to the Oracle database service through prepared SQL statements. </p>
+				<p>I developed an Oracle-based relational database management system, providing an interface for inexperienced users to interact with the database through prepared SQL statements.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Compilers and Processes/database1.jpg" target="_blank">
@@ -97,7 +96,7 @@
 					</div>
 					<div class="displaymediadescription">database2.jpg</div>
 				</div>
-				<p>You can view the source code for my project here on Github. The source code has not been maintained since 2017.</p>
+				<p>You can view the source code for my 2017 project on Github.</p>
 				<div class="scriptcontainer">
 					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/Compilers%20and%20Processes/DBMS" id="downloadLink" target="_blank">
 						<img src="Assets/script.png" alt="[Script Directory]">
@@ -105,7 +104,7 @@
 					<p>Database Management System</p>
 				</div>
 				<div class="separator"></div>
-				<p>Next I'll talk about the compiler parser that I wrote for my C-styled language.</p>
+				<p>Next, I introduce the compiler parser I developed for my C-style language.</p>
 				<div class="displaymediacontainer">
 					<a href="Content/Portfolio/Compilers and Processes/compilerdemo.mp4" target="_blank">
 						<video class="displaymedia" poster="Content/Portfolio/Compilers and Processes/compilerdemo_poster.jpg" preload="metadata" loading="lazy" controls loop>
@@ -116,7 +115,7 @@
 					<div class="displaymediadescription">compilerdemo.mp4</div>
 				</div>
 				<div class="separator"></div>
-				<p>This photo provides a glimpse into my laboratory work environment, featuring various open terminal windows and VIM, my preferred IDE.</p>
+				<p>This photo showcases my lab setup, featuring multiple open terminals and VIM.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
 						<a href="Content/Portfolio/Compilers and Processes/station.jpg" target="_blank">
@@ -126,7 +125,7 @@
 					</div>
 					<div class="displaymediadescription">station.png</div>
 				</div>
-				<p>Here is the bash script I wrote to help automate certain frequently used terminal commands, namely git submissions.</p>
+				<p>This Bash script automates frequently used terminal commands, specifically for Git submissions.</p>
 				<div class="scriptcontainer">
 					<a href="Content/Portfolio/Compilers and Processes/myBash.sh" id="downloadLink" target="_blank">
 						<img src="Assets/script.png" alt="[Script]">

@@ -39,16 +39,10 @@
 		<main>
 			<div>
 				<h1>Assembly and Hardware</h1>
-				<p>This project demonstrates my experiements with the M86HC11E architecture, SSBC architecture, and verilog hardware simulations of state machines, and latches. I've also included samples of hardware maintenance.</p>
+				<p>This project showcases my experiments with the M86HC11E and SSBC architectures, Verilog hardware simulations of state machines and latches, and hardware maintenance samples.</p>
 				<div class="separator"></div>
 				<div>
-					<p>The file "Wave.s" is a program designed to be ran on the M86HC11E architecture to demonstrate the use of working on the physical board CME11-E9-EVBU (with the PW link HACK) with the intention of producing a 30% high square wave form and display its output on an oscilloscope. It demonstrates the use of physical assembly architecture and with an interupt service routine.</p>
-					<div class="scriptcontainer">
-						<a href="Content/Portfolio/Assembly and Hardware/HC11/Wave.s" id="downloadLink" target="_blank">
-							<img src="Assets/script.png" alt="[Script]">
-						</a>
-						<p>Wave.s</p>
-					</div>
+					<p>"Wave.s" is an M86HC11E program designed for the CME11-E9-EVBU board (PW link HACK) to generate a 30% high square wave, viewable on an oscilloscope. It demonstrates physical assembly architecture and an interrupt service routine.</p>
 					<p>
 						<a href="https://www.nxp.com/docs/en/reference-manual/M68HC11ERG.pdf" target="_blank" rel="noopener noreferrer">
 							Click here to see the M86HC11E manual.
@@ -63,11 +57,22 @@
 						</div>
 						<div class="displaymediadescription">M86EHC11.jpg</div>
 					</div>
+					<div class="scriptcontainer">
+						<a href="Content/Portfolio/Assembly and Hardware/HC11/Wave.s" id="downloadLink" target="_blank">
+							<img src="Assets/script.png" alt="[Script]">
+						</a>
+						<p>Wave.s</p>
+					</div>
 				</div>
 				<div class="separator"></div>
 				<div>
-					<p>The file "Doubling.ssbc" is a program designed to test the programmable SSBC assembly language machine created by Peter W. It demonstrates the usage of direct memory mapping and setting up recursive subroutine calls by reading in an input "n" from one port and assigning "f(n)" to another.</p>
-					<p>Furthermore, "Doubling.cpp" is a c++ program with equivalent behaviour to help better understand the behaviour of the SSBC machine.</p>
+					<p>"Doubling.ssbc" tests Peter W.'s SSBC assembly machine, demonstrating direct memory mapping and recursive subroutine calls by reading input "n" and assigning "f(n)" to another port.</p>  
+					<p>"Doubling.cpp" replicates this behavior in C++ for better understanding.</p> 
+					<p>
+						<a href="https://github.com/Babakanoosh/Visual-SSBC" target="_blank" rel="noopener noreferrer">
+							Click here to see the SSBC source repository and web interpreter.
+						</a>
+					</p>
 					<div class="scriptcontainer">
 						<a href="Content/Portfolio/Assembly and Hardware/SSBC/Doubling.ssbc" id="downloadLink" target="_blank">
 							<img src="Assets/script.png" alt="[Script]">
@@ -80,11 +85,6 @@
 						</a>
 						<p>Doubling.cpp</p>
 					</div>
-					<p>
-						<a href="https://github.com/Babakanoosh/Visual-SSBC" target="_blank" rel="noopener noreferrer">
-							Click here to see the SSBC source repository and web interpreter.
-						</a>
-					</p>
 					<div class="displaymediacontainer">
 						<div class="displaymediawrapper">
 							<a href="Content/Portfolio/Assembly and Hardware/SSBC/SSBCvisualized.jpg" target="_blank">
@@ -97,15 +97,15 @@
 				</div>
 				<div class="separator"></div>
 				<div>
-					<p>This experiment demonstrates the usage of different finite state machines written in verilog. Mealy designs output based on their transition, while Moore types output based on their state.</p>
-					<p>The file FSM.v contains the implementations for creating the specific finite state machines.</p>
+					<p>This experiment explores finite state machines in Verilog. Mealy designs output on transitions, while Moore designs output based on state.</p>  
+					<p>"FSM.v" contains the state machine implementations.</p> 
+					<p>"FSM_tb.v" provides test data for GTKWave, visualizing finite state machine behavior through waveforms.</p>
 					<div class="scriptcontainer">
 						<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM.v" id="downloadLink" target="_blank">
 							<img src="Assets/script.png" alt="[Script]">
 						</a>
 						<p>FSM.v</p>
 					</div>
-					<p>The file FSM_tb.v communicates test data information to GTKWave to demonstrate the usage of these finite state machines by displaying meaningful waveform information.</p>
 					<div class="scriptcontainer">
 						<a href="Content/Portfolio/Assembly and Hardware/Verilog/Finite State Machines/FSM_tb.v" id="downloadLink" target="_blank">
 							<img src="Assets/script.png" alt="[Script]">
@@ -151,15 +151,15 @@
 				</div>
 				<div class="separator"></div>
 				<div>
-					<p>This experiment demonstrates the usage of different data latches written in verilog, namely D-flip-flop with reset, and Johnson counter. This experiment also serves as a demonstration into using multiple instantiations of data latches in creating larger, more sophisticated data storage methods.</p>
-					<p>The file Latches.v contains the implementations for creating the data-latch structure.</p>
+					<p>This experiment explores Verilog data latches, including a D-flip-flop with reset and a Johnson counter. It also demonstrates combining latches for advanced data storage.</p>  
+					<p>"Latches.v" contains the latch implementations.</p>
+					<p>"Latches_tb.v" provides test data for GTKWave, visualizing finite state machine behavior through waveforms.</p>
 					<div class="scriptcontainer">
 						<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Latches.v" id="downloadLink" target="_blank">
 							<img src="Assets/script.png" alt="[Script]">
 						</a>
 						<p>Latches.v</p>
 					</div>
-					<p>The file Latches_tb.v communicates test data information to GTKWave to demonstrate the usage of these data latches by displaying meaningful waveform information.</p>
 					<div class="scriptcontainer">
 						<a href="Content/Portfolio/Assembly and Hardware/Verilog/Latches/Latches_tb.v" id="downloadLink" target="_blank">
 							<img src="Assets/script.png" alt="[Script]">
@@ -187,8 +187,9 @@
 				</div>
 				<div class="separator"></div>
 				<div>
-					<p>This experiment demonstrates computer maintenance by cleaning and restoring the thermal paste on an NVidia ASUS ROG STRIX GTX 1080 GPU graphics card and Intel CPU (LGA 1151 socket).</p>
-					<p>Here I disassemble the backplate of my GPU, reapply thermal, and reassemble.</p>
+					<p>This experiment covers computer maintenance, including cleaning and reapplying thermal paste on an NVidia ASUS ROG STRIX GTX 1080 GPU and an Intel LGA 1151 CPU.</p>  
+					<p>The process involves disassembling the GPU backplate, reapplying thermal paste, and reassembling.</p>
+					<p>I unmounted the water cooling system on my Intel LGA 1151 socket to reapply thermal paste to the CPU.</p>
 					<div class="displaymediacontainer">
 						<div class="displaymediawrapper">
 							<a href="Content/Portfolio/Assembly and Hardware/Maintenance/GPUPasting.jpg" target="_blank">
@@ -207,7 +208,6 @@
 						</div>
 					</div>
 					<div class="displaymediadescription">GPUBuilt.jpg</div>
-					<p>Here I unmount the water cooling system on my Intel LGA 1151 socket so that I can reapply thermal paste to my CPU.</p>
 					<div class="displaymediacontainer">
 						<div class="displaymediawrapper">
 							<a href="Content/Portfolio/Assembly and Hardware/Maintenance/CPUPasting.jpg" target="_blank">

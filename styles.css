@@ -471,6 +471,14 @@ main a:active {
 	color: red;
 }
 
+code {
+	color: #005600; /* Lime green */
+	padding: 2px 5px;
+	border-radius: 4px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 0.95em;
+}
+
 /********************/
 /*	Creative		*/
 /********************/
