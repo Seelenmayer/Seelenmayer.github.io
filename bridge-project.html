@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Bridge Project</h1>
+				<p>This project highlights my achievement in competing in Vancouver Island University's Bridge Building Competition of 2016, as well as the completion of VIU's Fundamentals of Engineering certification.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Bridge Project/bridgedemo.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Bridge Project/bridgedemo_poster.jpg" preload="metadata" loading="lazy" controls loop>
+							<source src="Content/Portfolio/Bridge Project/bridgedemo.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">bridgedemo.mp4</div>
+				</div>
+				<p>My role in this project was to develop the electronic systems used in operating this bridge. There were many criteria to be met such as time, costs, span, weight, alloted load, clearance, speed limitations, traffic light controllers, and detection for civillians, vehicles, and ship traffic.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Bridge Project/bridge1.jpg" target="_blank">
+							<img src="Content/Portfolio/Bridge Project/bridge1.jpg" alt="[Bridge]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">bridge1.jpg</div>
+				</div>
+				<p>My 3 teammates in this project took initiative on proposal writeups, drafting, construction, and gear ratio architectures. There were many times in which we had to work together to integrate new sensors, or accomodate for speed limitations. The idea of a gearbox came to be when we found that our bridge lifted too fast. Neither lowering the DC-motors analog voltage, nor using pulse-width modulation was sufficient, so we implemented a gear box instead. A worm-gear was used to prevent gravity from working against the DC-motor.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Bridge Project/bridge2.jpg" target="_blank">
+							<img src="Content/Portfolio/Bridge Project/bridge2.jpg" alt="[Bridge]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">bridge2.jpg</div>
+				</div>
+				<p>One design consideration that came to be was the usage of an 8-bit shift-register. My original design began utilizing too many pins on the Arduino board, and so a shift register was implemented to convert 3 pins into a data, clock, and latch, which would manage 8 more output pins, effectively allowing for control over 5 more, if not many more devices. As cost restrictions became apparent, this technology was disposed of.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Bridge Project/electronics.jpg" target="_blank">
+							<img src="Content/Portfolio/Bridge Project/electronics.jpg" alt="[Electronics]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">electronics.jpg</div>
+				</div>
+				<ul>
+					<li>
+						<strong>Vehicle and Ship Detection:</strong>
+						<ul>
+							<p>Used an ultrasonic sensor to issue sound waves and measure the return time.</p>
+							<p>Calculated object distance by dividing the return time by the speed of sound.</p>
+							<p>Checked for consecutive detections to mitigate external noise and improve accuracy.</p>
+							<p>Incremented or decremented the object count when a vehicle or ship passed the detection threshold.</p>
+						</ul>
+					</li>
+					<li>
+						<strong>Civilian Detection and Double-Bascule Bridge States:</strong>
+						<ul>
+							<p>Used conductive pads on cushioned materials to complete an electrical connection.</p>
+							<p>Employed a polling system (as opposed to an interrupt service routine) to take over operations when the connection was detected.</p>
+						</ul>
+					</li>
+					<li>
+						<strong>Motor Management:</strong>
+						<ul>
+							<p>Signaled an H-bridge chip to reverse polarity and control the bridge's motion.</p>
+						</ul>
+					</li>
+					<li>
+						<strong>Traffic Signal Management:</strong>
+						<ul>
+							<p>Used 4 LEDs to represent various traffic light signals.</p>
+							<p>Each LED blinked and responded based on specific criteria.</p>
+						</ul>
+					</li>
+				</ul>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Bridge Project/bridge3.jpg" target="_blank">
+							<img src="Content/Portfolio/Bridge Project/bridge3.jpg" alt="[Bridge]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">bridge3.jpg</div>
+				</div>
+				<div class="scriptcontainer">
+					<a href="Content/Portfolio/Bridge Project/BridgeController.txt" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script]">
+					</a>
+					<p>BridgeController.txt</p>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Game Jams</h1>
+				<p>This section showcases all of my game jam projects and community involvements with Global Game Jam, Pirate Software, and the VIGD Discord server.<p>
+				<div class="separator"></div>
+				<p>I entered Pirate Software's Game Jam (January 2025) and was able to form a team of 4 others! In just a few hours, I was able to prototype the team's ideas.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/piratedemo.png" target="_blank">
+							<img src="Content/Portfolio/Game Jams/piratedemo.png" alt="[Pirate Demo]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">piratedemo.png</div>
+				</div>
+				<p>By the end of the week, we were able to build a functioning online multiplayer chess and card game! A client can join a host via. a generated code. This project also allowed me to utilize Unity's built in version control.</p>
+				<p>
+					<a href="https://batmenzdw.itch.io/sorcererschess" target="_blank" rel="noopener noreferrer">
+						Click here to see the game submission.
+					</a>
+				</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/pirate16a.bmp" target="_blank">
+							<img src="Content/Portfolio/Game Jams/pirate16a.bmp" alt="[Pirate Demo]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">pirate16a.bmp</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/pirate16b.bmp" target="_blank">
+							<img src="Content/Portfolio/Game Jams/pirate16b.bmp" alt="[Pirate Demo]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">pirate16b.bmp</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/pirate16c.bmp" target="_blank">
+							<img src="Content/Portfolio/Game Jams/pirate16c.bmp" alt="[Pirate Demo]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">pirate16c.bmp</div>
+				</div>
+				<div class="separator"></div>
+				<p>Global Game Jam 2025 was so much fun! I was able to achieve my goal of integrating Llama into Unity and making a pet daycare simulator. I decided to not officially publish this game as I was also competing in Pirate Software's game jam. I was also having too much fun assisting the other developers on their projects!</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/ggj2025.png" target="_blank">
+							<img src="Content/Portfolio/Game Jams/ggj2025.png" alt="[Game Jam]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">ggj2025.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>Back in the summer of 2024, Sheldon, Dan, and I participated in the Global Game Jam 2024 event. Sheldon was in charge of music, Dan setup the Github version control systems and playtested, and I developed the game Jamfest in Unity. Within 48 hours, I was able to design and create this split-screen racing game where players summon terrain to block eachother from the finish line.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Global Game Jam 2024/Jamfest.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Game Jams/Jamfest_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/Game Jams/Jamfest.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">Jamfest.mp4</div>
+				</div>
+				<p>I put a lot of thought into the design of this game, and I'd like to explain how it came together. Initially, I planned a multiplayer game, but due to time constraints, I opted for a split-screen, linear racing format. After creating a simple floor, I decided to use a basic tree model from the Unity TreeGen package, which I ended up reworking into rocks to avoid geometry collision. These rocks would spawn in a controlled, linear fashion.</p>
+				<p>For the gameplay, I wanted to avoid players getting stuck, so I added a 2-second digging mechanic to clear obstacles. To prevent spamming commands, I implemented a universal cooldown system, with a particle effect for visual polish. I also balanced speed, gravity, terrain, and placement. A catch-up mechanic was added, giving players in last place a hidden speed boost, but only enough to catch up without overtaking.</p>
+				<p>I also made adjustments to prevent players from falling off the map and fine-tuned slopes to avoid unrealistic movement. To optimize performance, I deleted terrain behind the camera, and created clever environmental design by reusing objects like trees and bushes. After testing, I made players transparent for better visibility.</p>
+				<p>During a demonstration, the second player, initially behind, managed to catch up and leap over the terrain blocking the finish line, leading to an incredible reaction from the audience. The mechanics had worked perfectly, allowing players to redeem themselves in a surprising and satisfying way.</p>
+				<p>
+					<a href="https://globalgamejam.org/games/2024/jamfest-1" target="_blank" rel="noopener noreferrer">
+						Click here to see the Global Game Jam website.
+					</a>
+				</p>
+				<p>
+					<a href="https://seelenmayer.itch.io/jamfest" target="_blank" rel="noopener noreferrer">
+						Click here to see the itch.io upload and play for yourself!
+					</a>
+				</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/jamfest1.jpg" target="_blank">
+							<img src="Content/Portfolio/Game Jams/jamfest1.jpg" alt="[Jamfest Menu]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">jamfest1.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/jamfest2.jpg" target="_blank">
+							<img src="Content/Portfolio/Game Jams/jamfest2.jpg" alt="[Jamfest Gameplay]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">jamfest2.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/jamfest3.jpg" target="_blank">
+							<img src="Content/Portfolio/Game Jams/jamfest3.jpg" alt="[Jamfest Credits]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">jamfest3.jpg</div>
+				</div>
+				<div class="separator"></div>
+				<p>I wanted to give a special thanks to the VIGD group for hosting all of our wonderful gatherings.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/ggj2025.jpg" target="_blank">
+							<img src="Content/Portfolio/Game Jams/ggj2025.jpg" alt="[GGJ]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">ggj2025.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/ggj2025_2.jpg" target="_blank">
+							<img src="Content/Portfolio/Game Jams/ggj2025_2.jpg" alt="[GGJ]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">ggj2025_2.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/vigd.jpg" target="_blank">
+							<img src="Content/Portfolio/Game Jams/vigd.jpg" alt="[VIGD]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">vigd.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/vigd2.jpg" target="_blank">
+							<img src="Content/Portfolio/Game Jams/vigd2.jpg" alt="[VIGD]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">vigd2.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Game Jams/vigd3.jpg" target="_blank">
+							<img src="Content/Portfolio/Game Jams/vigd3.jpg" alt="[VIGD]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">vigd3.jpg</div>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Virtual Reality</h1>
+				<p>This project outlines some of my experiences working with virtual reality systems.</p>
+				<p>For starters, I helped Cloudhead Games playtest Pistol Whip while it was still in prototyping. Later, I setup my HTC Vive and coordinated it within the Unity environment using their XR plugins.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo1.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo1.png" alt="[Virtual Reality Demo]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo1.jpg</div>
+				</div>
+				<p>I later helped a team develop a VR scenario. My task was to implement dynamic level loading over a network using JSON files as descriptors, create a wrapper to utilize the Obi Rope library, assist artists in using Unity's shader graph and Perforce version control, and more. I helped lead in playtesting and carefully documented everything in as few runs as possible.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo2.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo2.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo2.png</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo3.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo3.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo3.png</div>
+				</div>
+				<p>I'm particularily proud of this scene as it shows the use of my wrapper to the Obi Rope library in placing these pipes. It also shows careful attention to lighting. I created a light in the sky that is occluded by the manhole. I also created two lights on the floor; one that is occluded by the scene, and another that is not. These 3 lights show a strong understanding of the phong reflection model which describe lighting as a composition of specular, diffuse, and ambient lighting.</p>
+				<p>Lastly, I helped develop an Unreal Engine plugin that used computer vision and AI to predict scene placement through a Python environment on AWS. It encorporated 3rd party widgets such as video-to-3d-model, texture-recommendation, text-to-voice, and text-translation. The last image was generated from the prompt "jungle" with a folder of office assets.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo4.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo4.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo4.png</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Virtual Reality/demo5.png" target="_blank">
+							<img src="Content/Portfolio/Virtual Reality/demo5.png" alt="[Virtual Reality Demo Scene]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">demo5.png</div>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

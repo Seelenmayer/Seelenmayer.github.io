@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Music</h1>
+				<p>I love playing music in my spare time. I spent most of my life playing percussion, but along the way found many other fascinating instruments ranging from 6 or 12 string electric and acoustic guitars, 4 or 5 string basses, piano, xylophone, or even a pan flute!</p>
+				<p>In this section, I wanted to showcase some of my few available recordings. Starting from Diablo's "Tristram" town theme on guitar, then Maplestory's "Ellinia" town theme on piano, and lastly, Maplestory's "Orbis" town theme on xylophone.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Music/tristram.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Music/tristram_poster.jpg" preload="metadata" loading="lazy" controls loop>
+							<source src="Content/Portfolio/Music/tristram.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">tristram.mp4</div>
+				</div>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Music/ellinia.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Music/ellinia_poster.jpg" preload="metadata" loading="lazy" controls loop>
+							<source src="Content/Portfolio/Music/ellinia.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">ellinia.mp4</div>
+				</div>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Music/orbis.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Music/orbis_poster.jpg" preload="metadata" loading="lazy" controls loop>
+							<source src="Content/Portfolio/Music/orbis.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">orbis.mp4</div>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

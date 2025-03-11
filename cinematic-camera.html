@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Cinematic Camera</h1>
+				<p>This project showcases my camera controller milestone for a Unity game that I was working on. A user can intuitively and smoothly drag the camera with them, visually burning any obstructions that get in the way! This controller was inspired by platformer genres with Klonoa as reference.</p>
+				<p>The developer defines three splines: the player spline, the camera spline, and the camera look-at target spline. As the player moves along their spline, reaching an interval’s end pushes the upper bound forward, while the lower bound follows at a fixed distance. The camera remains idle within this interval until pushed forward by the lower bound, interpolating along its spline while its look-at target progresses along its own. This updates the camera’s rotation matrix each frame.</p>
+				<p>If a marked object gets too close to the camera, a shader gradually burns it away to prevent obstruction. When in range, a noise texture map generated in GIMP is randomly assigned to guide the burn effect’s interpolation. Once the camera moves far enough away, the object regenerates, reversing the burn effect.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Cinematic Camera/camera.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Cinematic Camera/camera_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/Cinematic Camera/camera.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">camera.mp4</div>
+				</div>
+				<p>The first part of writing this GLSL shader was to capture the user's screen space coordinates by navigating the existing libraries. I coloured the X-axis red, and Y-axis green. You can see that the top-left pixel available to be drawn is green, and the bottom-right is red. Since these pixels aren't at the literal edge of the viewport, they aren't full saturated as seen on the bottom-left which would appear as solid black (as opposed to grey), or top-right which would appear as yellow (as opposed to orange).</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Cinematic Camera/shader1.png" target="_blank">
+							<img src="Content/Portfolio/Cinematic Camera/shader1.png" alt="[Shader Demo 1]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">shader1.png</div>
+				</div>
+				<p>Now that I had control of the screen coordinates, I was able to overlay the randomly assigned noise texture map from Gimp as depicted in blue.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Cinematic Camera/shader2.png" target="_blank">
+							<img src="Content/Portfolio/Cinematic Camera/shader2.png" alt="[Shader Demo 2]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">shader2.png</div>
+				</div>
+				<p>I wanted to include the following image as it demonstrated a slight visual iregularily where the burn appears to be hard-edged. This was an example of when not to confuse multiplied-alpha with premultiplied-alpha, which can result from incorrectly associating multiplication. Premultiplied alpha refers to the practice of storing the color values already multiplied by the alpha transparency value. The advantage of this is that rendering is faster since the math for compositing is simplified.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Cinematic Camera/shader3.png" target="_blank">
+							<img src="Content/Portfolio/Cinematic Camera/shader3.png" alt="[Shader Demo 3]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">shader3.png</div>
+				</div>
+				<p>Here’s the final result! However, one major oversight emerged during this project where objects with this shader weren’t casting shadows. Fixing this became complex, requiring me to integrate my code into Unity’s existing HDRP "Lit" shader to inherit its natural lighting properties. This meant combing through Unity’s shader scripts to resolve namespace issues with screen space coordinates and determining the correct render pass for the glow effect. I chose to render it in the forward pass while deliberately avoiding deferred rendering. Forward rendering, a simpler technique, processes lighting per object in a single pass, whereas deferred rendering separates geometry and lighting calculations but struggles with transparency without significant design overhauls.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Cinematic Camera/shader4.png" target="_blank">
+							<img src="Content/Portfolio/Cinematic Camera/shader4.png" alt="[Shader Demo 4]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">shader4.png</div>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Compilers and Processes</h1>
+				<p>This exercise covers essential concepts for effectively using an operating system, including key processes that run within it. I demonstrate various CPU process schedulers used in time-sharing algorithms and explore semaphores in asynchronous programs for managing overlapping memory and ensuring coherence. I also showcase a self-made Linux shell. Additionally, I discuss my Oracle database management system, as well as a compiler parser I developed. Finally, I include a custom Bash script I created to automate console commands.</p>
+				<div class="separator"></div>
+				<p>This screenshot highlights five scheduling algorithms used to determine when operating system processes access hardware resources such as CPU cores or GPU buses.</p>
+				<p>The algorithms showcased include first-come-first-serve, shortest-job-first, highest-priority-first, round-robin, and priority-round-robin. Round-robin is a preemptive scheduling algorithm that assigns each process a fixed time slice to execute. Once the time slice expires, the process moves to the back of the queue, and the next process begins execution. In priority round-robin, the process is reinserted into the queue based on its priority, ensuring higher-priority tasks are scheduled ahead of lower-priority ones.</p>
+				<p>You can interpret the terminal output in the format "[Task Name] [Priority] [Remaining_Time]" for a closer examination.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/schedule.png" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/schedule.png" alt="[Process Scheduler]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">schedule.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>This example demonstrates how two threads (represented by teaching assistants 1 and 2) handle 10 jobs (represented by students 1 through 10). Each student is assigned a random programming duration before needing assistance from a TA again.</p>
+				<p>The primary takeaway from this project is the importance of locking conditionals that check memory-sensitive information. When accessing memory, it's essential to lock it before viewing and unlock it when done. This concept forms the foundation of multi-threaded programming.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/semaphore.png" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/semaphore.png" alt="[Multi-Threading]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">semaphore.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>This program functions as a Linux shell, intercepting user commands and manipulating them before passing them to the system.</p>
+				<p>Here, I demonstrate functionality for automated compilation and execution to boot the shell. Commands include "pwd" to print the working directory, "!!" to repeat the last command, "ls" to list all items in the current directory, "ls > output.txt" to redirect the output to a file, "cat output.txt | sort -r" to display the file contents in reverse-sorted order, "history" to track the last 10 commands, and "exit" to safely close the shell.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/shell.png" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/shell.png" alt="[Linux Shell]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">shell.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>I also worked on an Oracle-based relational database management system. This database management served as an application for an inexperienced user to be able to communicate to the Oracle database service through prepared SQL statements. </p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/database1.jpg" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/database1.jpg" alt="[Database Prompt]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">database1.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/database2.jpg" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/database2.jpg" alt="[Database Prepared Statement]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">database2.jpg</div>
+				</div>
+				<p>You can view the source code for my project here on Github. The source code has not been maintained since 2017.</p>
+				<div class="scriptcontainer">
+					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/Compilers%20and%20Processes/DBMS" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script Directory]">
+					</a>
+					<p>Database Management System</p>
+				</div>
+				<div class="separator"></div>
+				<p>Next I'll talk about the compiler parser that I wrote for my C-styled language.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Compilers and Processes/compilerdemo.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Compilers and Processes/compilerdemo_poster.jpg" preload="metadata" loading="lazy" controls loop>
+							<source src="Content/Portfolio/Compilers and Processes/compilerdemo.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">compilerdemo.mp4</div>
+				</div>
+				<div class="separator"></div>
+				<p>This photo provides a glimpse into my laboratory work environment, featuring various open terminal windows and VIM, my preferred IDE.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Compilers and Processes/station.jpg" target="_blank">
+							<img src="Content/Portfolio/Compilers and Processes/station.jpg" alt="[Linux Shell]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">station.png</div>
+				</div>
+				<p>Here is the bash script I wrote to help automate certain frequently used terminal commands, namely git submissions.</p>
+				<div class="scriptcontainer">
+					<a href="Content/Portfolio/Compilers and Processes/myBash.sh" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script]">
+					</a>
+					<p>myBash.sh</p>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

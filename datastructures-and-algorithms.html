@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Datastructures and Algorithms</h1>
+				<p>This project demonstrates a strong understanding of datastructures, and algorithm analysis. First I reveal my Conway's Game of Life demo in OpenGL where I discuss a bit about emergent properties. Then I'll go over various algorithms and datastructures of increasing complexity until we reach the discussion point of big-O notation and "P=NP".</p>
+				<div class="separator"></div>
+				<p>This short demo briefly demonstrates the simple rule-set of Conway's Game of Life cellular automata where a cell survives only if exactly 2 or 3 adjacent cells were alive. This demo appears chaotic, but with a change in initial conditions, these instructions can be used to create some fascinating patterns from glider guns to digital clocks!</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Datastructures and Algorithms/conway.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Datastructures and Algorithms/conway_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/Datastructures and Algorithms/conway.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">conway.mp4</div>
+				</div>
+				<p>I'll include a fun paper I wrote that briefly suggests the idea of combining emergences of different patterns. The main take-away that I want to give is that I demonstrated an underlying understanding about turing machines.</p>
+				<div class="pdfcontainer">
+					<a href="Content/Portfolio/Datastructures and Algorithms/Cellular Automata & Procedural Generation.pdf" id="downloadLink" target="_blank">
+						<img src="Assets/pdf.png" alt="[Magic Squares Download]">
+					</a>
+					<p>Cellular Automata & Procedural Generation.pdf</p>
+				</div>
+				<div class="separator"></div>
+				<p>This next section briefly mentions some of the datastructures I've implemented such as stack, set, dictionary, and red-black trees. I avoid revealing too many implementation details.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/stack.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/stack.jpg" alt="[Stack Header]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">stack.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/set.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/set.jpg" alt="[Set Header]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">set.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/dictionary.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/dictionary.jpg" alt="[Dictionary Header]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">dictionary.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/redblacktree.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/redblacktree.jpg" alt="[RedBlackTree Example]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">redblacktree.jpg</div>
+				</div>
+				<div class="separator"></div>
+				<p>This next exersize serves as a demonstration for a deeper understanding in recursive functions and inductive proofs.</p>
+				<p>Given a 2^n by 2^n grid, you can select any particular square, and tesellate L-shaped trimono blocks around it that fill the containing grid.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/QuadTreeTesselation.png" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/QuadTreeTesselation.png" alt="[QuadTreeTesselation]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">QuadTreeTesselation.png</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures And Algorithms/quadtree.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures And Algorithms/quadtree.jpg" alt="[Quad Tree]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">quadtree.jpg</div>
+				</div>
+				<a href="https://undergroundmathematics.org/divisibility-and-induction/triominoes/solution" target="_blank">
+					<p>You can view a more rigorous proof here!</p>
+				</a>
+				<div class="separator"></div>
+				<p>This next algorithm is called the "Minimal Bump Lexicographic Linear Extension of Partially Ordered Sets" and will serve as my demonstration of more advanced C++ vector datastructures and implementation of a partially ordered set datastructure.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/lexbump.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/lexbump.jpg" alt="[Minimal Bump Example]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">lexbump.jpg</div>
+				</div>
+				<div class="scriptcontainer">
+					<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main/Content/Portfolio/Datastructures%20and%20Algorithms/Minimal%20Bump%20Lexicographic%20Linear%20Extension%20of%20Partially%20Ordered%20Sets" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script]">
+					</a>
+					<p>Minimal Bump Lexicographic Linear Extension of Partially Ordered Sets</p>
+				</div>
+				<div class="separator"></div>
+				<p>In this next section we will delve into more advanced levels of algorithm analysis and dynamic programming, namely the chain matrix association problem!</p>
+				<p>When we try multiplying matrices of differing dimensions, we find that the way we associate the matrix multiplications has an impact on the number of calculations we need to compute based solely on their dimensions. Now we can finally begin to discuss running time efficiency and so this solution that I've implemented runs in the big-O of n-cubed, denoted as O(n^3). This means that as the number of matrices increases, the complexity grows cubically in complexity!</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Datastructures and Algorithms/chainmatrix.jpg" target="_blank">
+							<img src="Content/Portfolio/Datastructures and Algorithms/chainmatrix.jpg" alt="[Chain Matrix Association]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">chainmatrix.jpg</div>
+				</div>
+				<a href="https://cs.wmich.edu/gupta/teaching/cs4310/lectureNotes_cs4310/chainMatrixMultiplication%20from%20Dekai_AT_HKUST.pdf" target="_blank">
+					<p>Click here to see Dekai's notes in case you want more insight on this particular solution.</p>
+				</a>
+				<a href="https://youtu.be/prx1psByp7U?si=8iq6SBVS5sNGsmmL" target="_blank">
+					<p>Need a video to help explain? Don't worry, I got you!</p>
+				</a>
+				<p>Believe it or not, we can actually do much better than O(n^3)! I was able to uncover this paper by T.C. Hu and M.T. Shing.</p>
+				<a href="http://i.stanford.edu/pub/cstr/reports/cs/tr/81/875/CS-TR-81-875.pdf" target="_blank">
+					<p>Click here to see how we can solve the chain matrix association problem in an impressive O(nlogn) time!</p>
+				</a>
+				<p>If we consider a convex polygon whose edges represent the matrices, and whose vertices represent the shared integer dimension, this problem of chain matrix association reduces to that of polygon disection, which we know to run in O(nlogn).</p>
+				<p>Its this type of thinking that allows us to compare and understand algorithms which lets us come closer to refining our understanding of the mythical problem "P=NP".</p>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💜 𝓒𝓵𝓪𝔂𝓽𝓸𝓷 💜</title>
+	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+	<script src="Scripts/portfolio.js"></script>
+</head>
+<body class="portfoliobody">
+	<a href="index.html" class="headerlink">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html">Home</a>
+		<a class="selected_tab">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div class="page">
+		<div>
+			<nav>
+				<div class="navcenteredtext">
+					<h1>Projects</h1>
+				</div>
+				<div class="pagination">
+					<div class="page-indicator">Page 1 out of <span id="total-pages">1</span></div>
+					<div class="button-container">
+						<button onclick="changePage('up')">Page Up</button>
+						<button onclick="changePage('down')">Page Down</button>
+					</div>
+				</div>
+				<ul></ul>
+			</nav>
+		</div>
+		<main>
+			<div>
+				<h1>Miscellaneous</h1>
+				<p>This project is a collection of small but noteworthy exercises. It features a project for using render textures to make a portal in Unity, a console organizer which demonstrates meta-programming, a group game project with shaders in Godot, a brief showcase of ThreeJS for displaying 3D renderings in a browser, render textures simulating a portal effect, image downscaling techniques for a memory-limited Game Boy ROM game, and lastly an 8x magnification microscope demonstration.</p>
+				<div class="separator"></div>
+				<p>This project demonstrates my first group game project, Bailey's Catastrophe, which was cut short due to the pandemic lockdown. It was my first experience in the Godot engine where I worked on the background, shaders, level loading systems, and version control management. I was particularily proud of my pixelization shader which allowed us to render 3d objects in a 2d 32bit pixelated way. This went hand-in-hand with our tile-based level design structure which paved a way for generative level branching.</p>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Miscellaneous/BaileysCatastrophe1.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Miscellaneous/BaileysCatastrophe1_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/Miscellaneous/BaileysCatastrophe1.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">BaileysCatastrophe1.mp4</div>
+				</div>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Miscellaneous/BaileysCatastrophe2.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Miscellaneous/BaileysCatastrophe2_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/Miscellaneous/BaileysCatastrophe2.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">BaileysCatastrophe2.mp4</div>
+				</div>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Miscellaneous/BaileysCatastrophe3.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Miscellaneous/BaileysCatastrophe3_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/Miscellaneous/BaileysCatastrophe3.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">BaileysCatastrophe3.mp4</div>
+				</div>
+				<div class="separator"></div>
+				<p>This demo demonstrates how a camera's render can be used as a texture and applied to a material in real-time, creating the illusion of looking through a portal. On the right side of the screen, you can experience the effect from the intended perspective, while the left side provides an external view where the illusion is broken. This contrast offers an intuitive understanding of how the effect is achieved.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Miscellaneous/RenderImg.jpg" target="_blank">
+							<img src="Content/Portfolio/Miscellaneous/RenderImg.jpg" alt="[Render Textures Example]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">RenderImg.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<a href="Content/Portfolio/Miscellaneous/Render.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Miscellaneous/Render_poster.jpg" preload="metadata" loading="lazy" controls muted loop>
+							<source src="Content/Portfolio/Miscellaneous/Render.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</a>
+					<div class="displaymediadescription">Render.mp4</div>
+				</div>
+				<div class="separator"></div>
+				<p>Based on the DrowzyFox logger, I implemented a Unity console logger that allows users to print arbitrary objects to the console in colour. It later serverd on a proprietary project as a tool for various users on the same project to filter between eachothers logs. This creation demonstrates an understanding and utilization of lambda functions in abstract meta-programming.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Miscellaneous/Consolelogger.jpg" target="_blank">
+							<img src="Content/Portfolio/Miscellaneous/Consolelogger.jpg" alt="[Console Demo]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">Consolelogger.jpg</div>
+				</div>
+				<div class="scriptcontainer">
+					<a href="Content/Portfolio/Miscellaneous/Logger.cs" id="downloadLink" target="_blank">
+						<img src="Assets/script.png" alt="[Script]">
+					</a>
+					<p>Logger.cs</p>
+				</div>
+				<div class="separator"></div>
+				<p>The MobiusArt project was a website where users could login and upload or download zipped 3d-models from a MySQL database through PHP scripts and be displayed interactively using the ThreeJS library with trackball controls with mobile accessibility in consideration.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Miscellaneous/MobiusArt.jpg" target="_blank">
+							<img src="Content/Portfolio/Miscellaneous/MobiusArt.jpg" alt="[Website]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">MobiusArt.jpg</div>
+				</div>
+				<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main" target="_blank">
+					<p>For more web developer related work, you can view this very website that you're reading's source code on Github here.</p>
+				</a>
+				<div class="separator"></div>
+				<p>Here are a few screenshots of a Nintendo Gameboy ROM game that I built. The main take-away that I found from this project was utilizing the limited available RAM in rendering the on screen textures. The scene is composed of several sprites neatly put together as rendering one full image was beyond memory limitations. The scenes themselves were designed by downscaling the resolution and colour pallete of existing images.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Miscellaneous/Gameboy1.png" target="_blank">
+							<img src="Content/Portfolio/Miscellaneous/Gameboy1.png" alt="[Gameboy Game 1]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">Gameboy1.png</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Miscellaneous/Gameboy2.png" target="_blank">
+							<img src="Content/Portfolio/Miscellaneous/Gameboy2.png" alt="[Gameboy Game 2]" class="displaymedia">
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">Gameboy2.png</div>
+				</div>
+				<div class="separator"></div>
+				<p>This project briefly showcases one of my physics lab experiments where I designed a microscope with 16x magnification.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Miscellaneous/microscope1.jpg" target="_blank">
+							<img src="Content/Portfolio/Miscellaneous/microscope1.jpg" alt="[Microscope]" class="displaymedia">
+							<img src="Assets/imageoverlay.jpg" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">microscope1.jpg</div>
+				</div>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Miscellaneous/microscope2.jpg" target="_blank">
+							<img src="Content/Portfolio/Miscellaneous/microscope2.jpg" alt="[Microscope]" class="displaymedia">
+							<img src="Assets/imageoverlay.jpg" class="displaymediaoverlay">
+						</a>
+					</div>
+					<div class="displaymediadescription">microscope2.jpg</div>
+				</div>
+			</div>
+			<div class="separator"></div>
+		</main>
+	</div>
+</body>
+</html>
