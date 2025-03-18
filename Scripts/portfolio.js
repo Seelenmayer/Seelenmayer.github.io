@@ -136,8 +136,6 @@ function updatePageIndicator() {
 
 // Window Initialize
 window.onload = () => {
-	sessionStorage.setItem('lastViewedPage', 0);
-	currentPage = 0;
 	renderProjects();
 	updatePageIndicator();
 };
