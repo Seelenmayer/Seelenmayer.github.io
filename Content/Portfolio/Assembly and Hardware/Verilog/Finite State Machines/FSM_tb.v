@@ -1,17 +1,17 @@
 //`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`
-//  File:   FSM_tb.v
+//	  File:   FSM_tb.v
 //
-//  Author: Clayton Seelenmayer
+// 	 Author: Clayton Seelenmayer
 //
-//  Date:   Nov 7th 2021
+// 	 Date:   Nov 7th 2021
 //
-//  Behavior:
-//      This program contains the test-bench implementations for demonstrating
-//          the usage of Mealy and Moore finite state machines.
+// 	 Behavior:
+// 	     This program contains the test-bench implementations for demonstrating
+// 	         the usage of Mealy and Moore finite state machines.
 //
-//  Compilation:    "iverilog -o FSM.vvp FSM.v"
-//                  "vvp FSM.vvp"
-//                  "gtkwave FSM.vcd"
+// 	 Compilation:    "iverilog -o FSM.vvp FSM.v"
+// 	                 "vvp FSM.vvp"
+//   	               "gtkwave FSM.vcd"
 //`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`^*~-~*^`
 
 
