@@ -88,16 +88,7 @@
 				<a href="https://www.rfc-editor.org/rfc/rfc5905" target="_blank">
 					<p>This program follows the specifications outlined in RFC 5905 as seen here.</p>
 				</a>
-				<p>I'd like to highlight one of the many processes involved in developing these applications—specifically, the server-side function <code>enteringIntoPassive</code>. This example provides insight into the type of work required for this project.</p>	
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Virtual Machines and Networks/ftp.jpg" target="_blank">
-							<img src="Content/Portfolio/Virtual Machines and Networks/ftp.jpg" alt="[FTP Code]" class="displaymedia">
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay">
-						</a>
-					</div>
-					<div class="displaymediadescription">ftp.jpg</div>
-				</div>
+				<p>I'd like to highlight one of the many processes involved in developing these applications—specifically, the server-side function <code>enteringIntoPassive</code>.</p>
 				<p>The <code>enteringIntoPassive</code> function is part of an FTP server implementation that transitions the server into passive mode for data transfer. The function first attempts to start a listener for incoming data connections using <code>startPassiveListener</code>. It then checks whether this operation was successful. The server constructs a response message using <code>createPassiveSuccessResponse</code>, which includes details such as the port number where the server is listening for data connections. This message is sent to the client over the control connection using <code>sendToRemote</code>. The server then verifies if the listener socket is ready to accept a connection by calling <code>isListenerSocketReady</code>, which also manages timeout and error states. If the listener is ready, the server accepts the incoming connection using <code>acceptClientConnection</code>. Finally, the passive listener is stopped with <code>stopPassiveListener</code>, and a success response is prepared.</p>
 				<p>While many additional processes are involved, this example should provide a sufficient understanding of the work required.</p>
 			</div>
