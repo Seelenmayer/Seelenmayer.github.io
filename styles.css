@@ -2,13 +2,14 @@
 /*	Colours			*/
 /********************/
 
-/*------------------*/
-/*  Colour Legend   */
-/*	#4f4f86;		*/
-/*	#272743;		*/
-/*	#d6d6ff;		*/
-/*	#6b6b7f;		*/
-/*------------------*/
+/*----------------------------------*/
+/*  Colour Legend					*/
+/*	#4f4f86;	Main background		*/
+/*	#272743;	Dark background		*/
+/*	#d6d6ff;	Light foreground	*/
+/*	#85859f;	Medium foreground	*/
+/*	#6b6b7f;	Dark foreground		*/
+/*----------------------------------*/
 
 /********************/
 /*	Body			*/
@@ -137,7 +138,7 @@ nav {
 	overflow: auto;
 	width: 300px;
 	padding: 20px 10px 5px 10px;
-	background-color: #6b6b7f;
+	background-color: #85859f;
 	outline: 10px solid #4f4f86;
 	border-radius: 15px;
 }
@@ -165,7 +166,7 @@ nav ul {
 /*------------------*/
 
 .navsociallink {
-	box-shadow: inset 0 0 10px 25px #6b6b7f;
+	box-shadow: inset 0 0 10px 25px #85859f;
 	background-color: #4f4f86;
 }
 
