@@ -1,77 +1,77 @@
 const projects = {
 	"Virtual Reality": {
 		title: "Virtual Reality",
-		image: "Content/Portfolio/Virtual Reality/banner.jpg",
+		image: "Content/Portfolio/Virtual Reality/tinybanner.jpg",
 		page: 0
 	},
 	"OpenGL Graphics": {
 		title: "OpenGL Graphics",
-		image: "Content/Portfolio/OpenGL Graphics/banner.jpg",
+		image: "Content/Portfolio/OpenGL Graphics/tinybanner.jpg",
 		page: 0
 	},
 	"Cinematic Camera": {
 		title: "Cinematic Camera",
-		image: "Content/Portfolio/Cinematic Camera/banner.jpg",
+		image: "Content/Portfolio/Cinematic Camera/tinybanner.jpg",
 		page: 0
 	},
 	"Game Jams": {
 		title: "Game Jams",
-		image: "Content/Portfolio/Game Jams/banner.jpg",
+		image: "Content/Portfolio/Game Jams/tinybanner.jpg",
 		page: 0
 	},
 	"Assembly and Hardware": {
 		title: "Assembly and Hardware",
-		image: "Content/Portfolio/Assembly and Hardware/banner.jpg",
+		image: "Content/Portfolio/Assembly and Hardware/tinybanner.jpg",
 		page: 1
 	},
 	"Virtual Machines and Networks": {
 		title: "Virtual Machines and Networks",
-		image: "Content/Portfolio/Virtual Machines and Networks/banner.jpg",
+		image: "Content/Portfolio/Virtual Machines and Networks/tinybanner.jpg",
 		page: 1
 	},
 	"Compilers and Processes": {
 		title: "Compilers and Processes",
-		image: "Content/Portfolio/Compilers and Processes/banner.jpg",
+		image: "Content/Portfolio/Compilers and Processes/tinybanner.jpg",
 		page: 1
 	},
 	"Datastructures and Algorithms": {
 		title: "Datastructures and Algorithms",
-		image: "Content/Portfolio/Datastructures and Algorithms/banner.jpg",
+		image: "Content/Portfolio/Datastructures and Algorithms/tinybanner.jpg",
 		page: 1
 	},
 	"Blender Modeling": {
 		title: "Blender Modeling",
-		image: "Content/Portfolio/Blender Modeling/banner.jpg",
+		image: "Content/Portfolio/Blender Modeling/tinybanner.jpg",
 		page: 2
 	},
 	"Miscellaneous": {
 		title: "Miscellaneous",
-		image: "Content/Portfolio/Miscellaneous/banner.jpg",
+		image: "Content/Portfolio/Miscellaneous/tinybanner.jpg",
 		page: 2
 	},
 	"Bridge Project": {
 		title: "Bridge Project",
-		image: "Content/Portfolio/Bridge Project/banner.jpg",
+		image: "Content/Portfolio/Bridge Project/tinybanner.jpg",
 		page: 2
 	},
 	"Magic Squares": {
 		title: "Magic Squares",
-		image: "Content/Portfolio/Magic Squares/banner.jpg",
+		image: "Content/Portfolio/Magic Squares/tinybanner.jpg",
 		page: 2
 	},
 	"Japanese": {
 		title: "Japanese",
-		image: "Content/Portfolio/Japanese/banner.jpg",
+		image: "Content/Portfolio/Japanese/tinybanner.jpg",
 		page: 3
 	},
 	"Maxs Mushrooms": {
 		title: "Maxs Mushrooms",
-		image: "Content/Portfolio/Maxs Mushrooms/banner.jpg",
+		image: "Content/Portfolio/Maxs Mushrooms/tinybanner.jpg",
 		page: 3
 	},
 	"Music": {
 		title: "Music",
-		image: "Content/Portfolio/Music/banner.jpg",
+		image: "Content/Portfolio/Music/tinybanner.jpg",
 		page: 3
 	},
 };
