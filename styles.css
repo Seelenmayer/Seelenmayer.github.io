@@ -507,7 +507,7 @@ code {
 /*	Mobile			*/
 /********************/
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1100px) {
 	.page {
 		flex-direction: column-reverse;
 		align-items: center;
@@ -516,9 +516,17 @@ code {
 	.portfoliobody .page {
 		flex-direction: column;
 	}
+
+	.tabs > a {
+		line-height: 31px;
+	}
+
+	.tabs a {
+		font-size: 12px;
+	}
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
 	header {
 		width: 90vw;
 		margin-top: 20px;
@@ -531,9 +539,14 @@ code {
 
 	.tabs > a{
 		left: 0px;
+		line-height: 31px;
 	}
 
 	.page {
 		width: 90vw;
+	}
+
+	.tabs a {
+		font-size: 12px;
 	}
 }
