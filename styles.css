@@ -539,6 +539,7 @@ code {
 
 	.page {
 		width: 90vw;
+		margin-top: 15px;
 	}
 
 	.tabs > a {
