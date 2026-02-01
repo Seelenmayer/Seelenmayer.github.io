@@ -96,7 +96,7 @@ function renderProjects() {
 			<div class="navprojectcontainer">
 				<div class="navproject">
 					<a href="${projectPage}" onclick="setLastViewedPage(${project.page});">
-						<img src="${project.image}" alt="[Project Image]" class="projectimage">
+						<img src="${project.image}" alt="${project.title} project banner" class="projectimage">
 						<span class="navprojectoverlay">${project.title}</span>
 					</a>
 				</div>
