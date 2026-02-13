@@ -30,7 +30,6 @@ a:focus-visible {
 
 body {
 	overflow: auto;
-	margin: 0;
 	background-image: 
 		url("Assets/background1.png"),
 		url("Assets/background2.png");
@@ -77,13 +76,14 @@ header {
 
 .tabs {
 	margin: auto;
+	margin-bottom: 10px;
 	width: 70vw;
 	display: flex;
 	justify-content: flex-end;
 	position: relative;
 	top: -10px;
 	flex-wrap: wrap;
-	gap: 6px;
+	gap: 10px;
 }
 
 .tabs > a {
@@ -103,7 +103,10 @@ header {
 	left: 0;
 	width: 110px;
 	height: 36px;
+	min-height: 36px;
 	font-size: 16px;
+	padding: 0 32px;
+	box-sizing: border-box;
 }
 
 .tabs a:link {
@@ -140,9 +143,9 @@ header {
 	z-index: 10;
 }
 
-/********************/
-/*	Page Contents	*/
-/********************/
+/************/
+/*	Page	*/
+/************/
 
 .page {
 	margin: 10px auto 50px auto;
@@ -589,11 +592,6 @@ code {
 	.portfoliobody .page {
 		flex-direction: column;
 	}
-
-	.tabs > a {
-		font-size: 14px;
-		height: 28px;
-	}
 }
 
 @media screen and (max-width: 800px) {
@@ -604,8 +602,11 @@ code {
 
 	.tabs {
 		justify-content: center;
-		width: 100vw;
+		width: 100%;
 		top: -5px;
+		padding: 26px 24px 0px 24px;
+		box-sizing: border-box;
+		margin: 0;
 	}
 
 	.page {
@@ -614,7 +615,10 @@ code {
 	}
 
 	.tabs > a {
-		font-size: 14px;
 		height: 28px;
+		width: auto;
+		flex: 1 1 calc(50% - 6px);
+		max-width: calc(50% - 6px);
+}
 	}
 }
