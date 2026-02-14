@@ -412,6 +412,7 @@ nav {
 /*                  */
 /*	Nav - Media		*/
 /*                  */
+
 .displaymediacontainer {
 	display: flex;
 	flex-direction: column;
@@ -477,6 +478,10 @@ main {
 	border-radius: 15px;
 	background-color: var(--color-fg-light);
 }
+
+	main h1 {
+		margin: 0;
+	}
 
 	main a:link {
 		color: var(--color-bg-dark);
