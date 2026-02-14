@@ -180,15 +180,11 @@ nav {
 .navcenteredtext {
 	display: flex;
 	justify-content: center;
-	align-items: stretch;
+	align-items: center;
 	text-align: center;
 	height: 35px;
 	margin-bottom: 30px;
 }
-
-	.navcenteredtext h1 {
-		margin: 0;
-	}
 
 /*------------------*/
 /*	Nav - Socials	*/
@@ -598,10 +594,6 @@ code {
 		#socials-block {
 			order: 3;
 		}
-
-	.tabs {
-		height: 42px;
-	}
 }
 
 
