@@ -203,6 +203,7 @@ nav {
 	}
 
 	.navsociallink a {
+		margin: 10px;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -226,10 +227,6 @@ nav {
 		.navsociallink a:active {
 			color: var(--color-blank);
 		}
-
-#socials-block {
-	gap: 10px;
-}
 
 /*------------------*/
 /*	Nav - Projects	*/
