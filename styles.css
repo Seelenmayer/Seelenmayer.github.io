@@ -590,6 +590,22 @@ code {
 	.portfoliobody .page {
 		flex-direction: column;
 	}
+
+	.project_socials_shared {
+		display: contents;
+	}
+
+	nav {
+		order: 1;
+	}
+
+	main {
+		order: 2;
+	}
+
+	#navigation-block {
+		order: 3;
+	}
 }
 
 @media screen and (max-width: 800px) {
