@@ -170,7 +170,7 @@ header {
 nav {
 	overflow: auto;
 	width: 300px;
-	padding: 20px 10px 5px 10px;
+	padding: 10px 10px 5px 10px;
 	background-color: var(--color-fg-medium);
 	outline: 10px solid var(--color-bg-main);
 	border-radius: 15px;
@@ -188,6 +188,7 @@ nav {
 	align-items: center;
 	text-align: center;
 	height: 35px;
+	margin: 10px;
 }
 
 /*------------------*/
