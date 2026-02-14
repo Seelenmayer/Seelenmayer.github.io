@@ -21,7 +21,17 @@
 	<script src="Scripts/html_loader.js"></script>
 </head>
 <body>
-	<div id="header-block"></div>
+	<a href="index.html" class="headerlink" tabindex="-1">
+		<header>
+			<h1>Clayton Seelenmayer</h1>
+		</header>
+	</a>
+	<div class="tabs">
+		<a href="index.html" class="selected_tab">Home</a>
+		<a href="portfolio.html">Portfolio</a>
+		<a href="resume.html">Resume</a>
+		<a href="contact.html">Contact</a>
+	</div>
 	<div class="page">
 		<div id="socials-block"></div>
 		<main>
@@ -52,7 +62,6 @@
 		</main>
 	</div>
 	<script>
-		loadHTML("header-block", "header.html");
 		loadHTML("socials-block", "socials.html");
 	</script>
 </body>
