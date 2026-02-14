@@ -32,7 +32,6 @@
 		<a href="contact.html">Contact</a>
 	</div>
 	<div class="page">
-		<div id="navigation-block"></div>
 		<script defer>
 			fetch("navigation.html")
 			.then(response => response.text())
@@ -40,6 +39,7 @@
 			document.getElementById("navigation-block").innerHTML = data;
 			});
 		</script>
+		<div id="navigation-block"></div>
 		<main>
 			<div>
 				<h1>Welcome!</h1>
