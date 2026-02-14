@@ -33,6 +33,13 @@
 	</div>
 	<div class="page">
 		<div id="navigation-block"></div>
+		<script defer>
+			fetch("navigation.html")
+			.then(response => response.text())
+			.then(data => {
+			document.getElementById("navigation-block").innerHTML = data;
+			});
+		</script>
 		<main>
 			<div>
 				<h1>Welcome!</h1>
@@ -61,12 +68,5 @@
 			<div class="separator"></div>
 		</main>
 	</div>
-	<script defer>
-		fetch("navigation.html")
-		.then(response => response.text())
-		.then(data => {
-		document.getElementById("navigation-block").innerHTML = data;
-		});
-	</script>
 </body>
 </html>
