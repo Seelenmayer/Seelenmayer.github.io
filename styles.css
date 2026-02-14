@@ -410,6 +410,7 @@ nav {
 .project_socials_shared {
 	display: flex;
 	flex-direction: column;
+	gap: 30px;
 }
 
 /*                  */
