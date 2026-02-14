@@ -159,10 +159,6 @@ header {
 	align-items: flex-start
 }
 
-.page h1 {
-	margin: 0;
-}
-
 /*------------------*/
 /*	Navigation Menu	*/
 /*------------------*/
@@ -188,7 +184,7 @@ nav {
 	align-items: center;
 	text-align: center;
 	height: 35px;
-	margin: 20px;
+	margin: 10px;
 }
 
 /*------------------*/
