@@ -7,9 +7,5 @@ function loadHTML(id, file) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-	loadHTML("tabs", "tabs.html");
-});
-
-document.addEventListener("DOMContentLoaded", () => {
 	loadHTML("socials-block", "socials.html");
 });
