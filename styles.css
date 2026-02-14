@@ -581,14 +581,9 @@ code {
 /********************/
 
 @media screen and (max-width: 1100px) {
-
 	.page {
-		flex-direction: column-reverse;
-		align-items: center;
-	}
-
-	.portfoliobody .page {
 		flex-direction: column;
+		align-items: center;
 	}
 
 	.project_socials_shared {
@@ -607,6 +602,7 @@ code {
 		order: 3;
 	}
 }
+
 
 @media screen and (max-width: 800px) {
 
