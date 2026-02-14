@@ -5,6 +5,7 @@
 :root {
 	--color-bg-main: #4f4f86;
 	--color-bg-main-fade: #4f4f86aa;
+	--color-bg-alt: #3a3a6a;
 	--color-bg-dark: #272743;
 	--color-fg-light: #d6d6ff;
 	--color-fg-medium: #85859f;
@@ -139,7 +140,7 @@ header {
 	.tabs a:focus-visible {
 		outline: 3px solid var(--color-accent);
 		outline-offset: 3px;
-		background-color: #3a3a6a;
+		background-color: var(--color-bg-alt);
 		box-shadow: 0 0 0 4px var(--color-bg-main), 0 0 10px 4px rgba(255, 255, 0, 0.6);
 		transform: scale(1.15);
 		z-index: 10;
@@ -187,7 +188,6 @@ nav {
 	align-items: center;
 	text-align: center;
 	height: 35px;
-	margin-bottom: 30px;
 }
 
 /*------------------*/
@@ -257,7 +257,7 @@ nav {
 		border: none;
 		border-radius: 10px;
 		background-color: var(--color-bg-dark);
-		color: var(--color-blank);
+		color: var(--color-fg-light);
 		transition: background-color 0.3s ease, transform 0.2s ease;
 	}
 
@@ -267,8 +267,8 @@ nav {
 		}
 
 		.pagination button:focus-visible {
-			background-color: #3a3a6a;
-			color: var(--color-accent);
+			background-color: var(--color-bg-alt);
+			color: var(--color-blank);
 			text-shadow: 0 0 2px black, 0 0 4px black;
 			box-shadow: 0 0 0 4px var(--color-bg-main), 0 0 10px 4px rgba(255, 255, 0, 0.6);
 			transform: scale(1.1);
@@ -278,8 +278,8 @@ nav {
 		.pagination button:hover,
 		.pagination button:focus-visible {
 			box-shadow: 0 0 0 4px var(--color-accent);
-			background-color: #3a3a6a;
-			color: var(--color-accent);
+			background-color: var(--color-bg-alt);
+			color: var(--color-blank);
 			z-index: 5;
 		}
 
