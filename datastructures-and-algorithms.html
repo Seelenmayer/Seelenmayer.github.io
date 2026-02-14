@@ -7,6 +7,7 @@
 	<link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="styles.css">
 	<script src="Scripts/portfolio.js"></script>
+	<script src="Scripts/html_loader.js"></script>
 </head>
 <body class="portfoliobody">
 	<a href="index.html" class="headerlink" tabindex="-1">
@@ -21,7 +22,7 @@
 		<a href="contact.html">Contact</a>
 	</div>
 	<div class="page">
-		<div>
+		<div class="project_socials_shared">
 			<nav>
 				<div class="navcenteredtext">
 					<h1>Projects</h1>
@@ -35,6 +36,7 @@
 				</div>
 				<ul></ul>
 			</nav>
+			<div id="navigation-block"></div>
 		</div>
 		<main>
 			<div>
@@ -134,5 +136,8 @@
 			</div>
 		</main>
 	</div>
+	<script>
+		loadHTML("navigation-block", "./navigation.html");
+	</script>
 </body>
 </html>
