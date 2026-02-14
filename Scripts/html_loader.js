@@ -7,5 +7,5 @@ function loadHTML(id, file) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-	loadHTML("navigation-block", "./navigation.html");
+	loadHTML("socials-block", "./socials.html");
 });
