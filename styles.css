@@ -183,7 +183,7 @@ nav {
 	align-items: stretch;
 	text-align: center;
 	height: 35px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 /*------------------*/
@@ -478,25 +478,21 @@ main {
 	background-color: var(--color-fg-light);
 }
 
-	main h1 {
-		margin: 0;
+	main a:link {
+		color: var(--color-bg-dark);
 	}
 
-		main a:link {
-			color: var(--color-bg-dark);
-		}
+	main a:visited {
+		color: var(--color-bg-dark);
+	}
 
-		main a:visited {
-			color: var(--color-bg-dark);
-		}
+	main a:hover {
+		color: black;
+	}
 
-		main a:hover {
-			color: black;
-		}
-
-		main a:active {
-			color: black;
-		}
+	main a:active {
+		color: black;
+	}
 
 .separator {
 	width: 80%;
