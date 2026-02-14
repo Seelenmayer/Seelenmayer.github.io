@@ -227,7 +227,7 @@ nav {
 			color: var(--color-blank);
 		}
 
-#socials-block {
+#socials-block ul {
 	gap: 10px;
 }
 
