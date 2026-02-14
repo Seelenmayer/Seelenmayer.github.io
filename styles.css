@@ -188,8 +188,11 @@ nav {
 	align-items: center;
 	text-align: center;
 	height: 35px;
-	margin: 10px;
 }
+
+	.navcenteredtext h1 {
+		margin: 10px;
+	}
 
 /*------------------*/
 /*	Nav - Socials	*/
