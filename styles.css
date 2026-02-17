@@ -103,7 +103,7 @@ header {
 		justify-content: center;
 		align-items: center;
 		box-shadow: inset 0 0 4px 4px var(--color-bg-main-fade);
-		border: 3px solid var(--color-bg-main);
+		outline: 3px solid var(--color-bg-main);
 		border-radius: 15px;
 		background-color: var(--color-bg-dark);
 		font-family: Arial, sans-serif;
@@ -482,7 +482,7 @@ main {
 	padding: 20px 30px 20px 30px;
 	margin: 0;
 	flex: 1;
-	outline: 10px solid var(--color-bg-main);
+	border: 10px solid var(--color-bg-main);
 	border-radius: 15px;
 	background-color: var(--color-fg-light);
 }
