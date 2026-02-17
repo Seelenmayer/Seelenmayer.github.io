@@ -271,34 +271,25 @@ nav {
 		border-radius: 10px;
 		background-color: var(--color-bg-dark);
 		color: var(--color-fg-light);
-		transition: background-color 0.3s ease, transform 0.2s ease;
+		transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 	}
 
 		.pagination button:hover {
-			background-color: var(--color-bg-main);
-			transform: scale(1.05);
-		}
-
-		.pagination button:focus-visible {
-			background-color: var(--color-bg-alt);
-			color: var(--color-blank);
-			text-shadow: 0 0 2px black, 0 0 4px black;
-			box-shadow: 0 0 0 4px var(--color-bg-main), 0 0 10px 4px rgba(255, 255, 0, 0.6);
-			transform: scale(1.1);
-			z-index: 10;
-		}
-
-		.pagination button:hover,
-		.pagination button:focus-visible {
 			box-shadow: 0 0 0 4px var(--color-accent);
 			background-color: var(--color-bg-alt);
 			color: var(--color-blank);
+			transform: scale(1.05);
 			z-index: 5;
 		}
 
 		.pagination button:focus {
 			outline: none;
-			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+		}
+
+		.pagination button:focus-visible {
+			outline: 2px solid var(--color-accent);
+			outline-offset: 2px;
+			box-shadow: none;
 		}
 
 .button-container {
