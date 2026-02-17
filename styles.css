@@ -88,7 +88,7 @@ header {
 
 	.tabs > .selected_tab {
 		box-shadow: inset 0 0 4px 4px var(--color-bg-main-fade);
-		outline: 3px solid var(--color-bg-main);
+		border: 3px solid var(--color-bg-main);
 		border-radius: 15px;
 		background-color: var(--color-bg-dark);
 		color: var(--color-accent) !important;
@@ -103,7 +103,7 @@ header {
 		justify-content: center;
 		align-items: center;
 		box-shadow: inset 0 0 4px 4px var(--color-bg-main-fade);
-		outline: 3px solid var(--color-bg-main);
+		border: 3px solid var(--color-bg-main);
 		border-radius: 15px;
 		background-color: var(--color-bg-dark);
 		font-family: Arial, sans-serif;
@@ -168,7 +168,7 @@ nav {
 	width: 300px;
 	padding: 10px 10px 5px 10px;
 	background-color: var(--color-fg-medium);
-	outline: 10px solid var(--color-bg-main);
+	border: 10px solid var(--color-bg-main);
 	border-radius: 15px;
 }
 
@@ -283,7 +283,7 @@ nav {
 		}
 
 		.pagination button:focus {
-			outline: none;
+			border: none;
 		}
 
 		.pagination button:focus-visible {
@@ -340,7 +340,7 @@ nav {
 	}
 
 		.navproject a:focus-visible {
-			outline: none;
+			border: none;
 		}
 
 	.navproject span {
@@ -444,7 +444,7 @@ nav {
 	object-fit: contain;
 	object-position: center;
 	background-color: black;
-	outline: 2px solid black;
+	border: 2px solid black;
 	cursor: pointer;
 }
 
