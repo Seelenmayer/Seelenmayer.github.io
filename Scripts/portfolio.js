@@ -44,6 +44,11 @@ const projects = {
 		image: "Content/Portfolio/Blender Modeling/tinybanner.jpg",
 		page: 2
 	},
+	"Web Development": {
+		title: "Web Development",
+		image: "Content/Portfolio/Web-Development/tinybanner.jpg",
+		page: 2
+	},
 	"Miscellaneous": {
 		title: "Miscellaneous",
 		image: "Content/Portfolio/Miscellaneous/tinybanner.jpg",
@@ -57,7 +62,7 @@ const projects = {
 	"Magic Squares": {
 		title: "Magic Squares",
 		image: "Content/Portfolio/Magic Squares/tinybanner.jpg",
-		page: 2
+		page: 3
 	},
 	"Japanese": {
 		title: "Japanese",
