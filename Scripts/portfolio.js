@@ -1,52 +1,52 @@
 const projects = {
 	"Virtual Reality": {
 		title: "Virtual Reality",
-		image: "Content/Portfolio/Virtual Reality/tinybanner.jpg",
+		image: "Content/Portfolio/Virtual_Reality/tinybanner.jpg",
 		page: 0
 	},
 	"OpenGL Graphics": {
 		title: "OpenGL Graphics",
-		image: "Content/Portfolio/OpenGL Graphics/tinybanner.jpg",
+		image: "Content/Portfolio/OpenGL_Graphics/tinybanner.jpg",
 		page: 0
 	},
 	"Cinematic Camera": {
 		title: "Cinematic Camera",
-		image: "Content/Portfolio/Cinematic Camera/tinybanner.jpg",
+		image: "Content/Portfolio/Cinematic_Camera/tinybanner.jpg",
 		page: 0
 	},
 	"Game Jams": {
 		title: "Game Jams",
-		image: "Content/Portfolio/Game Jams/tinybanner.jpg",
+		image: "Content/Portfolio/Game_Jams/tinybanner.jpg",
 		page: 0
 	},
 	"Assembly and Hardware": {
 		title: "Assembly and Hardware",
-		image: "Content/Portfolio/Assembly and Hardware/tinybanner.jpg",
+		image: "Content/Portfolio/Assembly_and_Hardware/tinybanner.jpg",
 		page: 1
 	},
 	"Virtual Machines and Networks": {
 		title: "Virtual Machines and Networks",
-		image: "Content/Portfolio/Virtual Machines and Networks/tinybanner.jpg",
+		image: "Content/Portfolio/Virtual_Machines_and_Networks/tinybanner.jpg",
 		page: 1
 	},
 	"Compilers and Processes": {
 		title: "Compilers and Processes",
-		image: "Content/Portfolio/Compilers and Processes/tinybanner.jpg",
+		image: "Content/Portfolio/Compilers_and_Processes/tinybanner.jpg",
 		page: 1
 	},
 	"Datastructures and Algorithms": {
 		title: "Datastructures and Algorithms",
-		image: "Content/Portfolio/Datastructures and Algorithms/tinybanner.jpg",
+		image: "Content/Portfolio/Datastructures_and_Algorithms/tinybanner.jpg",
 		page: 1
 	},
 	"Blender Modeling": {
 		title: "Blender Modeling",
-		image: "Content/Portfolio/Blender Modeling/tinybanner.jpg",
+		image: "Content/Portfolio/Blender_Modeling/tinybanner.jpg",
 		page: 2
 	},
 	"Web Development": {
 		title: "Web Development",
-		image: "Content/Portfolio/Web-Development/tinybanner.jpg",
+		image: "Content/Portfolio/Web_Development/tinybanner.jpg",
 		page: 2
 	},
 	"Mathematics": {
@@ -56,7 +56,7 @@ const projects = {
 	}
 	"Bridge Project": {
 		title: "Bridge Project",
-		image: "Content/Portfolio/Bridge Project/tinybanner.jpg",
+		image: "Content/Portfolio/Bridge_Project/tinybanner.jpg",
 		page: 2
 	},
 ,	"Miscellaneous": {
@@ -71,7 +71,7 @@ const projects = {
 	},
 	"Maxs Mushrooms": {
 		title: "Maxs Mushrooms",
-		image: "Content/Portfolio/Maxs Mushrooms/tinybanner.jpg",
+		image: "Content/Portfolio/Maxs_Mushrooms/tinybanner.jpg",
 		page: 3
 	},
 	"Music": {

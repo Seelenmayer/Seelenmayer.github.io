@@ -106,61 +106,48 @@
 		</div>
 		<main>
 			<div>
-				<h1>Bridge Project</h1>
-				<p>I competed in VIU's 2016 Bridge Building Competition and completed the Fundamentals of Engineering certification. This section highlights my contributions and experiences for this event.</p>
+				<h1>Cinematic Camera</h1>
+				<p>This project showcases my cinematic camera system in Unity. The player, camera, and look-at target each follow separate splines, ensuring smooth movement and framing.</p>
 				<div class="separator"></div>
-				<p>I collaborated with teammates on proposals, drafting, construction, and gear systems. A motor with pulse-width modulation helped keep the bridge lifting at a slow rate without needing an overcomplicated gearbox. A worm gear prevented gravity from reversing the motor.</p>
-				<p>I implemented the electrical systems, which included an 8-bit shift register controlling all of the sensors. Vehicle and ship traffic was detected using an ultrasonic sensor to masure return time and calculate distance while discarding noisy inputs. Conductive pads detected bridge states or pedestrian traffic by polling. An H-bridge chip controlled DC motor polarity for bridge movement, while 4 LEDs signalled traffic.</p>
+				<p>Imagine an interval overtop of a line. As the player progresses along the line and pushes the upper bound forward, the lower bound follows at a set distance. If the player turns around and instead pushes the lower bound, the camera will linearly interpolate along the spline in a heroic sweep back to the new frontier that the player faces while maintaining fluent rotation.</p>
+				<p>Obstructing objects near the camera are burned away using a GLSL shader. A noise texture, generated in GIMP and randomly assigned each call, guides the burn effect, which reverses when the camera moves away.</p>
 				<div class="displaymediacontainer">
-					<a href="Content/Portfolio/Bridge Project/bridgedemo.mp4" target="_blank">
-						<video class="displaymedia" poster="Content/Portfolio/Bridge Project/bridgedemo_poster.jpg" preload="metadata" loading="lazy" controls="controls" loop="loop">
-							<source src="Content/Portfolio/Bridge Project/bridgedemo.mp4" type="video/mp4"/>
-							<p>Your browser does not support the video tag.</p>
+					<a href="Content/Portfolio/Cinematic_Camera/camera.mp4" target="_blank">
+						<video class="displaymedia" poster="Content/Portfolio/Cinematic_Camera/camera_poster.jpg" preload="metadata" loading="lazy" controls="controls" muted="muted" loop="loop">
+							<source src="Content/Portfolio/Cinematic_Camera/camera.mp4" type="video/mp4"/>
+							Your browser does not support the video tag.
 						</video>
 					</a>
-					<div class="displaymediadescription">bridgedemo.mp4</div>
+					<div class="displaymediadescription">camera.mp4</div>
 				</div>
+				<p>Initially, the shader mapped screen space coordinates using colour channels red for the X-axis, and green for Y-axis. This ensured correct positioning before overlaying the noise texture in blue overtop which mapped the animation in screen-space.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Bridge Project/bridge1.jpg" target="_blank">
-							<img src="Content/Portfolio/Bridge Project/bridge1.jpg" alt="[Bridge]" class="displaymedia"/>
+						<a href="Content/Portfolio/Cinematic_Camera/shader1.png" target="_blank">
+							<img src="Content/Portfolio/Cinematic_Camera/shader1.png" alt="[Shader Demo 1]" class="displaymedia"/>
 							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
 						</a>
 					</div>
-					<div class="displaymediadescription">bridge1.jpg</div>
+					<div class="displaymediadescription">shader1.png</div>
 				</div>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Bridge Project/bridge2.jpg" target="_blank">
-							<img src="Content/Portfolio/Bridge Project/bridge2.jpg" alt="[Bridge]" class="displaymedia"/>
+						<a href="Content/Portfolio/Cinematic_Camera/shader2.png" target="_blank">
+							<img src="Content/Portfolio/Cinematic_Camera/shader2.png" alt="[Shader Demo 2]" class="displaymedia"/>
 							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
 						</a>
 					</div>
-					<div class="displaymediadescription">bridge2.jpg</div>
+					<div class="displaymediadescription">shader2.png</div>
 				</div>
+				<p>The final shader needed shadow casting, requiring integration with Unity’s HDRP "Lit" shader. I opted for forward rendering rather than deferred rendering to maintain transparency effects.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Bridge Project/electronics.jpg" target="_blank">
-							<img src="Content/Portfolio/Bridge Project/electronics.jpg" alt="[Electronics]" class="displaymedia"/>
+						<a href="Content/Portfolio/Cinematic_Camera/shader3.png" target="_blank">
+							<img src="Content/Portfolio/Cinematic_Camera/shader3.png" alt="[Shader Demo 4]" class="displaymedia"/>
 							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
 						</a>
 					</div>
-					<div class="displaymediadescription">electronics.jpg</div>
-				</div>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Bridge Project/bridge3.jpg" target="_blank">
-							<img src="Content/Portfolio/Bridge Project/bridge3.jpg" alt="[Bridge]" class="displaymedia"/>
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
-						</a>
-					</div>
-					<div class="displaymediadescription">bridge3.jpg</div>
-				</div>
-				<div class="scriptcontainer">
-					<a href="Content/Portfolio/Bridge Project/BridgeController.txt" id="downloadLink" target="_blank">
-						<img src="Assets/script.png" alt="[Script]"/>
-					</a>
-					<p>BridgeController.txt</p>
+					<div class="displaymediadescription">shader3.png</div>
 				</div>
 			</div>
 			<div class="separator"></div>

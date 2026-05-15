@@ -106,79 +106,64 @@
 		</div>
 		<main>
 			<div>
-				<h1>Compilers and Processes</h1>
-				<p>This section explores fundamental OS concepts, including process scheduling, memory management, and concurrency. I demonstrate CPU scheduling algorithms, semaphore-based synchronization, and a custom Linux shell. Additionally, I showcase a compiler parser, and a Bash script for automating console commands.</p>
+				<h1>Web Development</h1>
+				<p>This section showcases some of my various webpage development involvements. Here I showcase my 2nd iteration for the BC Prosperity project, my simple copy-paste for Positive Energy, and I briefly mention my 3d-model viewer MobiusArt. You can view this pages' source code as well.</p>
 				<div class="separator"></div>
-				<p>This screenshot illustrates five scheduling algorithms that manage process execution on CPU cores and GPU buses: first-come-first-serve, shortest-job-first, highest-priority-first, round-robin, and priority round-robin. Round-robin assigns time slices to processes in a cyclic order, while priority round-robin reinserts processes based on priority.</p>
-				<p>The terminal output follows the format "[Task Name] [Priority] [Remaining_Time]".</p>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Compilers and Processes/schedule.png" target="_blank">
-							<img src="Content/Portfolio/Compilers and Processes/schedule.png" alt="[Process Scheduler]" class="displaymedia"/>
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
-						</a>
-					</div>
-					<div class="displaymediadescription">schedule.png</div>
-				</div>
-				<div class="separator"></div>
-				<p>This example simulates two threads (teaching assistants) managing 10 jobs (students). Each student receives a random programming task before requiring further assistance.</p>
-				<p>The key takeaway is the importance of locking memory-sensitive operations. Proper locking ensures data integrity in multi-threaded environments, forming the foundation of concurrent programming.</p>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Compilers and Processes/semaphore.png" target="_blank">
-							<img src="Content/Portfolio/Compilers and Processes/semaphore.png" alt="[Multi-Threading]" class="displaymedia"/>
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
-						</a>
-					</div>
-					<div class="displaymediadescription">semaphore.png</div>
-				</div>
-				<div class="separator"></div>
-				<p>This Linux shell intercepts and modifies user commands before passing them to the system.</p>
-				<p>It supports automated compilation and execution, along with commands like "pwd" (print working directory), "!!" (repeat last command), "ls" (list directory contents), output redirection, sorting, command history, and safe exit.</p>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Compilers and Processes/shell.png" target="_blank">
-							<img src="Content/Portfolio/Compilers and Processes/shell.png" alt="[Linux Shell]" class="displaymedia"/>
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
-						</a>
-					</div>
-					<div class="displaymediadescription">shell.png</div>
-				</div>
-				<div class="separator"></div>
-				<p>Next, I introduce the compiler parser I developed for my C-style language.</p>
-				<div class="displaymediacontainer">
-					<a href="Content/Portfolio/Compilers and Processes/compilerdemo.mp4" target="_blank">
-						<video class="displaymedia" poster="Content/Portfolio/Compilers and Processes/compilerdemo_poster.jpg" preload="metadata" loading="lazy" controls="controls" loop="loop">
-							<source src="Content/Portfolio/Compilers and Processes/compilerdemo.mp4" type="video/mp4"/>
-							Your browser does not support the video tag.
-						</video>
-					</a>
-					<div class="displaymediadescription">compilerdemo.mp4</div>
-				</div>
-				<div class="separator"></div>
-				<p>This photo showcases my lab setup, featuring multiple open terminals and VIM.</p>
-				<div class="displaymediacontainer">
-					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Compilers and Processes/station.jpg" target="_blank">
-							<img src="Content/Portfolio/Compilers and Processes/station.jpg" alt="[Linux Shell]" class="displaymedia"/>
-							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
-						</a>
-					</div>
-					<div class="displaymediadescription">station.png</div>
-				</div>
-				<p>This Bash script automates frequently used terminal commands, specifically for Git submissions.</p>
-				<div class="scriptcontainer">
-					<a href="Content/Portfolio/Compilers and Processes/myBash.sh" id="downloadLink" target="_blank">
-						<img src="Assets/script.png" alt="[Script]"/>
-					</a>
-					<p>myBash.sh</p>
-				</div>
-			</div>
-			<div class="separator"></div>
-			<div>
-				<a href="https://seelenmayer.github.io/portfolio.html">
-					<span>Return to the Portfolio landing page.</span>
+				<a href="https://seelenmayer.github.io/Content/Portfolio/Web-Development/BCProsperity/index.html" target="_blank">
+					<p>The BCProsperity non-profit organization asked me to recreate their website. You can view the local files here.</p>
 				</a>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Web_Development/MobiusArt.jpg" target="_blank">
+							<img src="Content/Portfolio/Web_Development/BCProsperity.jpg" alt="[Website]" class="displaymedia"/>
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
+						</a>
+					</div>
+					<div class="displaymediadescription">BCProsperity.jpg</div>
+				</div>
+				<div class="separator"></div>
+				<a href="https://possitiveenergy.github.io/" target="_blank">
+					<p>The unofficial non-profit organization Positive Energy asked me for a copy-paste landing page hosted on Github here.</p>
+				</a>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Web_Development/MobiusArt.jpg" target="_blank">
+							<img src="Content/Portfolio/Web_Development/PositiveEnergy.jpg" alt="[Website]" class="displaymedia"/>
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
+						</a>
+					</div>
+					<div class="displaymediadescription">PositiveEnergy.jpg</div>
+				</div>
+				<div class="separator"></div>
+				<p>The MobiusArt project was a web platform for uploading and downloading 3D models stored in a MySQL database. Models were displayed interactively using ThreeJS with trackball controls and mobile accessibility.</p>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Web_Development/MobiusArt.jpg" target="_blank">
+							<img src="Content/Portfolio/Web_Development/MobiusArt.jpg" alt="[Website]" class="displaymedia"/>
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
+						</a>
+					</div>
+					<div class="displaymediadescription">MobiusArt.jpg</div>
+				</div>
+				<div class="separator"></div>
+				<a href="https://github.com/Seelenmayer/Seelenmayer.github.io/tree/main" target="_blank">
+					<p>For more web developer related work, you can view this very website that you're reading's source code on Github here.</p>
+				</a>
+				<div class="displaymediacontainer">
+					<div class="displaymediawrapper">
+						<a href="Content/Portfolio/Web_Development/MobiusArt.jpg" target="_blank">
+							<img src="Content/Portfolio/Web_Development/SeelenmayerGithub.jpg" alt="[Website]" class="displaymedia"/>
+							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
+						</a>
+					</div>
+					<div class="displaymediadescription">SeelenmayerGithub.jpg</div>
+				</div>
+				<div class="separator"></div>
+				<div>
+					<a href="https://seelenmayer.github.io/portfolio.html">
+						<span>Return to the Portfolio landing page.</span>
+					</a>
+				</div>
 			</div>
 		</main>
 	</div>
