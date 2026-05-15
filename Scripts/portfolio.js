@@ -49,20 +49,20 @@ const projects = {
 		image: "Content/Portfolio/Web-Development/tinybanner.jpg",
 		page: 2
 	},
-	"Miscellaneous": {
-		title: "Miscellaneous",
-		image: "Content/Portfolio/Miscellaneous/tinybanner.jpg",
-		page: 2
-	},
+	"Mathematics": {
+		title: "Mathematics",
+		image: "Content/Portfolio/Mathematics/tinybanner.jpg",
+		page: 3
+	}
 	"Bridge Project": {
 		title: "Bridge Project",
 		image: "Content/Portfolio/Bridge Project/tinybanner.jpg",
 		page: 2
 	},
-	"Mathematics": {
-		title: "Mathematics",
-		image: "Content/Portfolio/Mathematics/tinybanner.jpg",
-		page: 3
+,	"Miscellaneous": {
+		title: "Miscellaneous",
+		image: "Content/Portfolio/Miscellaneous/tinybanner.jpg",
+		page: 2
 	},
 	"Japanese": {
 		title: "Japanese",
