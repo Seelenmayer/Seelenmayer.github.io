@@ -1,0 +1,73 @@
+---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+--
+--		File:
+--			Doubling.ssbc
+--
+--		Author:
+--			Clayton Seelenmayer
+--
+--		Date:
+--			Oct 10th 2018
+--
+--		Behaviour:
+--			Main read a value from Port B and store f(n) to Port A.
+--			Subroutine "f" computes f(n) = f(n-1)*2 where n >= 1 and
+--				f(0)=1.
+--
+--		Assumptions:
+--			Program status word (PSW) is destroyed.
+--			Subroutine "f" assumes input n >= 1, and f(0) = 1.
+--			Use Big Endian binary notation.
+--
+---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+-- ============================ Main =================================
+
+		pushimm     RL            Main return address (low byte)
+		pushimm     RH                                (high byte)
+		pushext     B             Save n from Port B.
+		pushimm     0             Clear Z flag.
+		popext      PSW
+		jnz         SR            Jump to subroutine f.
+		popext      A             Store f(n) to Port A.
+		halt
+
+
+-- ============================ Subroutine f =========================
+
+SR:	pushimm     0             Subroutine.
+		add
+		jnz         RS (!base)    Jump to RR if it is not the base case.
+		popext      PSW           Clear Z flag.
+		popext      RH            Pop return address. (high byte)
+		popext      RL                                (low byte)
+		pushimm     1             Return value 1 (1 = 2^0) as base case.
+		jnz         return        Return
+
+RS:	popext      Hold          Recursive Subroutine.
+		pushimm     RRL           Recursive Return Address. (low byte)
+		pushimm     RRH                                     (high byte)
+		pushimm     1             Decrement n.
+		pushext     Hold
+		sub
+		pushimm     0             Clear Z flag
+		popext      PSW
+		jnz         SR            Jump to Subroutine.
+
+RR:	popext      Hold          Recursive Return.
+		pushext     Hold          n = n * 2.
+		pushext     Hold
+		add
+		popext      Hold
+		pushimm     0             Clear Z flag
+		popext      PSW
+		popext      RH            Pop return address (high byte)
+		popext      RL                               (low byte)
+		pushext     Hold          Save parameter in hold.
+		jnz                       Recursive call.
+
+
+-- ============================ Data =================================
+
+		Hold                      Temporary storage variable address.
