@@ -59,9 +59,9 @@ const projects = {
 		image: "Content/Portfolio/Bridge Project/tinybanner.jpg",
 		page: 2
 	},
-	"Magic Squares": {
-		title: "Magic Squares",
-		image: "Content/Portfolio/Magic Squares/tinybanner.jpg",
+	"Mathematics": {
+		title: "Mathematics",
+		image: "Content/Portfolio/Mathematics/tinybanner.jpg",
 		page: 3
 	},
 	"Japanese": {
