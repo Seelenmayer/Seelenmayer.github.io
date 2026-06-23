@@ -1,0 +1,96 @@
+\documentclass[10pt]{article}
+
+\usepackage[letterpaper,margin=0.55in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}
+	{\large\bfseries}
+	{}
+	{0pt}
+	{}[\titlerule]
+
+\titlespacing*{\section}
+	{0pt}
+	{8pt}
+	{3pt}
+
+\setlist[itemize]{
+	leftmargin=1.15em,
+	topsep=1pt,
+	itemsep=1pt,
+	parsep=0pt,
+	partopsep=0pt
+}
+
+\newcommand{\job}[4]{
+	\textbf{#1} \hfill #2\\
+	\textit{#3} \hfill \textit{#4}
+}
+
+\begin{document}
+
+\begin{center}
+	{\LARGE \textbf{Clayton Seelenmayer}}
+\end{center}
+
+\vspace{-8pt}
+
+\section*{Professional Summary}
+Unity and VR Developer with a Bachelor of Science in Computer Science and Mathematics and two years of professional experience building immersive training simulations, editor tools, web applications, and real-time interactive systems. Experienced collaborating with artists, testers, developers, and stakeholders in agile production environments, with interests in Unity development, VR simulation, technical art, graphics programming, and creative tooling.
+
+\section*{Technical Skills}
+\textbf{Unity and VR:} Unity, C\#, VR development, gameplay systems, UI development, editor tooling, QA testing\\
+\textbf{Graphics and Technical Art:} Unreal Engine, OpenGL, shader programming, procedural tools, Blender, GIMP, Godot\\
+\textbf{Programming and Web:} C++, C, Python, JavaScript, SQL, HTML, CSS, Bash, PHP\\
+\textbf{Cloud and Collaboration:} AWS, Docker, Kubernetes, Git, GitHub, Perforce, Jira, Confluence, Slack, Microsoft Teams\\
+\textbf{Mathematics:} Linear algebra, discrete mathematics, graph theory, calculus, statistics, computation theory
+
+\section*{Professional Experience}
+
+\job{ML56 Studios}{Aug 2022 - Jun 2024}{VR Developer}{Remote}
+\begin{itemize}
+	\item Developed Unity-based VR training simulations within a 100-person company, working on multidisciplinary teams of approximately 10 developers, artists, testers, and stakeholders.
+	\item Built gameplay systems, front-end interfaces, web applications, databases, and in-editor tools supporting immersive training products.
+	\item Developed systems for a VR manhole training simulator using recursive JSON scene generation and network-delivered level data.
+	\item Prototyped AI-assisted scene layout tooling using Unity, Unreal Engine, OpenAI services, AWS, Docker, Kubernetes, and Python workflows.
+	\item Created procedural spline-generation tools for placing powerlines, pipes, hoses, cables, and other connected scene elements.
+	\item QA-tested a delivered private-contract VR training product for a major Canadian retailer, verifying distribution-centre workflows and multilingual training support.
+	\item Collaborated with artists to integrate assets, resolve implementation issues, prepare investor demonstrations, and participate in standups, code reviews, documentation, bug verification, and product validation.
+\end{itemize}
+
+\job{Society of Organized Services}{Nov 2025 - Present}{Math Tutor}{Parksville, BC}
+\begin{itemize}
+	\item Tutor high-school students in mathematics, including algebra, functions, trigonometry, and problem-solving strategies.
+	\item Support students through structured practice, worked examples, and clear explanations tailored to individual learning needs.
+\end{itemize}
+
+\job{Vancouver Island University}{Sep 2018 - Apr 2019}{Computing Tutor}{Nanaimo, BC}
+\begin{itemize}
+	\item Tutored students in programming, web development, data structures, algorithms, databases, graphics, operating systems, networking, multithreading, and compiler development.
+	\item Assisted students with calculus, linear algebra, discrete mathematics, and technical problem solving.
+\end{itemize}
+
+\job{Max's Mushrooms}{Aug 2012 - Aug 2022}{Swamper / Logistics Assistant}{Vancouver Island, BC}
+\begin{itemize}
+	\item Loaded and organized pallets for regional deliveries; supported inventory handling, invoicing, e-commerce fulfillment, and domestic and international freight documentation.
+\end{itemize}
+
+\job{French Creek Marine Pub}{May 2013 - Aug 2022}{Prep Cook}{French Creek, BC}
+\begin{itemize}
+	\item Prepared meals, supported banquet service, maintained kitchen organization, and contributed to daily food-service operations.
+\end{itemize}
+
+\section*{Education}
+\textbf{Vancouver Island University} \hfill Nanaimo, BC\\
+Bachelor of Science, Double Major in Computer Science and Mathematics\\
+Fundamentals of Engineering Certificate\\
+Proficiency in Language and Culture Certificate, Japanese Concentration
+
+\end{document}
