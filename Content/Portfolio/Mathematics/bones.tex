@@ -1,0 +1,674 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{lemma}[definition]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{example}[definition]{Example}
+
+\title{Bone Stacking Combinatorial Number System}
+\author{Clayton Seelenmayer}
+\date{October 4th, 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper defines a finite number system by enumerating combinatorial structures built from at most twelve abstract bones. A structure is first classified by its total number of bones, then by its structural partition, and finally by the orientations of its one-bone, two-bone, and three-bone piles. The resulting system contains exactly \(2{,}911\) distinct values. We derive the counting formula, give ranking and unranking procedures, and provide both concrete and generalized examples.
+\end{abstract}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{bones.png}
+	\caption{Bone number C1, representing decimal 9.}
+	\label{fig:myimage}
+\end{figure}
+
+\newpage
+
+\section{Introduction}
+
+The system was inspired by the observation that many small mammals have twelve pairs of ribs, as well as a curiousity surrounding the invention of roman numerals. The mathematical construction, however, treats the bones as abstract combinatorial objects. Up to twelve bones are used to represent a number, and are interpreted in a base-2911 number system to allow for individual digits to be read regardless of the positioning of the bones.
+
+\bigskip 
+The central idea is to enumerate every distinct structure in a fixed order over three levels:
+
+\begin{enumerate}
+	\item Structures are grouped by total number of bones: all one-bone structures,	then all two-bone structures, and so on through twelve bones. This is to minimize the number of bones needed for small numbers, while expanding the total number of representable numbers.
+	\item Within a fixed bone-count, structures are grouped by their structural partition. For example, three bones can be partitioned as
+	\[
+		1+1+1,\qquad 2+1,\qquad 3.
+	\]
+	Because the piles are unordered, \(1+2\) is not a separate partition from
+	\(2+1\).
+	\item Within a fixed partition, the possible orientations are enumerated
+	according to a fixed canonical ordering.
+\end{enumerate}
+
+This gives a one-to-one correspondence between valid bone structures and the natural numbers.
+\[
+1,2,\ldots,2911.
+\]
+
+\newpage
+\section{Definitions}
+\bigskip 
+\begin{definition}[Pile]
+A \emph{pile} is a connected group of one, two, or three bones. Four bones is likely to topple over and is not considered. Bone piles can be represented by the alphabet:
+\emph{1,A,B,C,D,E,F,G,H,I}.
+\end{definition}
+
+\begin{definition}[Bone orientation]
+A one-bone pile has one orientation of bone stackings:
+\[
+\begin{array}{ccl}
+1 &=& \text{No connections.}.
+\end{array}
+\]
+
+A two-bone pile has three orientations:
+\[
+\begin{array}{ccl}
+A &=& \text{end-to-end},\\
+B &=& \text{end-to-middle},\\
+C &=& \text{middle-to-middle}.
+\end{array}
+\]
+
+A three-bone pile has six orientations:
+\[
+\begin{array}{cclcl}
+D &=& \text{AA} &=& \text{end-to-end} + \text{end-to-end},\\
+E &=& \text{AB} &=& \text{end-to-end} + \text{end-to-middle},\\
+F &=& \text{AC} &=& \text{end-to-end} + \text{middle-to-middle},\\
+G &=& \text{BB} &=& \text{end-to-middle} + \text{end-to-middle},\\
+H &=& \text{BC} &=& \text{end-to-middle} + \text{middle-to-middle},\\
+I &=& \text{CC} &=& \text{middle-to-middle} + \text{middle-to-middle}.
+\end{array}
+\]
+
+The ordering convention is
+\[
+A<B<C,\qquad D<E<F<G<H<I.
+\]
+\end{definition}
+
+\begin{definition}[Structural partition]
+Suppose a structure consists of \(a\) one-bone piles, \(b\) two-bone piles, and \(c\) three-bone piles, where \(a,b,c\in\mathbb{N}_0\) and \(a+b+c\leq 12\). The \emph{structural partition} of a structure containing \(n\) bones is the triple \((a,b,c)\) satisfying
+\[
+	a+2b+3c=n.
+\]
+
+The piles are treated as unordered within each size class. Thus, for example, \(ABC\) represents the same structure regardless of the order in which the three two-bone piles are listed. The canonical representation is obtained by sorting orientations according to
+\[
+A<B<C
+\]
+for two-bone piles and
+\[
+D<E<F<G<H<I
+\]
+for three-bone piles.
+
+\bigskip
+When different pile sizes occur, three-bone piles are written first, followed by two-bone piles, followed by one-bone piles. Within a partition, smaller letters are written first.\end{definition}
+
+\begin{definition}[Bone-number]
+A \emph{bone-number} is the canonical symbolic representation of a valid structure. The decimal value of a bone-number is its position in the global enumeration described above.
+\end{definition}
+
+\newpage
+\section{The Beginning of the Enumeration}
+
+The first few values are
+
+\[
+\begin{array}{rclcrcl}
+1&=&1,	&& 9&=&C1,\\
+2&=&11,	&& 10&=&D,\\
+3&=&A,	&& 11&=&E,\\
+4&=&B,	&& 12&=&F,\\
+5&=&C,	&& 13&=&G,\\
+6&=&111,	&& 14&=&H,\\
+7&=&A1,	&& 15&=&I,\\
+8&=&B1,	&&
+\end{array}
+\]
+
+Continuing,
+
+\[
+\begin{array}{rclcrcl}
+16&=&1111, && 24&=&BC1,\\
+17&=&A11,  && 25&=&CC1,\\
+18&=&B11,  && 26&=&D1,\\
+19&=&C11,  && 27&=&E1,\\
+20&=&AA1,  && 28&=&F1,\\
+21&=&AB1,  && 29&=&G1,\\
+22&=&AC1,  && 30&=&H1,\\
+23&=&BB1,  && 31&=&I1.
+\end{array}
+\]
+
+At the upper end of the system,
+
+\[
+\begin{array}{rcl}
+2907&=&HHHH,\\
+2908&=&HHHI,\\
+2909&=&HHII,\\
+2910&=&HIII,\\
+2911&=&IIII.
+\end{array}
+\]
+
+\bigskip
+Thus the largest value is
+\[
+\boxed{2911},
+\]
+
+\newpage
+\section{Counting the Structures}
+
+The counting can be reduced to a simple multiset problem.
+
+\begin{lemma}
+For a structural partition containing \(b\) two-bone piles, the number of possible
+orientation multisets is
+\[
+\binom{b+2}{2}.
+\]
+\end{lemma}
+
+\begin{proof}
+There are three possible two-bone orientations, \(A,B,C\). We must choose a
+multiset of size \(b\) from these three types. Equivalently, let
+\(x_A,x_B,x_C\geq0\) satisfy
+\[
+x_A+x_B+x_C=b.
+\]
+By stars and bars, the number of solutions is
+\[
+\binom{b+3-1}{3-1}
+=
+\binom{b+2}{2}.
+\]
+\end{proof}
+
+\begin{lemma}
+For a structural partition containing \(c\) three-bone piles, the number of
+possible orientation multisets is
+\[
+\binom{c+5}{5}.
+\]
+\end{lemma}
+
+\begin{proof}
+There are six possible three-bone orientations,
+\[
+D,E,F,G,H,I.
+\]
+A multiset of size \(c\) is determined by nonnegative integers
+\[
+x_D+x_E+x_F+x_G+x_H+x_I=c.
+\]
+Again by stars and bars, the number of solutions is
+\[
+\binom{c+6-1}{6-1}
+=
+\binom{c+5}{5}.
+\]
+\end{proof}
+
+\begin{proposition}[Structures in a fixed partition]
+If a partition contains \("a"\) one-bone piles, \("b"\) two-bone piles, and
+\("c"\) three-bone piles, then the number of distinct structures is
+\[
+\boxed{
+\binom{b+2}{2}\binom{c+5}{5}
+}.
+\]
+\end{proposition}
+
+\begin{proof}
+The one-bone piles have only one possible orientation, since all one-bone piles are identical. The two-bone piles contribute
+\(\binom{b+2}{2}\) orientations, and the three-bone piles contribute
+\(\binom{c+5}{5}\) orientations. These choices are independent, so the total is
+their product.
+\end{proof}
+
+\section{Counting an Entire Bone Block}
+
+Let \(B_n\) denote the number of structures containing exactly \(n\) bones.
+
+\bigskip
+For each pair \((b,c)\) satisfying
+
+$$
+2b+3c\leq n,
+$$
+
+where \(b\) is the number of 2-bone structures and \(c\) is the number of 3-bone structures, the remaining number of bones is
+
+$$
+a=n-2b-3c.
+$$
+
+We first fix the number \(c\) of 3-bone structures and consider every possible value of \(c\), from \(0\) up to \(\lfloor n/3\rfloor\) since each multiple of 3-bone structures uses exactly 3 bones from the total \(n\). For each fixed \(c\), we then consider every possible number \(b\) of 2-bone structures that can be formed from the remaining bones, from \(0\) up to \(\lfloor(n-3c)/2\rfloor\).
+
+\bigskip
+For each pair \((b,c)\), there are
+
+$$
+\binom{b+2}{2}
+$$
+
+ways to distribute the \(b\) 2-bone structures among their three possible types, and
+
+$$
+\binom{c+5}{5}
+$$
+
+ways to distribute the \(c\) 3-bone structures among their six possible types.
+
+\bigskip
+Therefore,
+
+$$
+\boxed{
+B_n=
+\sum_{c=0}^{\lfloor n/3\rfloor}
+\sum_{b=0}^{\lfloor (n-3c)/2\rfloor}
+\binom{b+2}{2}\binom{c+5}{5}
+}.
+$$
+
+\bigskip
+Denote the cumulative number of structures through \(n\) bones.
+\[
+C_n=\sum_{k=1}^{n}B_k
+\]
+
+\begin{theorem}[Finite enumeration]
+The construction defines exactly \(2911\) distinct bone-numbers.
+\end{theorem}
+
+\begin{proof}
+Every valid structure is uniquely defined by a total bone count \(n\in\{1,\ldots,12\}\),
+a structural partition \((a,b,c)\), and a canonical multiset of
+orientations within each pile size. The enumeration orders these disjoint
+categories without overlap. Hence each structure occurs exactly once.
+
+\bigskip
+The number of structures in the \(n\)-bone block is \(B_n\), so the total number
+of structures is
+\[
+\sum_{n=1}^{12}B_n=C_{12}=2911.
+\]
+\end{proof}
+
+\section{Ranking and Unranking}
+
+The conversion between decimal integers and bone-numbers can be understood as a
+pair of inverse operations.
+
+\subsection{Decimal to Bone-Number}
+
+Let \(N\in\{1,\ldots,2911\}\). First find the unique \(n\) satisfying
+\[
+C_{n-1}<N\leq C_n,
+\]
+where \(C_0=0\). The number lies in the \(n\)-bone block. Its one-indexed position within that block is
+\[
+\boxed{
+r=N-C_{n-1}.
+}
+\]
+
+Next enumerate the structural partitions of \(n\) bones. For each partition, add
+\[
+\binom{b+2}{2}\binom{c+5}{5}
+\]
+until the partition containing position \(r\) is found. If the cumulative number before the selected partition is \(P\), then its one-indexed position within that partition is
+\[
+\boxed{
+s=r-P.
+}
+\]
+
+Finally, unrank the orientation multisets within the selected partition. In a partition containing \(b\) two-bone piles and \(c\) three-bone piles, define
+\[
+M_2(b)=\binom{b+2}{2},
+\qquad
+M_3(c)=\binom{c+5}{5}.
+\]
+The partition therefore contains
+\[
+M_3(c)M_2(b)
+\]
+structures. Structures are ordered by first enumerating the \(c\)-multiset of three-bone orientations, then the \(b\)-multiset of two-bone orientations, then the trivial \(a\)-multiset one-bone orientation. The one-indexed ranks of these two components are
+\[
+\boxed{
+p=\left\lfloor\frac{s-1}{M_2(b)}\right\rfloor+1
+}
+\]
+and
+\[
+\boxed{
+q=(s-1)\bmod M_2(b)+1.
+}
+\]
+Thus \(p\) identifies the \(p\)-th three-bone orientation multiset, while \(q\) identifies the \(q\)-th two-bone orientation multiset.
+
+\subsection{Decimal to Bone-Number Example: \(2500\)}
+
+Consider the decimal number
+\[
+2500.
+\]
+
+Since
+\[
+1847<2500\leq2911,
+\]
+the number lies in the twelve-bone block. Its position inside that block is
+
+\[
+2500-1847=653.
+\]
+
+The relevant partition table begins
+
+\[
+\begin{array}{l|r|r}
+\text{Partition} & \text{Number of structures} & \text{Cumulative}\\
+\midrule
+1^{12} & 1 & 1\\
+2+1^{10} & 3 & 4\\
+2^2+1^8 & 6 & 10\\
+2^3+1^6 & 10 & 20\\
+2^4+1^4 & 15 & 35\\
+2^5+1^2 & 21 & 56\\
+2^6 & 28 & 84\\
+3+1^9 & 6 & 90\\
+3+2+1^7 & 18 & 108\\
+3+2^2+1^5 & 36 & 144\\
+3+2^3+1^3 & 60 & 204\\
+3+2^4+1 & 90 & 294\\
+3^2+1^6 & 21 & 315\\
+3^2+2+1^4 & 63 & 378\\
+3^2+2^2+1^2 & 126 & 504\\
+3^2+2^3 & 210 & 714
+\end{array}
+\]
+
+Because
+\[
+504<653\leq714,
+\]
+the required partition is
+\[
+3^2+2^3.
+\]
+
+Its local rank is
+\[
+653-504=149.
+\]
+
+Each choice of the two three-bone orientations is followed by ten choices of
+the three two-bone orientations. Hence
+
+\[
+g
+=
+\left\lfloor\frac{149-1}{10}\right\rfloor+1
+=
+15
+\]
+and
+\[
+q
+=
+(149-1)\bmod10+1
+=
+9.
+\]
+
+The \(15\)-th three-bone orientation is
+\[
+FI,
+\]
+while the \(9\)-th two-bone orientation is
+\[
+BCC.
+\]
+
+Therefore
+\[
+\boxed{2500=FIBCC}.
+\]
+
+\subsection{Bone-Number to Decimal}
+
+The reverse process is a ranking operation. Given a bone-number, its corresponding decimal value is determined by finding its position in the complete enumeration of structures.
+
+\bigskip
+For a general bone-number, proceed as follows:
+\begin{enumerate}
+	\item Count the total number of bones \(n\).
+	\item Determine its structural partition \((a,b,c)\), where \(a\), \(b\),
+	      and \(c\) denote the numbers of one-, two-, and three-bone piles,
+	      respectively.
+	\item Add the complete blocks containing fewer than \(n\) bones. If
+	      \(C_{n-1}\) denotes the cumulative number of structures through
+	      \(n-1\) bones, this contributes \(C_{n-1}\).
+	\item Within the \(n\)-bone block, enumerate the structural partitions in
+	      the prescribed order and add the sizes of all partitions preceding
+	      the selected partition. Let this cumulative number be \(P\).
+	\item Determine the one-indexed rank \(s\) of the given orientation
+	      multiset within the selected partition.
+\end{enumerate}
+
+If \(P\) is the number of structures preceding the selected partition and
+\(s\) is the one-indexed rank within that partition, then the corresponding
+decimal value is
+\[
+\boxed{
+N=C_{n-1}+P+s.
+}
+\]
+
+\subsection{Bone-Number to Decimal Example: \("IX"\)}
+
+See Figure 1 for an example illustration.
+
+\bigskip
+Let the observed bone placements \(I\) and \(X\) denote the one-, two-bone orientations respectively:
+\[
+I=1,
+\]
+\[
+X=C.
+\]
+
+Since bone placement permutations are considered equivalent, we use the canonical representation
+\[
+IX=C1.
+\]
+
+This has structural partition
+\[
+2+1,
+\]
+
+Which contains three bones. The structures with fewer than three bones are
+\[
+11,A,B,C.
+\]
+
+Thus the cumulative number of structures through two bones is
+\[
+C_2=5.
+\]
+
+Within the three-bone block, the structural partitions preceding \(2+1\)
+consist only of
+\[
+1+1+1.
+\]
+
+This partition contains exactly one structure:
+\[
+111.
+\]
+
+Therefore,
+\[
+P=1.
+\]
+
+Within the \(2+1\) partition, the possible two-bone orientations are
+\[
+A1,B1,C1.
+\]
+
+Thus \(C1\) is the third structure in this partition, so
+\[
+s=3.
+\]
+
+Therefore the global rank is
+\[
+N=C_2+P+s
+=5+1+3
+=9.
+\]
+
+Hence
+\[
+\boxed{"IX"=C1=9}.
+\]
+
+\section{A Flappy Bird Example}
+
+\subsection{Encoding Game Stat and Program}
+
+The system can also be used as an abstract representation for the state of a
+simple game such as \emph{Flappy Bird}. For example, one could assign bone-numbers
+to quantities such as
+
+\begin{enumerate}
+	\item \(X\)-coordinate,
+	\item \(Y\)-coordinate,
+	\item velocity,
+	\item gravity,
+	\item flap impulse,
+	\item pipe \(X\)-positions,
+	\item pipe gap \(Y\)-positions,
+	\item score,
+	\item game speed,
+	\item random-number state.
+\end{enumerate}
+
+Each state variable could be encoded using one or more values in
+the range \(1,\ldots,2911\).
+
+\bigskip
+A deliberately conservative estimate of roughly \(190\) instructions and \(10\) states would require
+\[
+200\log_2(2911)
+\approx2301
+\]
+bits, or
+
+\[
+\frac{2301}{8}\approx288\text{ bytes}.
+\]
+
+This estimate represents the amount of memory needed to store game states and program instructions while excluding graphics, input/output, and other machine states. Since small mammals are imagined to provide two racks of ribs, this would correspond to 100 small mammals.
+
+\subsection{Encoding a \(20\times20\) Monochrome Image}
+
+A \(20\times20\) monochrome image contains
+\[
+20\cdot20=400
+\]
+binary pixels, and therefore has
+\[
+2^{400}
+\]
+possible states.
+
+\bigskip
+Since one bone-number has \(2911\) possible values, the minimum number \(m\) of
+bone-numbers required satisfies
+\[
+2911^m\geq2^{400}.
+\]
+
+Taking logarithms gives
+\[
+m\geq\frac{400}{\log_2(2911)}
+\approx34.76.
+\]
+
+Hence
+\[
+\boxed{m=35}.
+\]
+
+So \(35\) bone-numbers are sufficient to encode every possible \(20\times20\) monochrome image. Since each small mammal is imagined to provide two racks of ribs, this would correspond to 18 small mammals
+
+\newpage
+\section{Conclusion}
+
+The proposed number system is a finite combinatorial enumeration. A value is
+identified by the hierarchy
+
+\[
+\boxed{
+\text{total bone count}
+\longrightarrow
+\text{structural partition}
+\longrightarrow
+\text{orientation multiset}.
+}
+\]
+
+\bigskip
+The number of structures for a fixed partition follows from multisets and stars
+and bars, giving
+
+\[
+\binom{b+2}{2}\binom{c+5}{5}.
+\]
+
+\bigskip
+Summing over all partitions with at most twelve bones produces exactly
+\[
+\boxed{2911}
+\]
+distinct values.
+
+\bigskip
+The system therefore provides a well-defined bijection between the natural numbers \(1,\ldots,2911\) and a finite family of canonical bone structures. Decimal integers can be \emph{unranked} into bone-numbers by locating their block, partition, and orientation rank; bone-numbers can be \emph{ranked} back into integers by reversing the same sequence.
+
+\section{Take Away}
+
+Given a set of 12 ribs from a small mammal, you could arrange the bones in piles of 1, 2, and 3, dispersed over a small region, such that you represent the numbers from 1 to 2911. This alphabet of 2911 numerical values is made of only 10 primative symbols, limited structurally, with equivalent permutations.
+
+\end{document}
