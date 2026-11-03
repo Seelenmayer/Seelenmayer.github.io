@@ -112,9 +112,9 @@
 				<p>Imagine an interval overtop of a line. As the player progresses along the line and pushes the upper bound forward, the lower bound follows at a set distance. If the player turns around and instead pushes the lower bound, the camera will linearly interpolate along the spline in a heroic sweep back to the new frontier that the player faces while maintaining fluent rotation.</p>
 				<p>Obstructing objects near the camera are burned away using a GLSL shader. A noise texture, generated in GIMP and randomly assigned each call, guides the burn effect, which reverses when the camera moves away.</p>
 				<div class="displaymediacontainer">
-					<a href="Content/Portfolio/Cinematic_Camera/camera.mp4" target="_blank">
-						<video class="displaymedia" poster="Content/Portfolio/Cinematic_Camera/camera_poster.jpg" preload="metadata" loading="lazy" controls="controls" muted="muted" loop="loop">
-							<source src="Content/Portfolio/Cinematic_Camera/camera.mp4" type="video/mp4"/>
+					<a href="Portfolio/Cinematic_Camera/camera.mp4" target="_blank">
+						<video class="displaymedia" poster="Portfolio/Cinematic_Camera/camera_poster.jpg" preload="metadata" loading="lazy" controls="controls" muted="muted" loop="loop">
+							<source src="Portfolio/Cinematic_Camera/camera.mp4" type="video/mp4"/>
 							Your browser does not support the video tag.
 						</video>
 					</a>
@@ -123,8 +123,8 @@
 				<p>Initially, the shader mapped screen space coordinates using colour channels red for the X-axis, and green for Y-axis. This ensured correct positioning before overlaying the noise texture in blue overtop which mapped the animation in screen-space.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Cinematic_Camera/shader1.png" target="_blank">
-							<img src="Content/Portfolio/Cinematic_Camera/shader1.png" alt="[Shader Demo 1]" class="displaymedia"/>
+						<a href="Portfolio/Cinematic_Camera/shader1.png" target="_blank">
+							<img src="Portfolio/Cinematic_Camera/shader1.png" alt="[Shader Demo 1]" class="displaymedia"/>
 							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
 						</a>
 					</div>
@@ -132,8 +132,8 @@
 				</div>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Cinematic_Camera/shader2.png" target="_blank">
-							<img src="Content/Portfolio/Cinematic_Camera/shader2.png" alt="[Shader Demo 2]" class="displaymedia"/>
+						<a href="Portfolio/Cinematic_Camera/shader2.png" target="_blank">
+							<img src="Portfolio/Cinematic_Camera/shader2.png" alt="[Shader Demo 2]" class="displaymedia"/>
 							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
 						</a>
 					</div>
@@ -142,8 +142,8 @@
 				<p>The final shader needed shadow casting, requiring integration with Unity’s HDRP "Lit" shader. I opted for forward rendering rather than deferred rendering to maintain transparency effects.</p>
 				<div class="displaymediacontainer">
 					<div class="displaymediawrapper">
-						<a href="Content/Portfolio/Cinematic_Camera/shader3.png" target="_blank">
-							<img src="Content/Portfolio/Cinematic_Camera/shader3.png" alt="[Shader Demo 4]" class="displaymedia"/>
+						<a href="Portfolio/Cinematic_Camera/shader3.png" target="_blank">
+							<img src="Portfolio/Cinematic_Camera/shader3.png" alt="[Shader Demo 4]" class="displaymedia"/>
 							<img src="Assets/imageoverlay.png" class="displaymediaoverlay"/>
 						</a>
 					</div>
