@@ -1,0 +1,118 @@
+\documentclass[10pt]{article}
+
+\usepackage[letterpaper,margin=0.55in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}
+{\large\bfseries}
+{}
+{0pt}
+{}[\titlerule]
+
+\titlespacing*{\section}
+{0pt}
+{4pt}
+{4pt}
+
+\setlist[itemize]{
+	leftmargin=1.25em,
+	topsep=1pt,
+	itemsep=1pt,
+	parsep=0pt,
+	partopsep=0pt
+}
+
+\newcommand{\job}[4]{%
+	\textbf{#1}\hfill\textbf{#4}\\
+	\textit{#2}\hfill#3%
+	\vspace{0pt}
+}
+
+\newcommand{\jobspace}{\vspace{6pt}}
+
+\begin{document}
+
+% ============================================================
+% RESUME
+% ============================================================
+
+\begin{center}
+	{\LARGE\textbf{Clayton Seelenmayer}}\\[3pt]
+	seelenmayer [at] live [dot] com
+	\quad|\quad
+	\href{https://seelenmayer.github.io}{seelenmayer.github.io}
+\end{center}
+
+\vspace{-4pt}
+
+\section*{Professional Summary}
+
+Vancouver Island University graduate in Bachelor of Science in Computer Science and Mathematics with two years of professional experience building immersive training simulations, editor tools, web applications, and real-time interactive systems. Experienced working with artists, testers, developers, and stakeholders in agile production environments. Passionate about software infrastructure, education, academia, and helping younger generations grow.
+
+\section*{Education}
+
+\textbf{Vancouver Island University}\hfill \textbf{Jan 2014 - May 2022}\\
+Bachelor of Science, Double Major in Computer Science and Mathematics\\
+Fundamentals of Engineering Certificate\\
+Proficiency in Language and Culture Certificate, Japanese Concentration
+
+\section*{Professional Experience}
+
+\job{ML56}{VR Developer}{Remote, ON}{Aug 2022 - Jun 2024}
+\begin{itemize}[nosep]
+	\item Developed Unity-based VR training simulations within a 100-person company, working in multidisciplinary teams of developers, artists, testers, and stakeholders.
+	\item Built gameplay systems, front-end interfaces, web applications, databases, and in-editor tools supporting immersive training products.
+	\item Developed systems for a VR manhole training simulator using recursive JSON scene generation and network-delivered level data.
+	\item Prototyped AI-assisted scene tooling using Unity, Unreal Engine, OpenAI, AWS, Docker, Kubernetes, and Python.
+	\item Created procedural spline-generation tools for placing powerlines, pipes, hoses, cables, and connected scene elements.
+	\item QA-tested and delivered a private-contract VR training product for a major Canadian retailer, verifying distribution-centre workflows and multilingual training support.
+	\item Collaborated with artists to integrate assets, resolve implementation issues, and prepare investor presentations and internal demonstrations.
+	\item Participated in daily standups, sprint planning, weekly code reviews, technical documentation, bug verification, and product validation.
+\end{itemize}
+\jobspace
+
+\job{Vancouver Island University}{Computing Tutor, IT Department CUPE Casual}{Nanaimo, BC}{Sep 2018 - Apr 2019 / Sep 2026 - Oct 2026}
+\begin{itemize}[nosep]
+	\item Tutored students in programming, web development, data structures, algorithms, databases, graphics, operating systems, networking, multithreading, and compiler development.
+	\item Assisted students with calculus, linear algebra, discrete mathematics, and technical problem solving.
+	\item Conducted campus-wide inventory audits, consolidation, and asset tracking.
+	\item Resolved faculty technology issues and managed institutional ticketing systems.
+\end{itemize}
+\jobspace
+
+\job{Society of Organized Services}{Math Tutor}{Parksville, BC}{Nov 2025 - Present}
+\begin{itemize}[nosep]
+	\item Tutored high-school students in mathematics, including algebra, trigonometry, factoring, and problem-solving strategies.
+	\item Support students in building confidence with structured practice, worked examples, and clear explanations.
+\end{itemize}
+\jobspace
+
+\job{Max's Mushrooms}{Logistics Assistant}{Vancouver Island, BC }{Aug 2012 - Aug 2022}
+\begin{itemize}[nosep]
+	\item Loaded and organized pallets for regional deliveries; supported inventory handling, invoicing, e-commerce fulfillment, and domestic and international freight documentation.
+\end{itemize}
+\jobspace
+
+\job{French Creek Marine Pub}{Prep Cook}{French Creek, BC}{May 2013 - Aug 2022}
+\begin{itemize}[nosep]
+	\item Prepared banquet operations, maintained kitchen organization, and contributed to daily food-service.
+\end{itemize}
+\jobspace
+
+\section*{Technical Skills}
+
+\textbf{Mathematics:} Linear algebra, discrete mathematics, graph theory, calculus, statistics, computation theory.\\
+\textbf{Graphics and Rendering:} Unity, Unreal Engine, UI development, QA testing, editor tooling, VR systems, OpenGL, shader programming, procedural tools, Blender, GIMP, Godot.\\
+\textbf{Programming and Web:} C++, C, Python, JavaScript, SQL, HTML, CSS, Bash, PHP.\\
+\textbf{Cloud Tools:} AWS, Docker, Kubernetes, Git, GitHub, Perforce, Jira, Confluence, Slack, Microsoft Teams, Odoo.
+
+\end{document}
+```
